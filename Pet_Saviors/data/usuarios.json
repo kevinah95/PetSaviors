@@ -1,0 +1,26 @@
+[
+  {
+    "arrayrepo": [],
+    "identificadorIndividuo": 1,
+    "identificacion": "123",
+    "nombre": "José",
+    "pApellido": "Aguilar",
+    "sApellido": "Quesada",
+    "contrasena": "123",
+    "correo": "j@g.com",
+    "casaCuna": false,
+    "eventosParticipado": []
+  },
+  {
+    "arrayrepo": [],
+    "identificadorIndividuo": 2,
+    "identificacion": "1234",
+    "nombre": "Kevin",
+    "pApellido": "Hernandez",
+    "sApellido": "Rostran",
+    "contrasena": "21312",
+    "correo": "k@g.com",
+    "casaCuna": false,
+    "eventosParticipado": []
+  }
+]
