@@ -99,8 +99,7 @@ public class Comparaciones {
 				resultadoPetFinder.remove(resultadoPetFinder.indexOf(animal));
 				resultadoPetFinder.add(0,animal);}}}
 	
-	
-	public static void main (String []args){
+	public static void main (String[] args){
 		ReporteAnimal perrito1 = new ReporteAnimal ("Perro","Pastor Alemán","Negro",
 									  "22152150", "menoc.sk27@gmail.com",
 									  "Pavas", "Encontrado", "No","direccionFoto",

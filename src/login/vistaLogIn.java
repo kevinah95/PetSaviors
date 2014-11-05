@@ -158,6 +158,7 @@ public class vistaLogIn extends JPanel{
 		}else{
 			
 			usuarios.usuariosRegistrados.stream().filter(predicadoFull).forEach(p->entrarASistema());
+			
 		}
 		return false;
 	}
