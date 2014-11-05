@@ -8,15 +8,21 @@ import logicaInterna.Animal;
 
 public class Regular extends Individuo {
 
+	/*
+	 * Adición de los parámetros: primerApellido, segundoApellido,Contrasena
+	 */
 	public Regular(String pIdentificacion, String pNombre, String primerApellido,
-			String segundoApellido, String pCorreo,String pContrasena, 
+			String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
 			String pCasaCuna) {
 		super (pIdentificacion,pNombre,primerApellido,
-			    segundoApellido,pCorreo, pContrasena,
+			    segundoApellido,pTelefono,pCorreo, pContrasena,
 			    pCasaCuna);
 		setReportes(new ArrayList<Animal>());
 	}
 	
+	/*
+	 * Adición de SerializedName para identificar un objeto serializado en los archivos Json
+	 */
 	@SerializedName("arrayrepo")
 	private ArrayList<Animal> reportes;
 	

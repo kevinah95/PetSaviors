@@ -183,7 +183,7 @@ public class vistaRegistrarme extends JPanel {
 		String pContrasena = txtContrasenia.getText();
 		
 		Regular nuevoUsuario = new Regular(pIdentificacion, pNombre, primerApellido, 
-				segundoApellido, pCorreo, pContrasena, "false");
+				segundoApellido,"anadirtelefono", pCorreo, pContrasena, "false");
 		usuarios.agregarUsuario(nuevoUsuario);
 		usuarios.actualizarJsonUsuarios();
 	}

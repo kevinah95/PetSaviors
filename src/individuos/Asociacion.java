@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Asociacion extends Individuo{
 
 	public Asociacion(String pIdentificacion, String pNombre, String primerApellido,
-			String segundoApellido, String pCorreo,String pContrasena, 
+			String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
 			
 			String pActividad)
 	{
 		super(pIdentificacion,pNombre,primerApellido,
-			    segundoApellido,pCorreo, pContrasena,
+			    segundoApellido,pTelefono,pCorreo, pContrasena,
 			    "false");
 		String[] actividad;
 		actividad = pActividad.split("$");

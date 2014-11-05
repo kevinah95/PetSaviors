@@ -5,7 +5,7 @@ import java.util.*;
 public class Adoptante extends Individuo{
 
 	public Adoptante(String pIdentificacion, String pNombre, String primerApellido,
-			String segundoApellido, String pCorreo,String pContrasena, 
+			String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
 			String pCasaCuna,
 			
 			String pDirImagenes,
@@ -14,7 +14,7 @@ public class Adoptante extends Individuo{
 	{
 		
 		super(pIdentificacion,pNombre,primerApellido,
-			    segundoApellido,pCorreo, pContrasena,
+			    segundoApellido,pTelefono,pCorreo, pContrasena,
 			    pCasaCuna);
 		setDirImagenes(pDirImagenes);
 		String[] imagenes;

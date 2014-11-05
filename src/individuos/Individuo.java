@@ -10,7 +10,7 @@ public class Individuo implements java.io.Serializable{
 	public static ArrayList<Individuo> individuosInvolucrados = new ArrayList<Individuo>();
 	
 	public Individuo(String pIdentificacion, String pNombre, String primerApellido,
-					String segundoApellido, String pCorreo,String pContrasena, 
+					String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
 					String pCasaCuna) 
 	{
 		cantIndividuos++;
@@ -21,12 +21,13 @@ public class Individuo implements java.io.Serializable{
 		setsApellido(segundoApellido);
 		setContrasena(pContrasena);
 		setCorreo(pCorreo);
+		setTelefono(pTelefono);
 		setCasaCuna(Boolean.parseBoolean(pCasaCuna));
 	}
 	
 	protected static int cantIndividuos = 0;
 	protected int identificadorIndividuo = 0;
-	protected String identificacion,nombre,pApellido,sApellido,contrasena,correo = null; 
+	protected String identificacion,nombre,pApellido,sApellido,telefono,contrasena,correo = null; 
 	protected boolean casaCuna;
 	protected ArrayList<Actividad> eventosParticipado = new ArrayList<Actividad>();
 	private ArrayList<Animal> reportes;
@@ -92,6 +93,18 @@ public class Individuo implements java.io.Serializable{
 	public void cambiarEstado ( ){} 
 	
 	public void editarCondicion ( ){}
+	/**
+	 * @return the telefono
+	 */
+	public String getTelefono() {
+		return telefono;
+	}
+	/**
+	 * @param telefono the telefono to set
+	 */
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 	
 	
 	
