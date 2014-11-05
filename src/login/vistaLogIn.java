@@ -10,7 +10,7 @@
 
 package login;
 
-import individuos.Regular;
+import individuos.Individuo;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -135,19 +135,19 @@ public class vistaLogIn extends JPanel{
 
 	}
 	
-	Predicate<Regular> predicadoCedula = new Predicate<Regular>() {
+	Predicate<Individuo> predicadoCedula = new Predicate<Individuo>() {
 		@Override
-		public boolean test(Regular t) {
+		public boolean test(Individuo t) {
 			return t.getIdentificacion().equals(txtCedula.getText());
 		}
 	};
-	Predicate<Regular> predicadoContrasena = new Predicate<Regular>() {
+	Predicate<Individuo> predicadoContrasena = new Predicate<Individuo>() {
 		@Override
-		public boolean test(Regular t) {
+		public boolean test(Individuo t) {
 			return t.getContrasena().equals(txtContrasenia.getText());
 		}
 	};
-	Predicate<Regular> predicadoFull = predicadoCedula.and(predicadoContrasena);
+	Predicate<Individuo> predicadoFull = predicadoCedula.and(predicadoContrasena);
 	
 	
 	

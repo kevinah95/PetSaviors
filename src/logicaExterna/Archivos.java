@@ -29,7 +29,7 @@ public class Archivos {
 			FileWriter w = new FileWriter(archivo.getAbsolutePath() + java.io.File.separator);
 			BufferedWriter bw = new BufferedWriter(w);
 			PrintWriter wr = new PrintWriter(bw);
-			for (Animal mascota : Animal.animalesSistema) {
+			for (ReporteAnimal mascota : ReporteAnimal.animalesSistema) {
 				String entradaTxt = mascota.toString();
 				wr.write(entradaTxt);
 				bw.newLine();}

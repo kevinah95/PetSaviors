@@ -10,7 +10,7 @@
 
 package login;
 
-import individuos.Regular;
+import individuos.Individuo;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -177,7 +177,7 @@ public class vistaRegistrarme extends JPanel {
 		String pCorreo = txtCorreo.getText();
 		String pContrasena = txtContrasenia.getText();
 		
-		Regular nuevoUsuario = new Regular(pIdentificacion, pNombre, primerApellido, 
+		Individuo nuevoUsuario = new Individuo(pIdentificacion, pNombre, primerApellido, 
 				segundoApellido,pTelefono, pCorreo, pContrasena, "false");
 		usuarios.agregarUsuario(nuevoUsuario);
 		usuarios.actualizarJsonUsuarios();

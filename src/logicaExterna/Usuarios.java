@@ -1,13 +1,13 @@
 package logicaExterna;
 
-import individuos.Regular;
+import individuos.Individuo;
 import java.io.*;
 import java.util.*;
 import javax.swing.*;
 import com.google.gson.*;
 
 public class Usuarios implements java.io.Serializable{
-	public static List<Regular> usuariosRegistrados = new ArrayList<Regular>();
+	public static List<Individuo> usuariosRegistrados = new ArrayList<Individuo>();
 	private static Usuarios instance = null;
 	protected static final String dirFileUsuarios = "Pet_Saviors/data/usuarios.json";
 	final static Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
@@ -19,7 +19,7 @@ public class Usuarios implements java.io.Serializable{
 		return instance;
 	}
 	
-	public void agregarUsuario(Regular nuevoUsuario){
+	public void agregarUsuario(Individuo nuevoUsuario){
 		usuariosRegistrados.add(nuevoUsuario);
 	}
 
@@ -45,8 +45,8 @@ public class Usuarios implements java.io.Serializable{
 	    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
 	    for(JsonElement obj : jArray )
 	    {
-	        Regular regular = prettyGson.fromJson( obj , Regular.class);
-	        usuariosRegistrados.add(regular);
+	        Individuo individuo = prettyGson.fromJson( obj , Individuo.class);
+	        usuariosRegistrados.add(individuo);
 	    }
 	}
 	

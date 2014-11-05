@@ -1,10 +1,12 @@
 package logicaInterna;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class Comparaciones {
 	//Pet Finder
-	private static ArrayList<String> todosDatosDisponibles ( Animal animalAnalizado ){
+	public static ArrayList<ReporteAnimal> resultadoPetFinder = new ArrayList<ReporteAnimal>();
+	
+	private static ArrayList<String> todosDatosDisponibles ( ReporteAnimal animalAnalizado ){
 		String condicion =  animalAnalizado.getCondicionEntrada();
 		ArrayList<String> datosPorComparar = new ArrayList<String>();
 		datosPorComparar.add("");
@@ -14,7 +16,7 @@ public class Comparaciones {
 		datosPorComparar.add(animalAnalizado.getTelefonoContacto());
 		datosPorComparar.add(animalAnalizado.getCorreoContacto());
 		datosPorComparar.add(Integer.toString(animalAnalizado.getDiasSistema()));
-		int cantidadDatos = 1;  //Siempre debe compararse el Tipo de Mascota
+		int cantidadDatos = 1; //No comienza en 0 porque automáticamente evalúa los dias en el sistema.
 		if (!animalAnalizado.getRaza().equals("No")){//System.out.println(animalAnalizado.getRaza());
 			cantidadDatos ++;}
 		datosPorComparar.add(animalAnalizado.getRaza());
@@ -30,11 +32,11 @@ public class Comparaciones {
 		if (!animalAnalizado.getNombreMascota().equals("No")){//System.out.println(animalAnalizado.getNombreMascota());
 			cantidadDatos++;}
 		datosPorComparar.add(animalAnalizado.getNombreMascota());
-
+		System.out.println(cantidadDatos);
 		datosPorComparar.set(0,Integer.toString(cantidadDatos));
 		return datosPorComparar;}
 	
-	private static int cantidadSemejanzas(ArrayList<String>datosComparar,Animal comparacionContra){
+	private static int cantidadSemejanzas(ArrayList<String>datosComparar, ReporteAnimal comparacionContra){
 		int contadorSemejanzas = 0;
 		int contadorComparaciones = 0;
 		for (String dato : datosComparar ){//System.out.println(dato);
@@ -64,59 +66,67 @@ public class Comparaciones {
 			contadorComparaciones++;}
 		return contadorSemejanzas;}
 	
-	public static void PetFinder(Animal animalPorComparar){
+	public static void PetFinder(ReporteAnimal animalPorComparar){
 		ArrayList<String> datos = todosDatosDisponibles(animalPorComparar);
-		Animal.resultadoPetFinder.clear();
-		for ( Animal animal : Animal.animalesSistema ){
+		resultadoPetFinder.clear();
+		for ( ReporteAnimal animal : ReporteAnimal.animalesSistema ){
 			if (!datos.get(1).equals(Integer.toString(animal.getIdAnimal()))){
 				animal.setContadorSemejanzas(cantidadSemejanzas (datos, animal)); //Setea la variable para ordenamiento de cada animal
 				if ( cantidadSemejanzas (datos, animal) > 0 ){
-					Animal.resultadoPetFinder.add(animal);}
+					resultadoPetFinder.add(animal);}
 				if ( cantidadSemejanzas (datos, animal) == -2){
-					Animal.resultadoPetFinder.add(0,animal);}	}}
-		ordenarResultados();}
+					resultadoPetFinder.add(0,animal);}	}}
+		ordenarResultados();
+		porcentajeSimilitud(Integer.parseInt(datos.get(0)));}
+	
+	private static void porcentajeSimilitud (int x){
+		for (ReporteAnimal animal : resultadoPetFinder ){
+			if (animal.getContadorSemejanzas() != -2){
+				float y = animal.getContadorSemejanzas();
+				animal.setContadorSemejanzas((y*100)/x);}}}
 	
 	private static void ordenarResultados ( ) {
 		//Bubble sort comparando los contadores de semejanzas
-		for(int i = 0; i<Animal.resultadoPetFinder.size(); i++){ 
-			for(int j = i; j<Animal.resultadoPetFinder.size(); j++){
-				if( Animal.resultadoPetFinder.get(i).getContadorSemejanzas() 
-						< Animal.resultadoPetFinder.get(j).getContadorSemejanzas() ) { //La posición 1 es el contador de Semejanzas 
-					Animal aux = Animal.resultadoPetFinder.get(i); 
-					Animal.resultadoPetFinder.set(i,Animal.resultadoPetFinder.get(j)); 
-					Animal.resultadoPetFinder.set(j,aux); }}} 
-		for (Animal animal : Animal.resultadoPetFinder){
+		for(int i = 0; i<resultadoPetFinder.size(); i++){
+			for(int j = i; j<resultadoPetFinder.size(); j++){
+				if( resultadoPetFinder.get(i).getContadorSemejanzas() 
+						< resultadoPetFinder.get(j).getContadorSemejanzas() ) { //La posición 1 es el contador de Semejanzas 
+					ReporteAnimal aux = resultadoPetFinder.get(i); 
+					resultadoPetFinder.set(i,resultadoPetFinder.get(j)); 
+					resultadoPetFinder.set(j,aux); }}} 
+		for (ReporteAnimal animal : resultadoPetFinder){
 			if (animal.getContadorSemejanzas() == -2){
-				Animal.resultadoPetFinder.remove(Animal.resultadoPetFinder.indexOf(animal));
-				Animal.resultadoPetFinder.add(0,animal);}}}
+				resultadoPetFinder.remove(resultadoPetFinder.indexOf(animal));
+				resultadoPetFinder.add(0,animal);}}}
+	
 	
 	public static void main (String []args){
-		Animal perrito1 = new Animal ("Perro","Pastor Alemán","Negro",
+		ReporteAnimal perrito1 = new ReporteAnimal ("Perro","Pastor Alemán","Negro",
 									  "22152150", "menoc.sk27@gmail.com",
-									  "Pavas", "Encontrado", "012","direccionFoto",
+									  "Pavas", "Encontrado", "No","direccionFoto",
 									  "Maximus Gorrerus", "0");
-		Animal perrito2 = new Animal ("Perro","Pastor Italiano","Rojo",
+		ReporteAnimal perrito2 = new ReporteAnimal ("Perro","Pastor Italiano","Rojo",
 				 					  "22152150", "menoc.sk27@gmail.com",
-				 					  "No", "Encontrado", "012","direccionFoto",
+				 					  "No", "Encontrado", "011","direccionFoto",
 				 					  "Maximus", "0");
-		Animal perrito3 = new Animal ("Perro", "Pastor Mundano", "Tirando a Rojo",
+		ReporteAnimal perrito3 = new ReporteAnimal ("Perro", "Pastor Alemán", "Negro",
 									  "22222222", "jasc!gmail.com", 
-									  "Pavas", "Nada", "010", "ashskdf", 
+									  "Pavas", "Nada", "No", "ashskdf", 
 									  "Maximus Gorrerus", "002");
-		Animal perrito4 = new Animal ("Perro", "Pastor Alemán", "Tirando a Rojo",
+		ReporteAnimal perrito4 = new ReporteAnimal ("Perro", "Pastor Alemán", "Tirando a Rojo",
 				 					  "22222222", "jasc!gmail.com", 
 				 				      "Pavas", "Nada", "010", "ashskdf", 
 				 					  "Maximus Gorrerus", "002");
 		
-		Animal.animalesSistema.add(perrito1);
-		Animal.animalesSistema.add(perrito2);
-		Animal.animalesSistema.add(perrito3);
-		Animal.animalesSistema.add(perrito4);
+		ReporteAnimal.animalesSistema.add(perrito1);
+		ReporteAnimal.animalesSistema.add(perrito2);
+		ReporteAnimal.animalesSistema.add(perrito3);
+		ReporteAnimal.animalesSistema.add(perrito4);
 		
 		PetFinder(perrito1);
 		System.out.println("Pet Finder: ");
-		for (Animal animal : Animal.resultadoPetFinder){
-			System.out.println(animal.toString() +"\n" + animal.getContadorSemejanzas());}
+		for (Animal animal : resultadoPetFinder){
+			System.out.println(animal.toString() +"\n" + animal.getContadorSemejanzas() + "%");}
 		
 	}
 }

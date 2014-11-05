@@ -2,6 +2,8 @@ package individuos;
 
 import java.util.*;
 
+import com.google.gson.annotations.SerializedName;
+
 import logicaInterna.Actividad;
 import logicaInterna.Animal;
 
@@ -23,6 +25,7 @@ public class Individuo implements java.io.Serializable{
 		setCorreo(pCorreo);
 		setTelefono(pTelefono);
 		setCasaCuna(Boolean.parseBoolean(pCasaCuna));
+		setReportes(new ArrayList<Animal>());
 	}
 	
 	protected static int cantIndividuos = 0;
@@ -30,8 +33,7 @@ public class Individuo implements java.io.Serializable{
 	protected String identificacion,nombre,pApellido,sApellido,telefono,contrasena,correo = null; 
 	protected boolean casaCuna;
 	protected ArrayList<Actividad> eventosParticipado = new ArrayList<Actividad>();
-	private ArrayList<Animal> reportes;
-	
+	private ArrayList<Animal> reportes;	
 	/*===================================================================================================*/
 	/*===================================================================================================*/
 	/*===================================================================================================*/
