@@ -3,6 +3,7 @@
 *.settings
 *.classpath
 *.metadata
+*.jar
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
