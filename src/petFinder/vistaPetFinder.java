@@ -16,6 +16,11 @@ import javax.swing.SwingConstants;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 
+/*
+ * Clase vistaPetFinder
+ * Contiene los páneles de la sección PetFinder
+ */
+
 @SuppressWarnings("serial")
 public class vistaPetFinder extends JPanel{
 	public static JPanel contenedor = new JPanel(); 
