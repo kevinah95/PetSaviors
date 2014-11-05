@@ -1,20 +1,9 @@
 package petFinder;
 
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /*
  * Clase vistaPetFinder

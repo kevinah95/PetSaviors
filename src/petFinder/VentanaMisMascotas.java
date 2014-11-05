@@ -1,21 +1,8 @@
 package petFinder;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableRowSorter;
-
-import java.awt.Font;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.table.*;
 
 public class VentanaMisMascotas extends JPanel {
 	//Esta clase va a contener una JTable con los animales que tiene el usuario.

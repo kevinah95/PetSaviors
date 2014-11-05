@@ -10,13 +10,9 @@
 
 package login;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
+import javax.swing.*;
 import menu.principal.PrincipalNormal;
-
-import java.awt.CardLayout;
-
+import java.awt.*;
 
 public class vistaIngreso extends JFrame {
 	static CardLayout cardlayout = new CardLayout();

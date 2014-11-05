@@ -1,6 +1,6 @@
 package logicaExterna;
 
-import java.text.SimpleDateFormat;
+import java.text.*;
 import java.util.*;
 
 public class Tiempo {

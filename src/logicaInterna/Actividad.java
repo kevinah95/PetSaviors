@@ -1,8 +1,6 @@
 package logicaInterna;
 
-
 public class Actividad {
-
 	public Actividad(String pTipoEvento, boolean pInvolucraDinero, 
 					double pMonto, String pDescripcion) 
 	{
