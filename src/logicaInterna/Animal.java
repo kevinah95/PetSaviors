@@ -1,6 +1,6 @@
 package logicaInterna;
 
-import java.util.ArrayList;
+import java.util.*;
 import logicaExterna.Tiempo;
 
 public class Animal {	

@@ -10,40 +10,14 @@
 
 package menu.principal;
 
-
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.ListCellRenderer;
-
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-
-import javax.swing.JLabel;
-import javax.swing.border.EmptyBorder;
-
-import java.awt.Font;
-
-
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
+import javax.swing.*;
+import java.awt.*;
+import javax.swing.border.*;
+import java.awt.event.*;
 import render.listas.RenderPrincipal;
-
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-
+import javax.swing.*;
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
-
-
 
 public class PrincipalNormal extends JPanel {
 	public static JList listaMenu;

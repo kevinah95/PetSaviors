@@ -11,27 +11,11 @@
 package login;
 
 import individuos.Regular;
-
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-
-import java.awt.Font;
-import java.awt.Color;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
 import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 import logicaExterna.Usuarios;
 

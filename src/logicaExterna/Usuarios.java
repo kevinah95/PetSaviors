@@ -1,47 +1,16 @@
 package logicaExterna;
 
-
 import individuos.Regular;
-
-
-
-
-
-
-
-
-
-
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JOptionPane;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-
-
-
-
+import java.io.*;
+import java.util.*;
+import javax.swing.*;
+import com.google.gson.*;
 
 public class Usuarios implements java.io.Serializable{
 	public static List<Regular> usuariosRegistrados = new ArrayList<Regular>();
 	private static Usuarios instance = null;
 	protected static final String dirFileUsuarios = "Pet_Saviors/data/usuarios.json";
 	final static Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-	
 	
 	protected Usuarios() {	// Disimular instancia 
 	}
@@ -65,8 +34,8 @@ public class Usuarios implements java.io.Serializable{
 			wr.close();
 			bw.close();}
 		catch(IOException e){
-			e.printStackTrace();}
-	    
+			e.printStackTrace();
+		}    
 	}
 	
 	private static void cargarUsuarios(){
@@ -105,8 +74,4 @@ public class Usuarios implements java.io.Serializable{
     	    JOptionPane.showMessageDialog(null, "Directorio CREADO: "+file.getCanonicalPath());
     	} 
 	}
-	
-	
-	
-
 }
