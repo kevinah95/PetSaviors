@@ -9,8 +9,15 @@ import individuos.Regular;
 
 
 
+
+
+
+
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,6 +28,9 @@ import javax.swing.JOptionPane;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 
 
@@ -30,13 +40,13 @@ public class Usuarios implements java.io.Serializable{
 	public static List<Regular> usuariosRegistrados = new ArrayList<Regular>();
 	private static Usuarios instance = null;
 	protected static final String dirFileUsuarios = "Pet_Saviors/data/usuarios.json";
-	final Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+	final static Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
 	
 	
 	protected Usuarios() {	// Disimular instancia 
 	}
 	public static Usuarios getInstance() {
-		if (instance == null) {	instance = new Usuarios(); }
+		if (instance == null) {	instance = new Usuarios(); cargarUsuarios(); }
 		return instance;
 	}
 	
@@ -57,6 +67,34 @@ public class Usuarios implements java.io.Serializable{
 		catch(IOException e){
 			e.printStackTrace();}
 	    
+	}
+	
+	private static void cargarUsuarios(){
+		JsonParser parser = new JsonParser();
+		String representacion = null;
+		try { representacion = representacion(); } catch (IOException e) { e.printStackTrace();}
+	    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
+	    for(JsonElement obj : jArray )
+	    {
+	        Regular regular = prettyGson.fromJson( obj , Regular.class);
+	        usuariosRegistrados.add(regular);
+	    }
+	}
+	
+	private static String representacion() throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(dirFileUsuarios));
+		try {
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				sb.append(line);
+				sb.append("\n");
+				line = br.readLine();
+			}
+			return sb.toString();
+		} finally {
+			br.close();
+		}
 	}
 	
 	public static void verificarArchivo() throws IOException { 

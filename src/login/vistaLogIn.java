@@ -12,12 +12,20 @@ package login;
 
 
 
+import individuos.Regular;
+
 import javax.swing.JPanel;
+
+
+
+
+
 
 
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -31,9 +39,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.function.Predicate;
 
 import javax.swing.border.EmptyBorder;
 
+import logicaExterna.Usuarios;
 import menu.principal.PrincipalNormal;
 
 
@@ -45,6 +55,7 @@ public class vistaLogIn extends JPanel{
 	public JButton btnRegistrarme;
 	public JLabel label;
 	public JPanel panel;
+	Usuarios usuarios = Usuarios.getInstance();
 	
 	public vistaLogIn() {
 		setSize(1280, 720);
@@ -83,11 +94,9 @@ public class vistaLogIn extends JPanel{
 		panel.add(btnEntrar);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "PrincipalNormal");
-//				PrincipalNormal.listaMenu.setSelectedIndex(0);
-				PrincipalNormal.listaMenu.requestFocus();
-				getParent().revalidate();
-				getParent().repaint();
+				if (verificarDatos()==false){
+					JOptionPane.showMessageDialog(null, "Datos Incorrectos");
+				}
 			}
 		});
 		btnEntrar.setOpaque(false);
@@ -152,6 +161,42 @@ public class vistaLogIn extends JPanel{
             }
         });
 
+	}
+	
+	Predicate<Regular> predicadoCedula = new Predicate<Regular>() {
+		@Override
+		public boolean test(Regular t) {
+			return t.getIdentificacion().equals(txtCedula.getText());
+		}
+	};
+	Predicate<Regular> predicadoContrasena = new Predicate<Regular>() {
+		@Override
+		public boolean test(Regular t) {
+			return t.getContrasena().equals(txtContrasenia.getText());
+		}
+	};
+	Predicate<Regular> predicadoFull = predicadoCedula.and(predicadoContrasena);
+	
+	
+	
+	private boolean verificarDatos(){
+		if (usuarios.usuariosRegistrados == null){
+			JOptionPane.showMessageDialog(null, "No hay usuarios registrados en el sistema");
+			return false;
+		}else{
+			
+			usuarios.usuariosRegistrados.stream().filter(predicadoFull).forEach(p->entrarASistema());
+		}
+		return false;
+	}
+	
+	
+	
+	private void entrarASistema(){
+		vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "PrincipalNormal");
+		PrincipalNormal.listaMenu.requestFocus();
+		getParent().revalidate();
+		getParent().repaint();
 	}
 	
 	public void limpiarDatos(){

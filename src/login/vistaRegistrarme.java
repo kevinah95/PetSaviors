@@ -29,6 +29,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -46,6 +47,7 @@ public class vistaRegistrarme extends JPanel {
 	private JPanel panel;
 	private JTextField txtSApellido;
 	Usuarios usuarios = Usuarios.getInstance();
+	private JTextField txtTelefono;
 
 	public vistaRegistrarme(){
 		setBackground(new Color(179, 209, 202));
@@ -53,13 +55,13 @@ public class vistaRegistrarme extends JPanel {
 		setLayout(null);
 		
 		panel = new JPanel();
-		panel.setBounds(405, 110, 470, 500);
+		panel.setBounds(405, 110, 470, 522);
 		panel.setBackground(null);
 		add(panel);
 		panel.setLayout(null);
 		
 		btnRegistrarme = new JButton("Reg\u00EDstrarme");
-		btnRegistrarme.setBounds(268, 407, 130, 39);
+		btnRegistrarme.setBounds(269, 458, 130, 39);
 		panel.add(btnRegistrarme);
 		btnRegistrarme.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -85,7 +87,7 @@ public class vistaRegistrarme extends JPanel {
 		btnRegistrarme.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(128, 407, 130, 39);
+		btnCancelar.setBounds(129, 458, 130, 39);
 		panel.add(btnCancelar);
 		btnCancelar.setOpaque(false);
 		btnCancelar.setContentAreaFilled(false);
@@ -107,7 +109,7 @@ public class vistaRegistrarme extends JPanel {
 		
 		
 		txtPApellido = new JTextField();
-		txtPApellido.setBounds(78, 139, 312, 28);
+		txtPApellido.setBounds(78, 138, 312, 28);
 		panel.add(txtPApellido);
 		txtPApellido.setOpaque(false);
 		txtPApellido.setBorder(null);
@@ -120,11 +122,19 @@ public class vistaRegistrarme extends JPanel {
 		txtSApellido.setFont(new Font("Tahoma", Font.BOLD, 15));
 		txtSApellido.setColumns(10);
 		txtSApellido.setBorder(null);
-		txtSApellido.setBounds(78, 202, 312, 28);
+		txtSApellido.setBounds(78, 200, 312, 28);
 		panel.add(txtSApellido);
 		
+		txtTelefono = new JTextField();
+		txtTelefono.setOpaque(false);
+		txtTelefono.setFont(new Font("Tahoma", Font.BOLD, 15));
+		txtTelefono.setColumns(10);
+		txtTelefono.setBorder(null);
+		txtTelefono.setBounds(78, 267, 312, 28);
+		panel.add(txtTelefono);
+		
 		txtCedula = new JTextField();
-		txtCedula.setBounds(78, 266, 125, 28);
+		txtCedula.setBounds(78, 332, 125, 28);
 		panel.add(txtCedula);
 		txtCedula.setOpaque(false);
 		txtCedula.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -140,7 +150,7 @@ public class vistaRegistrarme extends JPanel {
         });
 		
 		txtCorreo = new JTextField();
-		txtCorreo.setBounds(227, 266, 163, 28);
+		txtCorreo.setBounds(227, 332, 163, 28);
 		panel.add(txtCorreo);
 		txtCorreo.setOpaque(false);
 		txtCorreo.setBorder(null);
@@ -156,7 +166,7 @@ public class vistaRegistrarme extends JPanel {
         });
 		
 		txtContrasenia = new JPasswordField();
-		txtContrasenia.setBounds(78, 332, 312, 28);
+		txtContrasenia.setBounds(78, 397, 312, 28);
 		panel.add(txtContrasenia);
 		txtContrasenia.setOpaque(false);
 		txtContrasenia.setBorder(null);
@@ -164,7 +174,7 @@ public class vistaRegistrarme extends JPanel {
 		txtContrasenia.setColumns(10);
 		
 		JLabel lblBG = new JLabel("");
-		lblBG.setBounds(0, 0, 470, 500);
+		lblBG.setBounds(0, 0, 470, 520);
 		panel.add(lblBG);
 		lblBG.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblBG.setIcon(new ImageIcon(vistaRegistrarme.class.getResource("/recursos/Registrar.png")));
@@ -179,13 +189,15 @@ public class vistaRegistrarme extends JPanel {
 		String pNombre = txtNombre.getText();
 		String primerApellido = txtPApellido.getText();
 		String segundoApellido = txtSApellido.getText();
+		String pTelefono = txtTelefono.getText();
 		String pCorreo = txtCorreo.getText();
 		String pContrasena = txtContrasenia.getText();
 		
 		Regular nuevoUsuario = new Regular(pIdentificacion, pNombre, primerApellido, 
-				segundoApellido,"anadirtelefono", pCorreo, pContrasena, "false");
+				segundoApellido,pTelefono, pCorreo, pContrasena, "false");
 		usuarios.agregarUsuario(nuevoUsuario);
 		usuarios.actualizarJsonUsuarios();
+		
 	}
 	
 	public void accionVolver(){
@@ -199,6 +211,7 @@ public class vistaRegistrarme extends JPanel {
 		txtNombre.setText("");
 		txtPApellido.setText("");
 		txtSApellido.setText("");
+		txtTelefono.setText("");
 		txtCedula.setText("");
 		txtCorreo.setText("");
 		txtContrasenia.setText("");
@@ -221,31 +234,38 @@ public class vistaRegistrarme extends JPanel {
 	/**
 	 * Método para verificar si la dirección ingresada sea un email válido
 	 */
-	public boolean verificarEmail () {
+	public boolean verificarEmail() {
 
-	    // Establecer el patrón
-	    Pattern p = Pattern.compile("[-\\w\\.]+@[\\.\\w]+\\.\\w+");
-	    // Asociar el string al patrón
-	   Matcher matchCorreo = p.matcher( txtCorreo.getText() );
-	   // Comprobar si encaja
-	   if ( matchCorreo.matches() ){ return true; }else{
-		   JOptionPane.showMessageDialog(null, "La dirección de correo no es válida"); return false;}
-	   
+		// Establecer el patrón
+		Pattern p = Pattern.compile("[-\\w\\.]+@[\\.\\w]+\\.\\w+");
+		// Asociar el string al patrón
+		Matcher matchCorreo = p.matcher(txtCorreo.getText());
+		// Comprobar si encaja
+		if (matchCorreo.matches()) {
+			return true;
+		} else {
+			JOptionPane.showMessageDialog(null,
+					"La dirección de correo no es válida");
+			return false;
+		}
+
 	}
 	
 	public boolean verificarDatos(){
 		//Comprobar Nombre
 		if ( txtNombre.getText().matches("\\s*") ){ //Verifica si tiene espacios en blanco
 			JOptionPane.showMessageDialog(null, "El dato Nombre no ha sido ingresado");	return false;}
-		//Comprobar Apellidos
+		//Comprobar pApellido
 		if ( txtPApellido.getText().matches("\\s*") ){
 			JOptionPane.showMessageDialog(null, "El dato Primer Apellido no ha sido ingresado"); return false;}
-		//Comprobar Apellidos
+		//Comprobar sApellido
 		if ( txtSApellido.getText().matches("\\s*") ){
 			JOptionPane.showMessageDialog(null, "El dato Segundo Apellido no ha sido ingresado"); return false;}
+		if (!txtTelefono.getText().matches("\\d*") || txtTelefono.getText().matches("\\s*")){
+			JOptionPane.showMessageDialog(null, "El dato Teléfono solo acepta digitos");	return false;}
 		//Comprobar cédula
 		if (!txtCedula.getText().matches("\\d*") || txtCedula.getText().matches("\\s*")){
-			JOptionPane.showMessageDialog(null, "El número de Cédula solo acepta digitos");	return false;}
+			JOptionPane.showMessageDialog(null, "El dato Cédula solo acepta digitos");	return false;}
 		//Comprobar Correo
 		if ( txtCorreo.getText().matches("\\s*") ){
 			JOptionPane.showMessageDialog(null, "El dato Correo no ha sido ingresado");	return false;}
