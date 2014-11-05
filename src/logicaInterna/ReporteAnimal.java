@@ -1,10 +1,9 @@
 package logicaInterna;
 
-import java.util.ArrayList;
-
+import java.util.*;
 import logicaExterna.Tiempo;
 
-public class ReporteAnimal extends Animal{
+public class ReporteAnimal{
 
 	public static ArrayList<ReporteAnimal> animalesSistema = new ArrayList<ReporteAnimal>();
 	
@@ -15,9 +14,8 @@ public class ReporteAnimal extends Animal{
 			   			String pChipIdentificacion, String pDirFoto,
 			   			String pNombreMascota, String pRecompensa) 
 	{
-		super(pTipoMascota, pRaza, pColor,
-			  pChipIdentificacion,
-			  pNombreMascota);
+		setAnimalReportado(new Animal(pTipoMascota, pRaza, pColor,
+							pChipIdentificacion, pNombreMascota));
 		
 		setTelefonoContacto(pTelefonoContacto); 
 		setCorreoContacto(pCorreoContacto); 
@@ -31,7 +29,6 @@ public class ReporteAnimal extends Animal{
 		setCondicionSalida("false");
 		setEnAdopcion(false);
 		setDiasSistema(1);
-		
 	}
 
 	private String telefonoContacto = null;
@@ -41,11 +38,13 @@ public class ReporteAnimal extends Animal{
 	private String condicionEntrada; //"Encontrado, Extraviado"
 	private double recompensa = 0; //0 si no hay recompensa. Else: Si hay recompensa. 
 	
-	private String  fechaRegistrado = null;
-	private String  fechaSalidaSistema = null;
+	private Animal animalReportado;
+	private String fechaRegistrado = null;
+	private String fechaSalidaSistema = null;
 	private boolean enAdopcion = false; //Si diasSistema tiene determinado número, cambia a positivo. 
-	private String  condicionSalida = null; //"Devuelto": Se encontró al dueño y fue devuelto. "Adoptado": Alguien lo adoptó.
-	private int 	diasSistema = 0; 
+	
+	private String condicionSalida = null; //"Devuelto": Se encontró al dueño y fue devuelto. "Adoptado": Alguien lo adoptó.
+	private int diasSistema = 0; 
 	
 	public String getTelefonoContacto() {
 		return telefonoContacto;}
@@ -91,5 +90,8 @@ public class ReporteAnimal extends Animal{
 		return diasSistema;}
 	public void setDiasSistema(int diasSistema) {
 		this.diasSistema = diasSistema;}
-	
+	public Animal getAnimalReportado() {
+		return animalReportado;}
+	public void setAnimalReportado(Animal animalReportado) {
+		this.animalReportado = animalReportado;}
 }
