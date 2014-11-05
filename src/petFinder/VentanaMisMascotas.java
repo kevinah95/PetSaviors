@@ -17,7 +17,8 @@ public class VentanaMisMascotas extends JPanel {
 		setBackground(new Color(155, 196, 188));
 		//setLayout(null);
 		hacerTabla();
-		add(panelContenedor);
+		setLayout(new CardLayout(0, 0));
+		add(panelContenedor, "name_181084789481483");
 	}
 	
 	public void hacerTabla() {
@@ -40,10 +41,11 @@ public class VentanaMisMascotas extends JPanel {
 		modelo.addRow(datos);
 		sorter = new TableRowSorter<DefaultTableModel>(modelo);
 		
-		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		tabla.setPreferredScrollableViewportSize(new Dimension(766, 458));
 		tabla.setRowSorter(sorter);
 		tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		//tabla.setBackground(arg0);
 		
 		NormalCellRenderer normal = new NormalCellRenderer();
 		tabla.getColumn("ID").setCellRenderer(normal);
@@ -53,10 +55,11 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.getColumn("Sexo").setCellRenderer(normal);
 		tabla.getColumn("Chip ID").setCellRenderer(normal);
 		tabla.getColumn("Nombre").setCellRenderer(normal);
+		panelContenedor.setLayout(new CardLayout(0, 0));
 		
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		grid.fill = GridBagConstraints.BOTH;
-		panelContenedor.add(scrollPanel, grid);
+		panelContenedor.add(scrollPanel, "name_181078707065095");
 	}
 	
 	public static class NormalCellRenderer extends JLabel implements TableCellRenderer {
