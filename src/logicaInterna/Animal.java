@@ -5,7 +5,7 @@ public class Animal {
 	public Animal (String pTipoMascota, String pRaza, String pColor,
 				   //Los sig. parámetros no son requeridos. 
 				   String pChipIdentificacion,
-				   String pNombreMascota)
+				   String pNombreMascota,String pSexo)
 	{	
 		cantAnimales++;
 		setIdAnimal(cantAnimales);
@@ -14,6 +14,7 @@ public class Animal {
 		setColor(pColor);
 		setChipIdentificacion(pChipIdentificacion);
 		setNombreMascota(pNombreMascota);
+		setSexo(pSexo);
 	}
 	
 	//Variables de las que se encarga el sistema. 

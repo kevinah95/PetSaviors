@@ -12,10 +12,10 @@ public class ReporteAnimal{
 			   			String pLugarContacto, String pCondicionEntrada,
 			   			//Los sig. parámetros no son requeridos. 
 			   			String pChipIdentificacion, String pDirFoto,
-			   			String pNombreMascota, String pRecompensa) 
+			   			String pNombreMascota, String pRecompensa,String pSexo) 
 	{
 		setAnimalReportado(new Animal(pTipoMascota, pRaza, pColor,
-							pChipIdentificacion, pNombreMascota));
+							pChipIdentificacion, pNombreMascota, pSexo));
 		
 		setTelefonoContacto(pTelefonoContacto); 
 		setCorreoContacto(pCorreoContacto); 
