@@ -60,6 +60,10 @@ public class VentanaMisMascotas extends JPanel {
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		grid.fill = GridBagConstraints.BOTH;
 		panelContenedor.add(scrollPanel, "name_181078707065095");
+		
+		JTableHeader cabecera = tabla.getTableHeader();
+		cabecera.setForeground(new Color(255, 255, 255));
+		cabecera.setBackground(new Color(69, 147, 160));
 	}
 	
 	public static class NormalCellRenderer extends JLabel implements TableCellRenderer {
