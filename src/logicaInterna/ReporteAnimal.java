@@ -94,4 +94,18 @@ public class ReporteAnimal{
 		return animalReportado;}
 	public void setAnimalReportado(Animal animalReportado) {
 		this.animalReportado = animalReportado;}
+
+	@Override
+	public String toString() {
+		return  getAnimalReportado().toString() + 
+				"ReporteAnimal [telefonoContacto=" + telefonoContacto
+				+ ", correoContacto=" + correoContacto + ", lugarContacto="
+				+ lugarContacto + ", dirFoto=" + dirFoto
+				+ ", condicionEntrada=" + condicionEntrada + ", recompensa="
+				+ recompensa + ", animalReportado=" + animalReportado
+				+ ", fechaRegistrado=" + fechaRegistrado
+				+ ", fechaSalidaSistema=" + fechaSalidaSistema
+				+ ", enAdopcion=" + enAdopcion + ", condicionSalida="
+				+ condicionSalida + ", diasSistema=" + diasSistema + "]";
+	}
 }

@@ -17,22 +17,27 @@ public class Comparaciones {
 		datosPorComparar.add(animalAnalizado.getCorreoContacto());
 		datosPorComparar.add(Integer.toString(animalAnalizado.getDiasSistema()));
 		int cantidadDatos = 1; //No comienza en 0 porque automáticamente evalúa los dias en el sistema.
-		if (!animalAnalizado.getAnimalReportado().getRaza().equals("No")){//System.out.println(animalAnalizado.getRaza());
+		if (!animalAnalizado.getAnimalReportado().getRaza().equals("No")){//
+			//System.out.println(animalAnalizado.getAnimalReportado().getRaza());
 			cantidadDatos ++;}
 		datosPorComparar.add(animalAnalizado.getAnimalReportado().getRaza());
-		if (!animalAnalizado.getAnimalReportado().getColor().equals("No")){//System.out.println(animalAnalizado.getColor());
+		if (!animalAnalizado.getAnimalReportado().getColor().equals("No")){//
+			//System.out.println(animalAnalizado.getAnimalReportado().getColor());
 			cantidadDatos++;}
 		datosPorComparar.add(animalAnalizado.getAnimalReportado().getColor());
-		if (!animalAnalizado.getLugarContacto().equals("No")){//System.out.println(animalAnalizado.getLugarContacto());
+		if (!animalAnalizado.getLugarContacto().equals("No")){//
+			//System.out.println(animalAnalizado.getLugarContacto());
 			cantidadDatos++;}
 		datosPorComparar.add(animalAnalizado.getLugarContacto());
-		if (!animalAnalizado.getAnimalReportado().getChipIdentificacion().equals("No")){//System.out.println(animalAnalizado.getChipIdentificacion());
+		if (!animalAnalizado.getAnimalReportado().getChipIdentificacion().equals("No")){//
+			//System.out.println(animalAnalizado.getAnimalReportado().getChipIdentificacion());
 			cantidadDatos++;}
 		datosPorComparar.add(animalAnalizado.getAnimalReportado().getChipIdentificacion());
-		if (!animalAnalizado.getAnimalReportado().getNombreMascota().equals("No")){//System.out.println(animalAnalizado.getNombreMascota());
+		if (!animalAnalizado.getAnimalReportado().getNombreMascota().equals("No")){//
+			//System.out.println(animalAnalizado.getAnimalReportado().getNombreMascota());
 			cantidadDatos++;}
 		datosPorComparar.add(animalAnalizado.getAnimalReportado().getNombreMascota());
-		System.out.println(cantidadDatos);
+		//System.out.println(cantidadDatos);
 		datosPorComparar.set(0,Integer.toString(cantidadDatos));
 		return datosPorComparar;}
 	
@@ -62,6 +67,9 @@ public class Comparaciones {
 				if (contadorComparaciones == 11) {	//Nombre //System.out.println("Comparando Nombre: "+dato+ " vs "+comparacionContra.getNombreMascota());
 					if (dato.equals(comparacionContra.getAnimalReportado().getNombreMascota())){
 						contadorSemejanzas++;}}
+				if (contadorComparaciones == 12) {	//Sexo //System.out.println("Comparando Sexo: "+dato+ " vs "+comparacionContra.getAnimalReportado().getSexo());
+					if (!dato.equals(comparacionContra.getAnimalReportado().getSexo())){
+						contadorSemejanzas = -1;break;}}
 			}//System.out.println("Contador C "+contadorComparaciones + "\nContador S "+contadorSemejanzas);
 			contadorComparaciones++;}
 		return contadorSemejanzas;}
@@ -83,7 +91,10 @@ public class Comparaciones {
 		for (ReporteAnimal animal : resultadoPetFinder ){
 			if (animal.getAnimalReportado().getContadorSemejanzas() != -2){
 				float contadorSeteadoSemejanzas = animal.getAnimalReportado().getContadorSemejanzas();
-				animal.getAnimalReportado().setContadorSemejanzas((contadorSeteadoSemejanzas*100)/semejanzasAnimalAnalizado);}}}
+				//System.out.println(contadorSeteadoSemejanzas);
+				animal.getAnimalReportado().setContadorSemejanzas((contadorSeteadoSemejanzas*100)/semejanzasAnimalAnalizado);}
+			if (animal.getAnimalReportado().getContadorSemejanzas() == -2)
+				animal.getAnimalReportado().setContadorSemejanzas(100);}}
 	
 	private static void ordenarResultados ( ) {
 		//Bubble sort comparando los contadores de semejanzas
@@ -102,7 +113,7 @@ public class Comparaciones {
 	public static void main (String[] args){
 		ReporteAnimal perrito1 = new ReporteAnimal ("Perro","Pastor Alemán","Negro",
 									  "22152150", "menoc.sk27@gmail.com",
-									  "Pavas", "Encontrado", "No","direccionFoto",
+									  "Pavas", "Encontrado", "010","direccionFoto",
 									  "Maximus Gorrerus", "0","Macho");
 		ReporteAnimal perrito2 = new ReporteAnimal ("Perro","Pastor Italiano","Rojo",
 				 					  "22152150", "menoc.sk27@gmail.com",
