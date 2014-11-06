@@ -50,12 +50,12 @@ public class PrincipalNormal extends JPanel {
 		
 		JPanel panelSurround = new JPanel();
 		panelSurround.setBackground(null);
-		panelSurround.setBounds(149, 169, 981, 458);
+		panelSurround.setBounds(79, 169, 1121, 458);
 		add(panelSurround);
 		panelSurround.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 766, 458);
+		panel.setBounds(0, 0, 869, 458);
 		panelSurround.add(panel);
 		panel.setBackground(new Color(100, 166, 155));
 		panel.setLayout(cardsPrincipal);
@@ -64,7 +64,7 @@ public class PrincipalNormal extends JPanel {
 		panel.add("Pet Finder", petFinder);
 		
 		JPanel panelLista = new JPanel();
-		panelLista.setBounds(765, 0, 281, 458);
+		panelLista.setBounds(869, 0, 227, 458);
 		panelSurround.add(panelLista);
 		panelLista.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panelLista.setBackground(new Color(130, 177, 166));
@@ -140,7 +140,7 @@ public class PrincipalNormal extends JPanel {
 	    	}
 	    });
 	    btnAtras.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/BotonAtras.png")));
-	    btnAtras.setBounds(58, 169, 81, 81);
+	    btnAtras.setBounds(10, 169, 61, 61);
 	    btnAtras.setOpaque(false);
 	    btnAtras.setContentAreaFilled(false);
 	    btnAtras.setBorder(null);

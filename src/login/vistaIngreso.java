@@ -32,6 +32,7 @@ public class vistaIngreso extends JFrame {
 		
 		agregarPaneles();
 		
+		setResizable(false);
 		setVisible(true);
 	}
 	

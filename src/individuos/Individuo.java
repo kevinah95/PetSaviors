@@ -2,12 +2,10 @@ package individuos;
 
 import java.util.*;
 
-import com.google.gson.annotations.SerializedName;
-
 import logicaInterna.Actividad;
 import logicaInterna.Animal;
 
-public class Individuo implements java.io.Serializable{
+public class Individuo {
 
 	public static ArrayList<Individuo> individuosInvolucrados = new ArrayList<Individuo>();
 	
