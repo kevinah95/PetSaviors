@@ -52,6 +52,7 @@ public class Adoptante extends Individuo{
 				+ correo + ";" 
 				+ dirImagenes + ";"
 				+ img + ";"					//Cambiar arrays por $
-				+ calificaciones + ";";}
+				+ calificaciones + ";"
+				+ datosSistema.toString();}
 	
 }

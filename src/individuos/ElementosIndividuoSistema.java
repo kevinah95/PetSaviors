@@ -36,4 +36,11 @@ public class ElementosIndividuoSistema {
 	public void setReportes(ArrayList<Animal> reportes) {
 		this.reportes = reportes;}
 	
+	@Override
+	public String toString() {
+		return "ElementosIndividuoSistema [identificadorIndividuo="
+				+ identificadorIndividuo + ", eventosParticipado="
+				+ eventosParticipado + ", reportes=" + reportes + "]";
+	}
+	
 }

@@ -11,8 +11,8 @@ public class ReporteAnimal{
 			   			String pTelefonoContacto, String pCorreoContacto,
 			   			String pLugarContacto, String pCondicionEntrada,
 			   			//Los sig. parámetros no son requeridos. 
-			   			String pChipIdentificacion, String pDirFoto,
-			   			String pNombreMascota, String pRecompensa,String pSexo,
+			   			String pChipIdentificacion, String pNombreMascota,
+			   			String pRecompensa,String pSexo,
 			   			String pIdentificacionReportante) 
 	{
 		setAnimalReportado(new Animal(pTipoMascota, pRaza, pColor,
@@ -24,9 +24,8 @@ public class ReporteAnimal{
 		setCorreoContacto(pCorreoContacto); 
 		setLugarContacto(pLugarContacto);
 		setCondicionEntrada(pCondicionEntrada); 
-		setDirFoto(pDirFoto);
+		setFotosAnimal(new ArrayList<String>());
 		setRecompensa(Double.parseDouble(pRecompensa));
-		
 		setFechaRegistrado(Tiempo.fechaSistema());
 		setFechaSalidaSistema("false");
 		setCondicionSalida("false");
@@ -34,12 +33,11 @@ public class ReporteAnimal{
 		setDiasSistema(1);
 	}
 
-	private String cedulaReportante = null;
-	
+	private String identificacionReportante = null;
 	private String telefonoContacto = null;
 	private String correoContacto = null;
 	private String lugarContacto = null;
-	private String dirFoto = null;
+	private ArrayList<String> fotosAnimal;
 	private String condicionEntrada; //"Encontrado, Extraviado"
 	private double recompensa = 0; //0 si no hay recompensa. Else: Si hay recompensa. 
 	
@@ -53,9 +51,9 @@ public class ReporteAnimal{
 	
 	
 	public String getIdentificacionReportante() {
-		return cedulaReportante;}
-	public void setIdentificacionReportante(String cedulaReportante) {
-		this.cedulaReportante = cedulaReportante;}
+		return identificacionReportante;}
+	public void setIdentificacionReportante(String pIdentificacionReportante) {
+		this.identificacionReportante = pIdentificacionReportante;}
 	public String getTelefonoContacto() {
 		return telefonoContacto;}
 	public void setTelefonoContacto(String telefonoContacto) {
@@ -71,11 +69,13 @@ public class ReporteAnimal{
 	public String getCondicionEntrada() {
 		return condicionEntrada;}
 	public void setCondicionEntrada(String condicionEntrada) {
-		this.condicionEntrada = condicionEntrada;}
-	public String getDirFoto() {
-		return dirFoto;}
-	public void setDirFoto(String dirFoto) {
-		this.dirFoto = dirFoto;}
+		this.condicionEntrada = condicionEntrada;}	
+	public ArrayList<String> getFotosAnimal() {
+		return fotosAnimal;}
+	public void setFotosAnimal(ArrayList<String> fotosAnimal) {
+		this.fotosAnimal = fotosAnimal;}
+	public void agregarFotosAnimal (String nuevaFoto){
+		this.fotosAnimal.add(nuevaFoto);}
 	public double getRecompensa() {
 		return recompensa;}
 	public void setRecompensa(double dRecompensa) {
@@ -110,7 +110,7 @@ public class ReporteAnimal{
 		return  getAnimalReportado().toString() + 
 				"ReporteAnimal [telefonoContacto=" + telefonoContacto
 				+ ", correoContacto=" + correoContacto + ", lugarContacto="
-				+ lugarContacto + ", dirFoto=" + dirFoto
+				+ lugarContacto + ", fotosAnimal=" + fotosAnimal
 				+ ", condicionEntrada=" + condicionEntrada + ", recompensa="
 				+ recompensa + ", animalReportado=" + animalReportado
 				+ ", fechaRegistrado=" + fechaRegistrado

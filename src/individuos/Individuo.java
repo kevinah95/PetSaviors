@@ -84,10 +84,11 @@ public class Individuo {
 	{
 		ReporteAnimal animalReportado = new ReporteAnimal (pTipoMascota,pRaza,pColor,
 										this.getTelefono(),this.getCorreo(), pLugarContacto,
-										pCondicionEntrada, pChipIdentificacion, pDirFoto,
+										pCondicionEntrada, pChipIdentificacion,
 										pNombreMascota, pRecompensa, pSexo, this.getIdentificacion());
 		ReporteAnimal.animalesSistema.add(animalReportado);
 	}
+	
 	@Override
 	public String toString() {
 		return "Individuo [identificacion=" + identificacion + ", nombre="

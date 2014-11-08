@@ -113,19 +113,19 @@ public class Comparaciones {
 	public static void main (String[] args){
 		ReporteAnimal perrito1 = new ReporteAnimal ("Perro","Pastor Alemán","Negro",
 									  "22152150", "menoc.sk27@gmail.com",
-									  "Pavas", "Encontrado", "010","direccionFoto",
+									  "Pavas", "Encontrado", "010",
 									  "Maximus Gorrerus", "0","Macho","001");
 		ReporteAnimal perrito2 = new ReporteAnimal ("Perro","Pastor Italiano","Rojo",
 				 					  "22152150", "menoc.sk27@gmail.com",
-				 					  "No", "Encontrado", "011","direccionFoto",
+				 					  "No", "Encontrado", "011",
 				 					  "Maximus", "0","Macho","002");
 		ReporteAnimal perrito3 = new ReporteAnimal ("Perro", "Pastor Alemán", "Negro",
 									  "22222222", "jasc!gmail.com", 
-									  "Pavas", "Nada", "No", "ashskdf", 
+									  "Pavas", "Nada", "No",  
 									  "Maximus Gorrerus", "002","Macho","004");
 		ReporteAnimal perrito4 = new ReporteAnimal ("Perro", "Pastor Alemán", "Tirando a Rojo",
 				 					  "22222222", "jasc!gmail.com", 
-				 				      "Pavas", "Nada", "010", "ashskdf", 
+				 				      "Pavas", "Nada", "010", 
 				 					  "Maximus Gorrerus", "002","Macho","005");
 		
 		ReporteAnimal.animalesSistema.add(perrito1);
