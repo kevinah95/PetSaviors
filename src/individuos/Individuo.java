@@ -9,8 +9,8 @@ public class Individuo {
 	public static ArrayList<Individuo> individuosInvolucrados = new ArrayList<Individuo>();
 	
 	public Individuo(String pIdentificacion, String pNombre, String primerApellido,
-					String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
-					String pCasaCuna) 
+					 String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
+					 String pCasaCuna,String pAdoptante,String pAdmin) 
 	{
 		setIdentificacion(pIdentificacion);
 		setNombre(pNombre);
@@ -20,16 +20,22 @@ public class Individuo {
 		setCorreo(pCorreo);
 		setTelefono(pTelefono);
 		setCasaCuna(Boolean.parseBoolean(pCasaCuna));
+		setAdoptante(Boolean.parseBoolean(pAdoptante));
+		setAdministrador(Boolean.parseBoolean(pAdmin));
 		setDatosSistema(new ElementosIndividuoSistema());
 	}
 	
+	
 	protected String identificacion,nombre,pApellido,sApellido,telefono,contrasena,correo = null; 
-	protected boolean casaCuna;
+	protected boolean casaCuna,adoptante,administrador;
 	protected ElementosIndividuoSistema datosSistema;
+	protected InformacionCasaCuna informacionCasaCuna;
+	protected InformacionAdoptante informacionAdoptante;
 	
 	/*===================================================================================================*/
 	/*===================================================================================================*/
 	/*===================================================================================================*/
+	
 	
 	public ElementosIndividuoSistema getDatosSistema() {
 		return datosSistema;}
@@ -59,10 +65,28 @@ public class Individuo {
 		return correo;}
 	public void setCorreo(String correo) {
 		this.correo = correo;}
+	
 	public boolean isCasaCuna() {
 		return casaCuna;}
 	public void setCasaCuna(boolean casaCuna){
 		this.casaCuna = casaCuna;}
+	public InformacionCasaCuna getInformacionCasaCuna() {
+		return informacionCasaCuna;}
+	public void setInformacionCasaCuna(InformacionCasaCuna informacionCasaCuna) {
+		this.informacionCasaCuna = informacionCasaCuna;}
+	public boolean isAdoptante() {
+		return adoptante;}
+	public void setAdoptante(boolean adoptante) {
+		this.adoptante = adoptante;}
+	public boolean isAdministrador() {
+		return administrador;}
+	public void setAdministrador(boolean administrador) {
+		this.administrador = administrador;}
+	public InformacionAdoptante getInformacionAdoptante() {
+		return informacionAdoptante;}
+	public void setInformacionAdoptante(InformacionAdoptante informacionAdoptante) {
+		this.informacionAdoptante = informacionAdoptante;}
+	
 	public String getTelefono() {
 		return telefono;}
 	public void setTelefono(String telefono) {
@@ -74,9 +98,17 @@ public class Individuo {
 	public void cancelarReporte ( ReporteAnimal reporteAnimalPorCambiar ){
 		
 	}
-	public void cerrarCasoPorReencuentro ( ReporteAnimal ReporteAnimalPorCerrar ){
+	public void cerrarCasoPorReencuentro ( ReporteAnimal ReporteAnimalPorCerrar )
+	{	
 		
 	}
+	
+	public void calificarAdoptante (Individuo individuoPorCalificar, int calificacion)
+	{
+		if (individuoPorCalificar.isAdoptante())
+			individuoPorCalificar.getInformacionAdoptante().agregarCalificacion(calificacion);
+	}
+	
 	public void reportarMascota (String pTipoMascota, String pRaza, String pColor,
 								 String pLugarContacto, String pCondicionEntrada,
    								 String pChipIdentificacion, 

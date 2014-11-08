@@ -26,7 +26,7 @@ public class MainPruebaReg {
 	 */
 	
 	public static void main (String [] args){
-		Individuo manolo = new Individuo ("0101123", "Julián","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false");	
+		Individuo manolo = new Individuo ("0101123", "Julián","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false","false","false");	
 		System.out.println(manolo.toString());
 		
 		manolo.reportarMascota("Perro","Huski",

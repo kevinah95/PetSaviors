@@ -1,8 +1,8 @@
 package individuos;
 
-public class CasaCuna {
+public class InformacionCasaCuna {
 
-	public CasaCuna(String pUbicacionCasa,
+	public InformacionCasaCuna(String pUbicacionCasa,
 					String pTipoMascota,
 					String pTamaño,
 					String pRequiereAlimento, 

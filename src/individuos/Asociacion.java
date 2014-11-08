@@ -6,19 +6,20 @@ public class Asociacion extends Individuo{
 
 	public Asociacion(String pIdentificacion, String pNombre, String primerApellido,
 			String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
-			
-			String pActividad)
+
+			ArrayList<String> pActividadRegistrada)
 	{
-		super(pIdentificacion,pNombre,primerApellido,
+		super ( pIdentificacion,pNombre,primerApellido,
 			    segundoApellido,pTelefono,pCorreo, pContrasena,
-			    "false");
-		String[] actividad;
-		actividad = pActividad.split("$");
-		for ( String evento : actividad )
-			actividadRegistrada.add(evento);
+			    "false","false","false");
+		setActividadRegistrada(pActividadRegistrada);
 	}
-	
 	private ArrayList<String> actividadRegistrada = new ArrayList<String>();
+	
+	public ArrayList<String> getActividadRegistrada() {
+		return actividadRegistrada;}
+	public void setActividadRegistrada(ArrayList<String> actividadRegistrada) {
+		this.actividadRegistrada = actividadRegistrada;}
 	
 	@Override
 	public String toString() {
