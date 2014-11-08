@@ -1,5 +1,6 @@
 package configuracion;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
@@ -15,6 +16,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.ListCellRenderer;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import com.sun.xml.internal.ws.api.Component;
 
@@ -31,10 +34,14 @@ import java.awt.Paint;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 
+import registrar.mascota.RegistrarMascota;
 import render.listas.RenderMenu;
 import render.listas.RenderPrincipal;
 
-public class Menu extends JFrame implements WindowFocusListener{
+public class Menu extends JFrame implements WindowFocusListener, ListSelectionListener{
+	
+	JList listaMenu;
+	
 	public Menu(java.awt.Component relativo){
 		setUndecorated(true);
 		setBackground(new Color(0,0,0,0)); 
@@ -54,12 +61,12 @@ public class Menu extends JFrame implements WindowFocusListener{
 		setContentPane(panel);
 		
 		JLabel lblBG = new JLabel("");
-		lblBG.setIcon(new ImageIcon(Menu.class.getResource("/recursos/ConfigMenu.png")));
+		lblBG.setIcon(new ImageIcon(Menu.class.getResource("/recursos/ConfigMenu2.png")));
 		lblBG.setBounds(5, 0, 210, 220);
 		lblBG.setVisible(true);
 		
 		JPanel panelLista = new JPanel();
-		panelLista.setBounds(10, 21, 200, 173);
+		panelLista.setBounds(19, 42, 168, 152);
 		panel.add(panelLista);
 		panelLista.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panelLista.setLayout(new BorderLayout(0, 0));
@@ -67,17 +74,19 @@ public class Menu extends JFrame implements WindowFocusListener{
 		
 		
 		DefaultListModel<String> model = new DefaultListModel();
-	    model.addElement("Reportes Activos");
-	    model.addElement("Mis Reportes");
-	    model.addElement("Pet Finder ®");
+	    model.addElement("Mi Perfil");
+	    model.addElement("Reportar Mascota");
+	    model.addElement("Cerrar Sesión");
 	    ListCellRenderer renderer = new RenderMenu();
-		JList listaMenu = new JList(model);
-		listaMenu.setFont(new Font("Dialog", Font.BOLD, 18));
+		listaMenu = new JList(model);
+		listaMenu.setFont(new Font("Dialog", Font.BOLD, 15));
 	    listaMenu.setBackground(new Color(130, 177, 166));
 	    listaMenu.setBorder(null);
 	    listaMenu.setSelectedIndex(0);
 	    
 	    listaMenu.setCellRenderer(renderer);
+	    
+	    listaMenu.addListSelectionListener(this);
 	    
 	    
 		JScrollPane scrollPaneLista = new JScrollPane(listaMenu);
@@ -89,11 +98,21 @@ public class Menu extends JFrame implements WindowFocusListener{
 		setFocusableWindowState(true);
 		setAlwaysOnTop(true);
 		setFocusable(true);
-		setLocation(relativo.getX()+33, relativo.getY()-175);
+		setLocation(relativo.getX()-90, relativo.getY()+70);
 		addWindowFocusListener(this);
 		setVisible(true);
 	}
 	
 	public void windowGainedFocus(WindowEvent e) {}
 	public void windowLostFocus(WindowEvent e) { dispose(); }
+
+	
+	public void valueChanged(ListSelectionEvent e) {
+		if (e.getValueIsAdjusting() == false) {
+			if (listaMenu.getSelectedIndex()==1){
+				RegistrarMascota.getInstance().crearDialog();
+			}
+		}
+		
+	}
 }

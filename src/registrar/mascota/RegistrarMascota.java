@@ -3,24 +3,23 @@ package registrar.mascota;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
+
 import java.awt.CardLayout;
 
-import logicaExterna.Usuarios;
 
 
 
+public class RegistrarMascota extends JDialog{
 
-public class Registrar extends JDialog{
-
-	private static Registrar instance = null;
+	private static RegistrarMascota instance = null;
 	JPanel panelCards = new JPanel();
 	CardLayout cardlayout = new CardLayout();
-	protected Registrar() {
+	protected RegistrarMascota() {
 		
 	}
 	
-	public static Registrar getInstance() {
-		if (instance == null) {	instance = new Registrar(); }
+	public static RegistrarMascota getInstance() {
+		if (instance == null) {	instance = new RegistrarMascota(); }
 		return instance;
 	}
 	
@@ -28,7 +27,7 @@ public class Registrar extends JDialog{
 		setSize(600, 600);
 		setContentPane(panelCards);
 		panelCards.setLayout(cardlayout);
-		
+		setLocationRelativeTo(null);
 		agregarPaneles();
 		
 		setResizable(false);

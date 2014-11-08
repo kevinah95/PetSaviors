@@ -28,11 +28,11 @@ public class ControladorEtapaDatos implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "Cancelar"){
-			Registrar.getInstance().dispose();
+			RegistrarMascota.getInstance().dispose();
 		}
 		
 		if (e.getActionCommand().equals("Siguiente")){
-			Registrar.getInstance().cardlayout.show(Registrar.getInstance().panelCards,"VistaEtapaImagenes");
+			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaImagenes");
 			vista.getParent().repaint();
 			vista.getParent().revalidate();
 		}

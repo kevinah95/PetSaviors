@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 
-public class ControladorEtapaImagenes implements ActionListener{
+public class ControladorEtapaImagenes implements ActionListener,KeyListener{
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
@@ -28,6 +28,12 @@ public class ControladorEtapaImagenes implements ActionListener{
 		vista.btnImagen3.addActionListener(escuchador);
 		vista.btnImagen4.addActionListener(escuchador);
 		vista.btnImagen5.addActionListener(escuchador);
+		vista.btnImagen0.addKeyListener(this);
+		vista.btnImagen1.addKeyListener(this);
+		vista.btnImagen2.addKeyListener(this);
+		vista.btnImagen3.addKeyListener(this);
+		vista.btnImagen4.addKeyListener(this);
+		vista.btnImagen5.addKeyListener(this);
 	}
 	
 	
@@ -35,7 +41,7 @@ public class ControladorEtapaImagenes implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==vista.btnAtras){
-			Registrar.getInstance().cardlayout.show(Registrar.getInstance().panelCards,"VistaEtapaDatos");
+			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaDatos");
 		}
 		
 		if (e.getSource()==vista.btnGuardar){
@@ -108,6 +114,25 @@ public class ControladorEtapaImagenes implements ActionListener{
 		}
 		
 		
+		
+		
+	}
+
+	
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyCode()== KeyEvent.VK_LEFT){
+			System.out.println("Izq");
+		}		
+	}
+
+	
+	public void keyReleased(KeyEvent e) {
+		
+		
+	}
+
+	
+	public void keyTyped(KeyEvent e) {
 		
 		
 	}

@@ -28,6 +28,7 @@ public class vistaLogIn extends JPanel{
 	public JLabel lblLogo;
 	public JPanel panel;
 	Usuarios usuarios = Usuarios.getInstance();
+	boolean entrarSistema = false;
 	
 	public vistaLogIn() {
 		setSize(1280, 720);
@@ -66,7 +67,8 @@ public class vistaLogIn extends JPanel{
 		panel.add(btnEntrar);
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (verificarDatos()==false){
+				verificarDatos();
+				if (entrarSistema==false){
 					JOptionPane.showMessageDialog(null, "Datos Incorrectos");
 				}
 			}
@@ -151,21 +153,22 @@ public class vistaLogIn extends JPanel{
 	
 	
 	
-	private boolean verificarDatos(){
+	private void verificarDatos(){
 		if (usuarios.usuariosRegistrados == null){
 			JOptionPane.showMessageDialog(null, "No hay usuarios registrados en el sistema");
-			return false;
+			entrarSistema = false;
 		}else{
 			
 			usuarios.usuariosRegistrados.stream().filter(predicadoFull).forEach(p->entrarASistema());
 			
 		}
-		return false;
+		
 	}
 	
 	
 	
 	private void entrarASistema(){
+		entrarSistema = true;
 		vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "PrincipalNormal");
 		PrincipalNormal.listaMenu.requestFocus();
 		getParent().revalidate();

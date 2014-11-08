@@ -43,12 +43,29 @@ public class PrincipalNormal extends JPanel {
 		lblDisenadoPor.setForeground(new Color(81, 87, 85));
 		add(lblDisenadoPor);
 		
+		JPanel panelConfig = new JPanel();
+		panelConfig.setBounds(1070, 98, 51, 43);
+		panelConfig.setBackground(new Color(0,0,0,0));
+		add(panelConfig);
+		panelConfig.setLayout(null);
+		
+		
+		
 		JLabel lblProfile = new JLabel("Profile");
+		lblProfile.setBounds(0, 0, 51, 43);
+		panelConfig.add(lblProfile);
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProfile.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/profile.png")));
+		lblProfile.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) { if (e.getButton()==MouseEvent.BUTTON1)new Menu(panelConfig); }
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseReleased(MouseEvent e) {}
+		});
 		lblProfile.setText("");
-		lblProfile.setBounds(1070, 98, 60, 60);
-		add(lblProfile);
+		
+
 		
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/LogoMenu.png")));
@@ -130,23 +147,10 @@ public class PrincipalNormal extends JPanel {
 	    panelImagenAnimal.setLayout(new BorderLayout(0, 0));
 	    
 	    
-	    JPanel panelConfig = new JPanel();
-	    panelConfig.setBackground(null);
-	    panelConfig.setBounds(159, 638, 24, 22);
-	    add(panelConfig);
-	    panelConfig.setLayout(null);
 	    
-	    JLabel lblConfig = new JLabel("");
-	    lblConfig.setBounds(0, 0, 24, 22);
-	    panelConfig.add(lblConfig);
-	    lblConfig.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/Configuracion.png")));
-	    lblConfig.addMouseListener(new MouseListener() {
-			public void mouseClicked(MouseEvent e) { if (e.getButton()==MouseEvent.BUTTON1)new Menu(panelConfig); }
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
-		});
+	    
+	    
+	    
 	    
 	    JButton btnAtras = new JButton("");
 	    btnAtras.addActionListener(new ActionListener() {
@@ -160,13 +164,7 @@ public class PrincipalNormal extends JPanel {
 	    btnAtras.setContentAreaFilled(false);
 	    btnAtras.setBorder(null);
 	    add(btnAtras);
-	    lblConfig.addMouseListener(new MouseListener() {
-			public void mouseClicked(MouseEvent e) { if (e.getButton()==MouseEvent.BUTTON1)new Menu(panelConfig); }
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
-		});
+	  
 	    
 	}
 

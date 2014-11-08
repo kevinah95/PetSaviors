@@ -7,7 +7,7 @@ public class MainPruebaReg {
 	//Generar casos de prueba
 	/* Principales: 
 	 * 		-Log In.
-	 * 		-Registrar Animal.
+	 * 		-RegistrarMascota Animal.
 	 * 		-Editar Datos del Animal.
 	 * 		-Revisar todos los animales reportados.
 	 * 		-Revisar todos los animales en el sistema.

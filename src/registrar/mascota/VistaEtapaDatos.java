@@ -25,6 +25,7 @@ import javax.swing.JRadioButton;
 public class VistaEtapaDatos extends JPanel{
 	JTextField txtNombre;
 	JTextField txtChip;
+	JComboBox<String> cbColor;
 	JEditorPane textField;
 	DefaultStyledDocument doc;
 	JLabel remaningLabel;
@@ -34,6 +35,8 @@ public class VistaEtapaDatos extends JPanel{
 	JComboBox<String> cbRaza;
 	JRadioButton rdbtnHembra;
 	JRadioButton rdbtnMacho;
+	
+	String[] colores= {"Rojo","Azul","Blanco"};
 	
 	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 	
@@ -75,8 +78,18 @@ public class VistaEtapaDatos extends JPanel{
 		txtChip.setFont(fontTextos);
 		txtChip.setColumns(10);
 		txtChip.setBorder(null);
-		txtChip.setBounds(87, 135, 299, 30);
+		txtChip.setBounds(87, 135, 130, 30);
 		panelDatos.add(txtChip);
+		
+		cbColor = new JComboBox();
+		cbColor.setModel(new DefaultComboBoxModel<String>(colores));
+		cbColor.setBorder(null);
+		cbColor.setBackground(Color.WHITE);
+		cbColor.setForeground(new Color(27,39,51));
+		cbColor.setFont(fontTextos);
+		cbColor.setBounds(250, 135, 140, 30);
+		cbColor.setUI(ColorArrowUI.createUI(cbColor));
+		panelDatos.add(cbColor);
 		
 		cbRaza = new JComboBox();
 		cbRaza.setBorder(null);
