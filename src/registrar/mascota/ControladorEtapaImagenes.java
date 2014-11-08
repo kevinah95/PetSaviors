@@ -18,7 +18,7 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener,Mous
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
-	JButtonTransparente btnTemp = null;
+	public static JButtonTransparente btnTemp = null;
 	public ControladorEtapaImagenes() {
 		this.modelo = ModeloEtapaImagenes.getInstance();
 		this.vista = VistaEtapaImagenes.getInstance();

@@ -1,6 +1,5 @@
 [
   {
-    "identificadorIndividuo": 1,
     "identificacion": "1",
     "nombre": "Kevin",
     "pApellido": "hdew",
@@ -8,11 +7,9 @@
     "telefono": "12324",
     "contrasena": "1",
     "correo": "k@gmailc.om",
-    "casaCuna": false,
-    "eventosParticipado": []
+    "casaCuna": false
   },
   {
-    "identificadorIndividuo": 1,
     "identificacion": "3124243523",
     "nombre": "Jasson",
     "pApellido": "Moya",
@@ -20,11 +17,9 @@
     "telefono": "123123",
     "contrasena": "asdasdasf",
     "correo": "j@gmail.com",
-    "casaCuna": false,
-    "eventosParticipado": []
+    "casaCuna": false
   },
   {
-    "identificadorIndividuo": 2,
     "identificacion": "364563456",
     "nombre": "Julián",
     "pApellido": "Mendez",
@@ -32,11 +27,9 @@
     "telefono": "35345346",
     "contrasena": "eqweqeq",
     "correo": "j@g.com",
-    "casaCuna": false,
-    "eventosParticipado": []
+    "casaCuna": false
   },
   {
-    "identificadorIndividuo": 1,
     "identificacion": "12312",
     "nombre": "jasdklasjkdaslk",
     "pApellido": "jdklasjdlkasjdlk",
@@ -44,8 +37,21 @@
     "telefono": "24234",
     "contrasena": "dasdasdas",
     "correo": "j@g.vom",
+    "casaCuna": false
+  },
+  {
+    "identificacion": "6",
+    "nombre": "j",
+    "pApellido": "j",
+    "sApellido": "j",
+    "telefono": "4",
+    "contrasena": "dsa",
+    "correo": "j@g.com",
     "casaCuna": false,
-    "eventosParticipado": [],
-    "reportes": []
+    "datosSistema": {
+      "identificadorIndividuo": 1,
+      "eventosParticipado": [],
+      "reportes": []
+    }
   }
 ]

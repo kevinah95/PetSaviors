@@ -16,12 +16,17 @@ public class ModeloEtapaImagenes {
 	String path="";
 	private static final boolean CORRECTA = true;
 	private static final boolean INCORRECTA = false;
+	private static final File dirTemporal = new File("Pet_Saviors/temp");
+	private String indexImagen =null;
 	protected ModeloEtapaImagenes() {
 		
 	}
 	
 	public static ModeloEtapaImagenes getInstance() {
-		if (instance == null) {	instance = new ModeloEtapaImagenes(); }
+		if (instance == null) {
+			instance = new ModeloEtapaImagenes();
+			limpiarDirTemporal();
+		}
 		return instance;
 	}
 	
@@ -52,28 +57,37 @@ public class ModeloEtapaImagenes {
 		
 	}
 	
+	private void guardarCopiaRedimensionada() throws IOException{
+		indexImagen = String.valueOf(ControladorEtapaImagenes.btnTemp.getName());
+		Thumbnails.of(path)
+        .size(300, 300)
+        .outputFormat("png")
+        .toFile(new File( ""+dirTemporal+"\\img"+String.valueOf(indexImagen) ));
+		path= ""+dirTemporal+"\\img"+String.valueOf(indexImagen)+".png";
+	}
+	
 	public BufferedImage obtenerImagen() throws IOException{
 		BufferedImage originalImage = null;
 		BufferedImage thumbnail = null;
 		
-			originalImage = ImageIO.read(new File(path));
+		guardarCopiaRedimensionada();
+		
+		originalImage = ImageIO.read(new File(path));
 		thumbnail = Thumbnails.of(originalImage)
 		        .size(56, 56)
 		        .asBufferedImage();
-		
 		return thumbnail;
 	}
 	
 	public BufferedImage obtenerImagenPrincipal() throws IOException{
-		BufferedImage originalImage = null;
-		BufferedImage thumbnail = null;
-		
-			originalImage = ImageIO.read(new File(path));
-		thumbnail = Thumbnails.of(originalImage)
-		        .size(300, 300)
-		        .asBufferedImage();
-		
-		return thumbnail;
+		BufferedImage imagenTemp = null;
+		imagenTemp = ImageIO.read(new File(path));			
+		return imagenTemp;
+	}
+	
+	private static void limpiarDirTemporal(){
+		for(File file: dirTemporal.listFiles()) 
+			file.delete();
 	}
 	
 	

@@ -73,24 +73,29 @@ public class VistaEtapaImagenes extends JPanel{
 		panelSurround.add(panelMiniaturas);
 		
 		btnImagen0 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen0.setName("0");
 		panelMiniaturas.setLayout(new GridLayout(0, 6, 2, 0));
 		btnImagen0.setIcon(new ImageIcon(ICONO_DEFAULT));
-		
 		panelMiniaturas.add(btnImagen0);
 		
 		btnImagen1 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen1.setName("1");
 		panelMiniaturas.add(btnImagen1);
 		
 		btnImagen2 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen2.setName("2");
 		panelMiniaturas.add(btnImagen2);
 		
 		btnImagen3 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen3.setName("3");
 		panelMiniaturas.add(btnImagen3);
 		
 		btnImagen4 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen4.setName("4");
 		panelMiniaturas.add(btnImagen4);
 		
 		btnImagen5 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen5.setName("5");
 		panelMiniaturas.add(btnImagen5);
 		
 		lblImagenPrincipal = new JLabel("ImagenPrincipal");

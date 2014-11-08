@@ -161,7 +161,7 @@ public class vistaRegistrarme extends JPanel {
 		lblBG.setBounds(0, 0, 470, 520);
 		panel.add(lblBG);
 		lblBG.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblBG.setIcon(new ImageIcon(vistaRegistrarme.class.getResource("/recursos/RegistrarMascota.png")));
+		lblBG.setIcon(new ImageIcon(vistaRegistrarme.class.getResource("/recursos/Registrar.png")));
 		
 		
 		

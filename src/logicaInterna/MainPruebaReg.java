@@ -1,5 +1,13 @@
 package logicaInterna;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+
+
 import individuos.*;
 
 public class MainPruebaReg {
@@ -25,7 +33,12 @@ public class MainPruebaReg {
 								"Blanco","Afuerita de mi chante",
 								"Encontrado","0101","No","124124","macho");
 		
-		for (ReporteAnimal animal : ReporteAnimal.animalesSistema)
+		String[] s = {"as.png","as.png","as.png"};
+		ArrayList<String> fotos= new ArrayList<String>(); 
+		Collections.addAll(fotos, s);
+		for (ReporteAnimal animal : ReporteAnimal.animalesSistema){
+			animal.setFotosAnimal(fotos);
 			System.out.println(animal.toString());
+		}
 	}
 }
