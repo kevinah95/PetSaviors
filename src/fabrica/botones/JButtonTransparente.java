@@ -4,9 +4,10 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 
-public class Transparente extends JButton {
+public class JButtonTransparente extends JButton {
+	public String dirImagen=null;
 
-	public Transparente(String nombreBoton) {
+	public JButtonTransparente(String nombreBoton) {
 		super(nombreBoton);
 		setOpaque(false);
 		setContentAreaFilled(false);

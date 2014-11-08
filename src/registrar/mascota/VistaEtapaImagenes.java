@@ -24,7 +24,7 @@ public class VistaEtapaImagenes extends JPanel{
 	
 	public static final URL ICONO_DEFAULT = VistaEtapaImagenes.class.getResource("/recursos/framepeq.png");
 	
-	static String[] Imagenes = new String[6]; 
+	String[] Imagenes = new String[6]; 
 	JButton btnAtras;
 	JButton btnGuardar;
 	JButton btnImagen0;

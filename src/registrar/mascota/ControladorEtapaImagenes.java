@@ -4,14 +4,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
-public class ControladorEtapaImagenes implements ActionListener,KeyListener{
+import fabrica.botones.FabricaBotones;
+import fabrica.botones.JButtonTransparente;
+
+public class ControladorEtapaImagenes implements ActionListener,KeyListener,MouseListener{
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
+	JButtonTransparente btnTemp = null;
 	public ControladorEtapaImagenes() {
 		this.modelo = ModeloEtapaImagenes.getInstance();
 		this.vista = VistaEtapaImagenes.getInstance();
@@ -22,18 +29,20 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener{
 	private void setAcciones(ActionListener escuchador){
 		vista.btnAtras.addActionListener(escuchador);
 		vista.btnGuardar.addActionListener(escuchador);
-		vista.btnImagen0.addActionListener(escuchador);
-		vista.btnImagen1.addActionListener(escuchador);
-		vista.btnImagen2.addActionListener(escuchador);
-		vista.btnImagen3.addActionListener(escuchador);
-		vista.btnImagen4.addActionListener(escuchador);
-		vista.btnImagen5.addActionListener(escuchador);
+		
 		vista.btnImagen0.addKeyListener(this);
 		vista.btnImagen1.addKeyListener(this);
 		vista.btnImagen2.addKeyListener(this);
 		vista.btnImagen3.addKeyListener(this);
 		vista.btnImagen4.addKeyListener(this);
 		vista.btnImagen5.addKeyListener(this);
+		
+		vista.btnImagen0.addMouseListener(this);
+		vista.btnImagen1.addMouseListener(this);
+		vista.btnImagen2.addMouseListener(this);
+		vista.btnImagen3.addMouseListener(this);
+		vista.btnImagen4.addMouseListener(this);
+		vista.btnImagen5.addMouseListener(this);
 	}
 	
 	
@@ -47,81 +56,13 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener{
 		if (e.getSource()==vista.btnGuardar){
 			
 		}
-		
-		if (e.getSource()==vista.btnImagen0){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen0.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.btnImagen1.setIcon(new ImageIcon(vista.ICONO_DEFAULT));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		if (e.getSource()==vista.btnImagen1){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen1.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.btnImagen2.setIcon(new ImageIcon(vista.ICONO_DEFAULT));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		if (e.getSource()==vista.btnImagen2){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen2.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.btnImagen3.setIcon(new ImageIcon(vista.ICONO_DEFAULT));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		if (e.getSource()==vista.btnImagen3){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen3.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.btnImagen4.setIcon(new ImageIcon(vista.ICONO_DEFAULT));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		if (e.getSource()==vista.btnImagen4){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen4.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.btnImagen5.setIcon(new ImageIcon(vista.ICONO_DEFAULT));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		if (e.getSource()==vista.btnImagen5){
-			if (modelo.verificarImagen()){
-				try {
-					vista.btnImagen5.setIcon(new ImageIcon(modelo.obtenerImagen()));
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
-			}
-		}
-		
-		
-		
-		
 	}
 
 	
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode()== KeyEvent.VK_LEFT){
 			System.out.println("Izq");
+			
 		}		
 	}
 
@@ -136,6 +77,68 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener{
 		
 		
 	}
+
+	
+	public void mouseClicked(MouseEvent e) {
+		if (e.getButton()==MouseEvent.BUTTON3){
+			btnTemp= (JButtonTransparente) e.getSource();
+			if (modelo.verificarImagen()){
+				try {
+					btnTemp.setIcon(new ImageIcon(modelo.obtenerImagen()));
+					seleccionBotonDefault();
+					btnTemp.dirImagen = modelo.path;
+					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
+					vista.lblImagenPrincipal.setText("");
+				} catch (IOException e1) { e1.printStackTrace(); }
+			}
+		}else if(e.getButton()==MouseEvent.BUTTON1){
+			btnTemp = (JButtonTransparente) e.getSource();
+			try {
+				seleccionarImagenPrincipal();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
+		}
+		
+	}
+
+	
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
+	public void mousePressed(MouseEvent e) {}
+	public void mouseReleased(MouseEvent e) {}
+	
+	public void seleccionBotonDefault(){
+		if(btnTemp==vista.btnImagen0 && vista.btnImagen1.getIcon()== null){
+			vista.btnImagen1.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
+		}else if(btnTemp==vista.btnImagen1 && vista.btnImagen2.getIcon()== null){
+			vista.btnImagen2.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
+		}else if(btnTemp==vista.btnImagen2 && vista.btnImagen3.getIcon()== null){
+			vista.btnImagen3.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
+		}else if(btnTemp==vista.btnImagen3 && vista.btnImagen4.getIcon()== null){
+			vista.btnImagen4.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
+		}else if(btnTemp==vista.btnImagen4 && vista.btnImagen5.getIcon()== null){
+			vista.btnImagen5.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
+		}
+	}
+	
+	
+	
+	public void seleccionarImagenPrincipal() throws IOException{
+		if (btnTemp.dirImagen != null) {
+			modelo.path = btnTemp.dirImagen;
+			vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
+		} 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	
