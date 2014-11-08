@@ -18,7 +18,14 @@ public class MainPruebaReg {
 	 */
 	
 	public static void main (String [] args){
-//		Individuo manolo = new Individuo ("0101123", "Julián Méndez", "menoc.sk27@gmail.com", "false");
-//		System.out.println(manolo.toString());
+		Individuo manolo = new Individuo ("0101123", "Julián","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false");	
+		System.out.println(manolo.toString());
+		
+		manolo.reportarMascota("Perro","Huski",
+								"Blanco","Afuerita de mi chante",
+								"Encontrado","0101","No","124124","macho");
+		
+		for (ReporteAnimal animal : ReporteAnimal.animalesSistema)
+			System.out.println(animal.toString());
 	}
 }

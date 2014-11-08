@@ -79,7 +79,7 @@ public class Individuo {
 	}
 	public void reportarMascota (String pTipoMascota, String pRaza, String pColor,
 								 String pLugarContacto, String pCondicionEntrada,
-   								 String pChipIdentificacion, String pDirFoto,
+   								 String pChipIdentificacion, 
    								 String pNombreMascota, String pRecompensa,String pSexo) 
 	{
 		ReporteAnimal animalReportado = new ReporteAnimal (pTipoMascota,pRaza,pColor,
