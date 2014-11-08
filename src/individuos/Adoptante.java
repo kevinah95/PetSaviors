@@ -46,12 +46,10 @@ public class Adoptante extends Individuo{
 	
 	@Override
 	public String toString() {
-		return "Individuo;Adoptante;" +
-				identificadorIndividuo+ ";" 
+		return "Individuo;Adoptante;" 
 				+ identificacion + ";"
 				+ nombre + ";" 
 				+ correo + ";" 
-				+ eventosParticipado + ";" //Cambiar array por división de $
 				+ dirImagenes + ";"
 				+ img + ";"					//Cambiar arrays por $
 				+ calificaciones + ";";}

@@ -12,11 +12,14 @@ public class ReporteAnimal{
 			   			String pLugarContacto, String pCondicionEntrada,
 			   			//Los sig. parámetros no son requeridos. 
 			   			String pChipIdentificacion, String pDirFoto,
-			   			String pNombreMascota, String pRecompensa,String pSexo) 
+			   			String pNombreMascota, String pRecompensa,String pSexo,
+			   			String pIdentificacionReportante) 
 	{
 		setAnimalReportado(new Animal(pTipoMascota, pRaza, pColor,
 							pChipIdentificacion, pNombreMascota, pSexo));
 		
+		
+		setIdentificacionReportante(pIdentificacionReportante);
 		setTelefonoContacto(pTelefonoContacto); 
 		setCorreoContacto(pCorreoContacto); 
 		setLugarContacto(pLugarContacto);
@@ -31,6 +34,8 @@ public class ReporteAnimal{
 		setDiasSistema(1);
 	}
 
+	private String cedulaReportante = null;
+	
 	private String telefonoContacto = null;
 	private String correoContacto = null;
 	private String lugarContacto = null;
@@ -46,6 +51,11 @@ public class ReporteAnimal{
 	private String condicionSalida = null; //"Devuelto": Se encontró al dueño y fue devuelto. "Adoptado": Alguien lo adoptó.
 	private int diasSistema = 0; 
 	
+	
+	public String getIdentificacionReportante() {
+		return cedulaReportante;}
+	public void setIdentificacionReportante(String cedulaReportante) {
+		this.cedulaReportante = cedulaReportante;}
 	public String getTelefonoContacto() {
 		return telefonoContacto;}
 	public void setTelefonoContacto(String telefonoContacto) {

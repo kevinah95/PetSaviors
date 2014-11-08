@@ -1,8 +1,10 @@
 package logicaExterna;
 
 import individuos.Individuo;
+
 import java.io.*;
 import java.util.*;
+
 import javax.swing.*;
 import com.google.gson.*;
 

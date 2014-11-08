@@ -114,19 +114,19 @@ public class Comparaciones {
 		ReporteAnimal perrito1 = new ReporteAnimal ("Perro","Pastor Alemán","Negro",
 									  "22152150", "menoc.sk27@gmail.com",
 									  "Pavas", "Encontrado", "010","direccionFoto",
-									  "Maximus Gorrerus", "0","Macho");
+									  "Maximus Gorrerus", "0","Macho","001");
 		ReporteAnimal perrito2 = new ReporteAnimal ("Perro","Pastor Italiano","Rojo",
 				 					  "22152150", "menoc.sk27@gmail.com",
 				 					  "No", "Encontrado", "011","direccionFoto",
-				 					  "Maximus", "0","Macho");
+				 					  "Maximus", "0","Macho","002");
 		ReporteAnimal perrito3 = new ReporteAnimal ("Perro", "Pastor Alemán", "Negro",
 									  "22222222", "jasc!gmail.com", 
 									  "Pavas", "Nada", "No", "ashskdf", 
-									  "Maximus Gorrerus", "002","Macho");
+									  "Maximus Gorrerus", "002","Macho","004");
 		ReporteAnimal perrito4 = new ReporteAnimal ("Perro", "Pastor Alemán", "Tirando a Rojo",
 				 					  "22222222", "jasc!gmail.com", 
 				 				      "Pavas", "Nada", "010", "ashskdf", 
-				 					  "Maximus Gorrerus", "002","Macho");
+				 					  "Maximus Gorrerus", "002","Macho","005");
 		
 		ReporteAnimal.animalesSistema.add(perrito1);
 		ReporteAnimal.animalesSistema.add(perrito2);

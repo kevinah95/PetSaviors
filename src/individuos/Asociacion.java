@@ -22,12 +22,11 @@ public class Asociacion extends Individuo{
 	
 	@Override
 	public String toString() {
-		return "Individuo;Asociacion;" +
-				identificadorIndividuo+ ";" 
+		return "Individuo;Asociacion;" 
 				+ identificacion + ";"
 				+ nombre + ";" 
-				+ correo + ";" 
-				+ eventosParticipado + ";" //Cambiar array por división de $
-				+ actividadRegistrada +";"; //Cambiar array por $
+				+ correo + ";"
+				+ actividadRegistrada +";" //Cambiar array por $
+				+ datosSistema.toString();
 	}
 }
