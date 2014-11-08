@@ -1,8 +1,14 @@
 package petFinder;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
 import javax.swing.*;
 import javax.swing.table.*;
+
+import menu.principal.*;
 
 public class VentanaMisMascotas extends JPanel {
 	//Esta clase va a contener una JTable con los animales que tiene el usuario.
@@ -38,14 +44,62 @@ public class VentanaMisMascotas extends JPanel {
 		//Se supone que le debería pasar una lista o algo así
 		//Ejemplo:
 		Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
+		String path1 = "/recursos/Peludito.jpg";
+		String path2 = "/recursos/Miaucito.jpg";
+		ArrayList<String> listaPath = new ArrayList<>();
+		listaPath.add(path1);
+		listaPath.add(path2);
 		modelo.addRow(datos);
+		Object[] datos1 = {"333333", "Gato", "Peterbald", "Blanco", "Hembra", "33EE212", "Miaucito <3"};
+		modelo.addRow(datos1);
 		sorter = new TableRowSorter<DefaultTableModel>(modelo);
 		
 		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		tabla.setPreferredScrollableViewportSize(new Dimension(766, 458));
 		tabla.setRowSorter(sorter);
 		tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		//tabla.setBackground(arg0);
+		tabla.setRowHeight(60);
+		tabla.setRowSelectionAllowed(true);
+		
+		tabla.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				PrincipalNormal.panelImagenAnimal.removeAll();
+				JLabel labelImagen = new JLabel();
+				String path = listaPath.get(tabla.getSelectedRow());
+				System.out.println(path);
+				labelImagen.setIcon(new ImageIcon(getClass().getResource(path)));
+				PrincipalNormal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
+				PrincipalNormal.panelImagenAnimal.setVisible(true);
+				PrincipalNormal.panelImagenAnimal.repaint();
+				PrincipalNormal.panelImagenAnimal.revalidate();
+			}
+		});
 		
 		NormalCellRenderer normal = new NormalCellRenderer();
 		tabla.getColumn("ID").setCellRenderer(normal);
@@ -73,9 +127,12 @@ public class VentanaMisMascotas extends JPanel {
 				setToolTipText("<html><p>"+(String)value+"</p></html>");
 				setHorizontalAlignment(SwingConstants.CENTER);
 				setText((String)value);
-				setForeground(Color.WHITE);
+				setForeground(new Color(14, 28, 29));
 				setOpaque(true);
-				setBackground(Color.DARK_GRAY);
+				setBackground(new Color(127, 200, 176));
+				if(hasFocus) {
+					setBackground(new Color(200, 232, 221));
+				}
 		  
 		       return this;
 		}

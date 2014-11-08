@@ -11,16 +11,23 @@
 package menu.principal;
 
 import javax.swing.*;
+
 import java.awt.*;
+
 import javax.swing.border.*;
+
 import java.awt.event.*;
+
 import render.listas.RenderPrincipal;
+
 import javax.swing.*;
+
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 
 public class PrincipalNormal extends JPanel {
 	public static JList listaMenu;
+	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
 	
 	public PrincipalNormal() {
@@ -64,7 +71,7 @@ public class PrincipalNormal extends JPanel {
 		panel.add("Pet Finder", petFinder);
 		
 		JPanel panelLista = new JPanel();
-		panelLista.setBounds(869, 0, 227, 458);
+		panelLista.setBounds(869, 0, 227, 230);
 		panelSurround.add(panelLista);
 		panelLista.setBorder(new EmptyBorder(0, 0, 0, 0));
 		panelLista.setBackground(new Color(130, 177, 166));
@@ -111,9 +118,17 @@ public class PrincipalNormal extends JPanel {
 		});
 	    
 	    
-	    JScrollPane scrollPaneLista = new JScrollPane(listaMenu);
-	    scrollPaneLista.setBorder(null);
-	    panelLista.add(scrollPaneLista);
+	    //JScrollPane scrollPaneLista = new JScrollPane(listaMenu);
+	    //scrollPaneLista.setBorder(null);
+	    panelLista.add(listaMenu, BorderLayout.NORTH);
+
+
+	    panelImagenAnimal.setBorder(new EmptyBorder(0, 0, 0, 0));
+	    panelImagenAnimal.setBackground(new Color(130, 177, 166));
+	    panelImagenAnimal.setBounds(869, 228, 227, 230);
+	    panelSurround.add(panelImagenAnimal);
+	    panelImagenAnimal.setLayout(new BorderLayout(0, 0));
+	    
 	    
 	    JPanel panelConfig = new JPanel();
 	    panelConfig.setBackground(null);
