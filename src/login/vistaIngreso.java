@@ -39,7 +39,7 @@ public class vistaIngreso extends JFrame {
 	
 	public void agregarPaneles(){
 		
-		VistaLogIn login = VistaLogIn.getInstance();
+		vistaLogIn login = vistaLogIn.getInstance();
 		login.crearVista();
 		new ControladorLogIn();
 		panelCards.add("Ingresar",login);

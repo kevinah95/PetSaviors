@@ -18,12 +18,12 @@ import javax.swing.*;
 
 import java.awt.event.*;
 
-
 import javax.swing.border.EmptyBorder;
 
 
 
-public class VistaLogIn extends JPanel{
+@SuppressWarnings("serial")
+public class vistaLogIn extends JPanel{
 	
 	JTextField txtCedula;
 	JPasswordField txtContrasenia;
@@ -34,14 +34,14 @@ public class VistaLogIn extends JPanel{
 	
 	
 	
-	private static VistaLogIn instance = null;
+	private static vistaLogIn instance = null;
 	
-	public static VistaLogIn getInstance() {
-		if (instance == null) {	instance = new VistaLogIn(); }
+	public static vistaLogIn getInstance() {
+		if (instance == null) {	instance = new vistaLogIn(); }
 		return instance;
 	}
 	
-	protected VistaLogIn() {
+	protected vistaLogIn() {
 	}
 	
 	public void crearVista(){
@@ -114,12 +114,12 @@ public class VistaLogIn extends JPanel{
 		JLabel lblLogger = new JLabel("");
 		lblLogger.setBounds(257, 62, 460, 341);
 		panel.add(lblLogger);
-		lblLogger.setIcon(new ImageIcon(VistaLogIn.class.getResource("/recursos/Log.png")));
+		lblLogger.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/Log.png")));
 		
 		lblLogo = new JLabel("");
 		lblLogo.setBounds(6, 16, 253, 237);
 		panel.add(lblLogo);
-		lblLogo.setIcon(new ImageIcon(VistaLogIn.class.getResource("/recursos/logo.png")));
+		lblLogo.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/logo.png")));
 		txtContrasenia.addFocusListener(new FocusListener() {
             public void focusGained(FocusEvent e) {
             	if (txtContrasenia.getText().equals("Contrasenia")){

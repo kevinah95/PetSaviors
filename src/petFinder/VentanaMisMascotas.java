@@ -62,32 +62,10 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.setRowSelectionAllowed(true);
 		
 		tabla.addMouseListener(new MouseListener() {
-			
-			@Override
-			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
+			public void mouseReleased(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mouseEntered(MouseEvent e) {}
 			public void mouseClicked(MouseEvent e) {
 				PrincipalNormal.panelImagenAnimal.removeAll();
 				JLabel labelImagen = new JLabel();
@@ -114,7 +92,7 @@ public class VentanaMisMascotas extends JPanel {
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		grid.fill = GridBagConstraints.BOTH;
 		panelContenedor.add(scrollPanel, "name_181078707065095");
-		
+				
 		JTableHeader cabecera = tabla.getTableHeader();
 		cabecera.setForeground(new Color(255, 255, 255));
 		cabecera.setBackground(new Color(69, 147, 160));
@@ -130,7 +108,7 @@ public class VentanaMisMascotas extends JPanel {
 				setForeground(new Color(14, 28, 29));
 				setOpaque(true);
 				setBackground(new Color(127, 200, 176));
-				if(hasFocus) {
+				if(isSelected) {
 					setBackground(new Color(200, 232, 221));
 				}
 		  

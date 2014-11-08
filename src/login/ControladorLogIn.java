@@ -17,12 +17,12 @@ import menu.principal.PrincipalNormal;
 public class ControladorLogIn implements ActionListener{
 	
 	ModeloLogIn modelo=null;
-	VistaLogIn vista = null;
+	vistaLogIn vista = null;
 	
 	
 	public ControladorLogIn() {
 		this.modelo = ModeloLogIn.getInstance();
-		this.vista = VistaLogIn.getInstance();
+		this.vista = vistaLogIn.getInstance();
 		setAcciones(this);
 	}
 	
