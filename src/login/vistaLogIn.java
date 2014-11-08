@@ -25,7 +25,7 @@ public class vistaLogIn extends JPanel{
 	public JPasswordField txtContrasenia;
 	public JButton btnEntrar;
 	public JButton btnRegistrarme;
-	public JLabel label;
+	public JLabel lblLogo;
 	public JPanel panel;
 	Usuarios usuarios = Usuarios.getInstance();
 	
@@ -110,15 +110,15 @@ public class vistaLogIn extends JPanel{
         });
 		txtCedula.setColumns(10);
 		
-		JLabel lblLog = new JLabel("");
-		lblLog.setBounds(257, 62, 460, 341);
-		panel.add(lblLog);
-		lblLog.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/Log.png")));
+		JLabel lblLogger = new JLabel("");
+		lblLogger.setBounds(257, 62, 460, 341);
+		panel.add(lblLogger);
+		lblLogger.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/Log.png")));
 		
-		label = new JLabel("");
-		label.setBounds(6, 16, 253, 237);
-		panel.add(label);
-		label.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/logo.png")));
+		lblLogo = new JLabel("");
+		lblLogo.setBounds(6, 16, 253, 237);
+		panel.add(lblLogo);
+		lblLogo.setIcon(new ImageIcon(vistaLogIn.class.getResource("/recursos/logo.png")));
 		txtContrasenia.addFocusListener(new FocusListener() {
             public void focusGained(FocusEvent e) {
             	if (txtContrasenia.getText().equals("Contrasenia")){
