@@ -15,10 +15,10 @@ public class InformacionAdoptante{
 		return calificaciones;}
 	public void setCalificaciones(ArrayList<Integer> calificaciones) {
 		this.calificaciones = calificaciones;}
-	public void agregarCalificacion (int nuevaCalificacion)
-	{
-		this.calificaciones.add(nuevaCalificacion);
-	}
+	
+	public void agregarCalificacion (int nuevaCalificacion){
+		this.calificaciones.add(nuevaCalificacion);}
+	
 	@Override
 	public String toString() {
 		return "InformacionAdoptante;" //Cambiar arrays por $

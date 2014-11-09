@@ -51,7 +51,7 @@ public class Comparaciones {
 					if (!dato.equals(comparacionContra.getAnimalReportado().getTipoMascota())){	
 						contadorSemejanzas = -1;break;}} //Si el dato Tipo de mascota es diferente, no hace falta comparar más
 				if (contadorComparaciones == 6) { //Dias //Hacer cálculo entre cantidad de dias (tolerancia Comparacion)
-					if (comparacionContra.getDiasSistema() - Integer.parseInt(dato) < 30) //Cambiar 30 por variable de tolerancia
+					if (comparacionContra.getDiasSistema() - Integer.parseInt(dato) < ConfiguracionSistema.toleranciaComparacion)
 						contadorSemejanzas++;}
 				if (contadorComparaciones == 7) { //Raza //System.out.println("Comparando Raza: "+dato+ " vs "+comparacionContra.getRaza());
 					if (dato.equals(comparacionContra.getAnimalReportado().getRaza())){
@@ -64,13 +64,13 @@ public class Comparaciones {
 						contadorSemejanzas++;}}
 				if (contadorComparaciones == 10) { //Chip  //System.out.println("Comparando Chip: "+dato+" vs "+comparacionContra.getChipIdentificacion());
 					if (dato.equals(comparacionContra.getAnimalReportado().getChipIdentificacion())){
-						contadorSemejanzas = -2;break;}} //Si el chip es igual, se trata diferente (Es 95% probable que se trate de la mascota
+						contadorSemejanzas = -2;break;}}
 				if (contadorComparaciones == 11) {	//Nombre //System.out.println("Comparando Nombre: "+dato+ " vs "+comparacionContra.getNombreMascota());
 					if (dato.equals(comparacionContra.getAnimalReportado().getNombreMascota())){
 						contadorSemejanzas++;}}
 				if (contadorComparaciones == 12) {	//Sexo //System.out.println("Comparando Sexo: "+dato+ " vs "+comparacionContra.getAnimalReportado().getSexo());
 					if (!dato.equals(comparacionContra.getAnimalReportado().getSexo())){
-						contadorSemejanzas = -1;break;}}
+						contadorSemejanzas = -1;break;}} //No es necesario comparar sexos opuestos
 			}//System.out.println("Contador C "+contadorComparaciones + "\nContador S "+contadorSemejanzas);
 			contadorComparaciones++;}
 		return contadorSemejanzas;}
