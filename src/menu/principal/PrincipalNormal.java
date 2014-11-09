@@ -33,8 +33,6 @@ public class PrincipalNormal extends JPanel {
 	public PrincipalNormal() {
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);
-		
-		
 	    setLayout(null);
 		
 		JLabel lblDisenadoPor = new JLabel("Diseñado por DreamTeam APP ®");
@@ -49,8 +47,6 @@ public class PrincipalNormal extends JPanel {
 		add(panelConfig);
 		panelConfig.setLayout(null);
 		
-		
-		
 		JLabel lblProfile = new JLabel("Profile");
 		lblProfile.setBounds(0, 0, 51, 43);
 		panelConfig.add(lblProfile);
@@ -64,8 +60,6 @@ public class PrincipalNormal extends JPanel {
 			public void mouseReleased(MouseEvent e) {}
 		});
 		lblProfile.setText("");
-		
-
 		
 		JLabel lblLogo = new JLabel("");
 		lblLogo.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/LogoMenu.png")));
@@ -138,24 +132,18 @@ public class PrincipalNormal extends JPanel {
 	    //JScrollPane scrollPaneLista = new JScrollPane(listaMenu);
 	    //scrollPaneLista.setBorder(null);
 	    panelLista.add(listaMenu, BorderLayout.NORTH);
-
-
+	    
 	    panelImagenAnimal.setBorder(new EmptyBorder(0, 0, 0, 0));
 	    panelImagenAnimal.setBackground(new Color(130, 177, 166));
 	    panelImagenAnimal.setBounds(869, 228, 227, 230);
 	    panelSurround.add(panelImagenAnimal);
 	    panelImagenAnimal.setLayout(new BorderLayout(0, 0));
 	    
-	    
-	    
-	    
-	    
-	    
-	    
 	    JButton btnAtras = new JButton("");
 	    btnAtras.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		vistaPetFinder.cardsPanel.show(vistaPetFinder.contenedor, "PetFinder");
+	    		panelImagenAnimal.removeAll();
 	    	}
 	    });
 	    btnAtras.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/BotonAtras.png")));

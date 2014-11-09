@@ -3,20 +3,25 @@ package petFinder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.table.*;
 
+import net.coobird.thumbnailator.Thumbnails;
 import menu.principal.*;
 
 public class VentanaMisMascotas extends JPanel {
 	//Esta clase va a contener una JTable con los animales que tiene el usuario.
-	private JTable tabla;
+	public static JTable tabla;
 	private DefaultTableModel modelo;
 	private JPanel panelContenedor = new JPanel();
 	private TableRowSorter<DefaultTableModel> sorter;
 	private GridBagConstraints grid = new GridBagConstraints();
+	
+	public static ArrayList<String> listaPath = new ArrayList<>();
 	
 	public VentanaMisMascotas() {
 		setSize(766, 458);
@@ -46,7 +51,6 @@ public class VentanaMisMascotas extends JPanel {
 		Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
 		String path1 = "/recursos/Peludito.jpg";
 		String path2 = "/recursos/Miaucito.jpg";
-		ArrayList<String> listaPath = new ArrayList<>();
 		listaPath.add(path1);
 		listaPath.add(path2);
 		modelo.addRow(datos);
@@ -60,25 +64,7 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tabla.setRowHeight(60);
 		tabla.setRowSelectionAllowed(true);
-		
-		tabla.addMouseListener(new MouseListener() {
-			public void mouseReleased(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseClicked(MouseEvent e) {
-				PrincipalNormal.panelImagenAnimal.removeAll();
-				JLabel labelImagen = new JLabel();
-				String path = listaPath.get(tabla.getSelectedRow());
-				System.out.println(path);
-				labelImagen.setIcon(new ImageIcon(getClass().getResource(path)));
-				PrincipalNormal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
-				PrincipalNormal.panelImagenAnimal.setVisible(true);
-				PrincipalNormal.panelImagenAnimal.repaint();
-				PrincipalNormal.panelImagenAnimal.revalidate();
-			}
-		});
-		
+				
 		NormalCellRenderer normal = new NormalCellRenderer();
 		tabla.getColumn("ID").setCellRenderer(normal);
 		tabla.getColumn("Tipo").setCellRenderer(normal);
@@ -110,6 +96,22 @@ public class VentanaMisMascotas extends JPanel {
 				setBackground(new Color(127, 200, 176));
 				if(isSelected) {
 					setBackground(new Color(200, 232, 221));
+					PrincipalNormal.panelImagenAnimal.removeAll();
+					JLabel labelImagen = new JLabel();
+					String path = VentanaMisMascotas.listaPath.get(tabla.getSelectedRow());
+					BufferedImage imagen = null;
+					try {
+						imagen = Thumbnails.of(getClass().getResource(path))
+								.size(227, 230)
+								.asBufferedImage();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					labelImagen.setIcon(new ImageIcon(imagen));
+					PrincipalNormal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
+					PrincipalNormal.panelImagenAnimal.setVisible(true);
+					PrincipalNormal.panelImagenAnimal.repaint();
+					PrincipalNormal.panelImagenAnimal.revalidate();
 				}
 		  
 		       return this;
