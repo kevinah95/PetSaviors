@@ -1,13 +1,6 @@
 package logicaInterna;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-
-
+import java.util.*;
 import individuos.*;
 
 public class MainPruebaReg {

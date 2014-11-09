@@ -1,9 +1,7 @@
 package individuos;
 
 import java.util.ArrayList;
-
-import logicaInterna.Actividad;
-import logicaInterna.Animal;
+import logicaInterna.*;
 
 public class ElementosIndividuoSistema {
 

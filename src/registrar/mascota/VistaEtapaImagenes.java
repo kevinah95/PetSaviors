@@ -1,23 +1,12 @@
 package registrar.mascota;
 
-
 import java.awt.*;
 import java.net.URL;
 import java.text.NumberFormat;
-
-
-
-
-
-
-
 import javax.swing.*;
-
-import javax.swing.text.DefaultStyledDocument;
 
 import fabrica.botones.FabricaBotones;
 import fabrica.botones.JButtonTransparente;
-
 
 public class VistaEtapaImagenes extends JPanel{
 
