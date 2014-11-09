@@ -13,75 +13,115 @@ import javax.swing.ImageIcon;
 
 import fabrica.botones.JButtonTransparente;
 
-public class ControladorEtapaImagenes implements ActionListener,MouseListener,PropertyChangeListener{
+public class ControladorEtapaImagenes implements ActionListener, MouseListener,
+		PropertyChangeListener {
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
 	public static JButtonTransparente btnTemp = null;
+
 	public ControladorEtapaImagenes() {
 		this.modelo = ModeloEtapaImagenes.getInstance();
 		this.vista = VistaEtapaImagenes.getInstance();
 		setAcciones(this);
-		
 	}
 	
-	private void setAcciones(ActionListener escuchador){
+	private void setAcciones(ActionListener escuchador) {
 		vista.btnAtras.addActionListener(escuchador);
 		vista.btnGuardar.addActionListener(escuchador);
-		
+
 		vista.btnImagen0.addMouseListener(this);
 		vista.btnImagen1.addMouseListener(this);
 		vista.btnImagen2.addMouseListener(this);
 		vista.btnImagen3.addMouseListener(this);
 		vista.btnImagen4.addMouseListener(this);
 		vista.btnImagen5.addMouseListener(this);
-		
+
 		vista.txtRecompensa.addPropertyChangeListener("value", this);
 	}
-	
-	
 
-	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==vista.btnAtras){
-			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaDatos");
+		if (e.getSource() == vista.btnAtras) {
+			RegistrarMascota.getInstance().cardlayout.show(
+					RegistrarMascota.getInstance().panelCards,
+					"VistaEtapaDatos");
 			vista.limpiarDatos();
 		}
-		
-		if (e.getSource()==vista.btnGuardar){
-			
+
+		if (e.getSource() == vista.btnGuardar) {
+			if (modelo.verificarLugar(vista.txtLugar.getText())) {
+				joinDatos();
+				joinImagenes();
+				modelo.cargarImagenes();
+			}
+
 		}
 	}
 
+	private void joinDatos(){
+		VistaEtapaDatos vistaDatos = VistaEtapaDatos.getInstance();
+		String sexo = null;
+		if (vistaDatos.rdbtnMacho.isSelected()) {
+			sexo = vistaDatos.rdbtnMacho.getText();
+		} else {
+			sexo = vistaDatos.rdbtnHembra.getText();
+		}
+		String raza = null;
+		if (vistaDatos.cbRaza.getSelectedItem() == null) {
+			raza = "";
+		} else {
+			raza = vistaDatos.cbRaza.getSelectedItem().toString();
+		}
+		modelo.cargarDatos(RegistrarMascota.modoRegistro,
+				vistaDatos.txtNombre.getText(), vistaDatos.txtChip
+						.getText(), vistaDatos.cbColor
+						.getSelectedItem().toString(),
+				vistaDatos.cbEspecie.getSelectedItem().toString(),
+				raza, sexo,
+				vistaDatos.txtDescripcion.getText(), vista.txtLugar
+						.getText(), String.valueOf(vista.txtRecompensa
+						.getValue()));
+	}
+	
+	private void joinImagenes(){
+		modelo.anadirImagenes(vista.btnImagen0.getDirImagen(),
+				vista.btnImagen1.getDirImagen(),
+				vista.btnImagen2.getDirImagen(),
+				vista.btnImagen3.getDirImagen(),
+				vista.btnImagen4.getDirImagen(),
+				vista.btnImagen5.getDirImagen());
+	}
 	
 	
 
 	
 	public void mouseClicked(MouseEvent e) {
-		if (e.getButton()==MouseEvent.BUTTON3){
-			btnTemp= (JButtonTransparente) e.getSource();
-			if (modelo.verificarImagen()){
+		if (e.getButton() == MouseEvent.BUTTON3) {
+			btnTemp = (JButtonTransparente) e.getSource();
+			if (modelo.verificarImagen()) {
 				try {
 					btnTemp.setIcon(new ImageIcon(modelo.obtenerImagen()));
 					seleccionBotonDefault();
 					btnTemp.setDirImagen(modelo.path);
-					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
+					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo
+							.obtenerImagenPrincipal()));
 					vista.lblImagenPrincipal.setText("");
-				} catch (IOException e1) { e1.printStackTrace(); }
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 			}
-		}else if(e.getButton()==MouseEvent.BUTTON1){
+		} else if (e.getButton() == MouseEvent.BUTTON1) {
 			btnTemp = (JButtonTransparente) e.getSource();
-			if (!btnTemp.getDirImagen().equals("")){
+			if (!btnTemp.getDirImagen().equals("")) {
 				try {
 					seleccionarImagenPrincipal();
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
 			}
-			
-			
+
 		}
-		
+
 	}
 
 	
@@ -92,11 +132,10 @@ public class ControladorEtapaImagenes implements ActionListener,MouseListener,Pr
 	
 	public void propertyChange(PropertyChangeEvent e) {
 		Object source = e.getSource();
-        if (source == vista.txtRecompensa) {
-            /*Anadir resultado*/vista.txtRecompensa.getValue();
-            
-        }
-		
+		if (source == vista.txtRecompensa) {
+			vista.txtRecompensa.getValue();
+		}
+
 	}
 	
 	public void seleccionBotonDefault(){
@@ -117,33 +156,13 @@ public class ControladorEtapaImagenes implements ActionListener,MouseListener,Pr
 			vista.btnImagen1.setDirImagen("");
 		}
 	}
-	
-	
-	
-	public void seleccionarImagenPrincipal() throws IOException{
+
+	public void seleccionarImagenPrincipal() throws IOException {
 		if (btnTemp.getDirImagen() != null) {
 			modelo.path = btnTemp.getDirImagen();
-			vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
-		} 
+			vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo
+					.obtenerImagenPrincipal()));
+		}
 	}
-
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
 
 }

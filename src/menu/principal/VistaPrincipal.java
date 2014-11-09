@@ -35,7 +35,7 @@ public class VistaPrincipal extends JPanel {
 	/**
 	 * TODO Cambiar Individuo a private
 	 */
-	public static Individuo usuario= null;
+	private Individuo usuario= null;
 	
 	private static VistaPrincipal instance = null;
 	
@@ -181,6 +181,20 @@ public class VistaPrincipal extends JPanel {
 		
 		f.setVisible(true);
 
+	}
+
+	/**
+	 * @return the usuario
+	 */
+	public Individuo getUsuario() {
+		return usuario;
+	}
+
+	/**
+	 * @param usuario the usuario to set
+	 */
+	public void setUsuario(Individuo usuario) {
+		this.usuario = usuario;
 	}
 }
 

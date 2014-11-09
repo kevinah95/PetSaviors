@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 public class JButtonTransparente extends JButton {
-	private String dirImagen=null;
+	private String dirImagen="";
 
 	public JButtonTransparente(String nombreBoton) {
 		super(nombreBoton);

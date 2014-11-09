@@ -1,11 +1,19 @@
 package registrar.mascota;
 
+import individuos.Individuo;
+
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.function.Predicate;
+
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import logicaInterna.ReporteAnimal;
+import menu.principal.VistaPrincipal;
 import net.coobird.thumbnailator.Thumbnails;
 
 public class ModeloEtapaImagenes {
@@ -15,7 +23,8 @@ public class ModeloEtapaImagenes {
 	private static final boolean CORRECTA = true;
 	private static final boolean INCORRECTA = false;
 	private static final File dirTemporal = new File("Pet_Saviors/temp");
-	private String indexImagen =null;
+	private String indexImagen = null;
+	private ArrayList<String> imagenes = new ArrayList<String>();
 	protected ModeloEtapaImagenes() {
 		
 	}
@@ -92,7 +101,40 @@ public class ModeloEtapaImagenes {
 		return true;
 	}
 	
+	public void cargarDatos(String modoRegistro, String nombre, String chip,
+			String color, String tipoMascota, String razaMascota, String sexo,
+			String descripcion, String lugar, String recompensa) {
+		VistaPrincipal
+				.getInstance()
+				.getUsuario()
+				.reportarMascota(tipoMascota, razaMascota, color, lugar,
+						modoRegistro, chip, nombre, recompensa, sexo);
+
+	}
 	
+	Predicate<ReporteAnimal> predicadoCedula = new Predicate<ReporteAnimal>() {
+		public boolean test(ReporteAnimal t) {
+			return t.getIdentificacionReportante().equals(VistaPrincipal.getInstance().getUsuario().getIdentificacion());
+		}
+	};
+	
+	public void cargarImagenes(){
+		ReporteAnimal.animalesSistema.stream().filter(predicadoCedula).forEach(p->p.setFotosAnimal(imagenes));
+		ReporteAnimal.animalesSistema.stream().filter(predicadoCedula).forEach(p->System.out.println(p.toString()));
+		
+	}
+	
+	public void anadirImagenes(String imagen0, String imagen1, String imagen2,
+			String imagen3, String imagen4, String imagen5) {
+		imagenes.clear();
+		imagenes.add(imagen0);
+		imagenes.add(imagen1);
+		imagenes.add(imagen2);
+		imagenes.add(imagen3);
+		imagenes.add(imagen4);
+		imagenes.add(imagen5);
+
+	}
 	
 	private static void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
