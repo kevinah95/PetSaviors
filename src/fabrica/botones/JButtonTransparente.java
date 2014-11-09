@@ -1,10 +1,11 @@
 package fabrica.botones;
 
 import java.awt.Color;
-
 import javax.swing.JButton;
 
 public class JButtonTransparente extends JButton {
+	
+	private static final long serialVersionUID = 1L;
 	private String dirImagen="";
 
 	public JButtonTransparente(String nombreBoton) {

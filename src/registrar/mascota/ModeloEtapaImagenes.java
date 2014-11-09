@@ -1,17 +1,12 @@
 package registrar.mascota;
 
-import individuos.Individuo;
-
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.function.Predicate;
-
 import javax.imageio.ImageIO;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import logicaInterna.ReporteAnimal;
 import menu.principal.VistaPrincipal;
 import net.coobird.thumbnailator.Thumbnails;

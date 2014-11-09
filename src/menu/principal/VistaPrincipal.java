@@ -11,23 +11,17 @@
 package menu.principal;
 
 import individuos.Individuo;
-
 import javax.swing.*;
-
 import java.awt.*;
-
 import javax.swing.border.*;
-
 import java.awt.event.*;
-
-import registrar.mascota.VistaEtapaDatos;
 import render.listas.RenderPrincipal;
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 
 public class VistaPrincipal extends JPanel {
-	
-	
+
+	private static final long serialVersionUID = 1L;
 	public static JList listaMenu;
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();

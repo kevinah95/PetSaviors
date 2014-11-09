@@ -1,13 +1,9 @@
 package correosRedesSociales;
 //Basado en el ejemplo de http://xmeng.wordpress.com/2011/07/10/how-to-handle-sign-in-with-twitter-using-twitter4j/
 import twitter4j.*;
-import twitter4j.auth.AccessToken;
-import twitter4j.auth.RequestToken;
+import twitter4j.auth.*;
 import twitter4j.conf.ConfigurationBuilder;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
  
 public final class TwitterPost {
  

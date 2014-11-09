@@ -1,8 +1,6 @@
 package petFinder;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +12,7 @@ import net.coobird.thumbnailator.Thumbnails;
 import menu.principal.*;
 
 public class VentanaMisMascotas extends JPanel {
+	private static final long serialVersionUID = 1L;
 	//Esta clase va a contener una JTable con los animales que tiene el usuario.
 	public static JTable tabla;
 	private DefaultTableModel modelo;
@@ -38,6 +37,8 @@ public class VentanaMisMascotas extends JPanel {
 		
 		String col[] = {"ID", "Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre"};
 		modelo = new DefaultTableModel(col, 0){
+			private static final long serialVersionUID = 1L;
+
 			public boolean isCellEditable(int fila, int columna) {
 				return columna > 8;
 			}
@@ -85,6 +86,7 @@ public class VentanaMisMascotas extends JPanel {
 	}
 	
 	public static class NormalCellRenderer extends JLabel implements TableCellRenderer {
+		private static final long serialVersionUID = 1L;
 		public Component getTableCellRendererComponent(JTable table, Object value,
 				boolean isSelected, boolean hasFocus, int row, int column) {
 

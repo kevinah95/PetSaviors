@@ -1,14 +1,10 @@
 package login;
 
 import individuos.Individuo;
-
 import java.util.function.Predicate;
-
 import javax.swing.JOptionPane;
-
 import logicaExterna.Usuarios;
 import menu.principal.VistaPrincipal;
-
 
 public class ModeloLogIn {
 

@@ -1,21 +1,13 @@
 package registrar.mascota;
 
 import javax.swing.JLabel;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-
-
+import java.awt.*;
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
+import javax.swing.event.*;
 import javax.swing.plaf.ComboBoxUI;
 import javax.swing.plaf.basic.BasicArrowButton;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 import javax.swing.text.DefaultStyledDocument;
-import javax.swing.DefaultComboBoxModel;
-
 import clasificacion.animales.ControlEspecie;
 import fabrica.botones.FabricaBotones;
 import filtros.document.DocumentSizeFilter;
@@ -23,6 +15,7 @@ import filtros.document.DocumentSizeFilter;
 import javax.swing.JRadioButton;
 
 public class VistaEtapaDatos extends JPanel{
+	private static final long serialVersionUID = 1L;
 	JTextField txtNombre;
 	JTextField txtChip;
 	JComboBox<String> cbColor;

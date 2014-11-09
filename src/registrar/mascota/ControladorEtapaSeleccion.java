@@ -1,8 +1,12 @@
 package registrar.mascota;
 
+<<<<<<< HEAD
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+=======
+import java.awt.event.*;
+>>>>>>> origin/master
 
 public class ControladorEtapaSeleccion implements ActionListener{
 

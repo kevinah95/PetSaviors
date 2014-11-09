@@ -1,45 +1,15 @@
 package configuracion;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowFocusListener;
-import java.awt.event.WindowListener;
-
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JWindow;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.ListCellRenderer;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-
-import com.sun.xml.internal.ws.api.Component;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.FlowLayout;
-import java.awt.Paint;
-
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
-
+import javax.swing.event.*;
+import java.awt.*;
+import java.awt.event.*;
 import registrar.mascota.RegistrarMascota;
 import render.listas.RenderMenu;
-import render.listas.RenderPrincipal;
 
 public class Menu extends JFrame implements WindowFocusListener, ListSelectionListener{
-	
+	private static final long serialVersionUID = 1L;
 	JList listaMenu;
 	
 	public Menu(java.awt.Component relativo){

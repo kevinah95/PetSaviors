@@ -10,17 +10,10 @@
 
 package login;
 
-
-
 import java.awt.*;
-
 import javax.swing.*;
-
 import java.awt.event.*;
-
 import javax.swing.border.EmptyBorder;
-
-
 
 @SuppressWarnings("serial")
 public class vistaLogIn extends JPanel{
@@ -31,8 +24,6 @@ public class vistaLogIn extends JPanel{
 	JButton btnRegistrarme;
 	JLabel lblLogo;
 	JPanel panel;
-	
-	
 	
 	private static vistaLogIn instance = null;
 	

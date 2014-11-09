@@ -2,11 +2,8 @@ package registrar.mascota;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-
-import clasificacion.animales.ControlEspecie;
 
 public class ControladorEtapaDatos implements ActionListener{
 

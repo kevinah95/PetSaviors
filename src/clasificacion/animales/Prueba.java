@@ -1,8 +1,5 @@
 package clasificacion.animales;
 
-import java.util.ArrayList;
-
-
 public class Prueba {
 
 	
@@ -16,6 +13,4 @@ public class Prueba {
 		
 	}
 	
-	
-
 }
