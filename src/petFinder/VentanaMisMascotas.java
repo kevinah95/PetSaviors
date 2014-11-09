@@ -96,7 +96,7 @@ public class VentanaMisMascotas extends JPanel {
 				setBackground(new Color(127, 200, 176));
 				if(isSelected) {
 					setBackground(new Color(200, 232, 221));
-					PrincipalNormal.panelImagenAnimal.removeAll();
+					VistaPrincipal.panelImagenAnimal.removeAll();
 					JLabel labelImagen = new JLabel();
 					String path = VentanaMisMascotas.listaPath.get(tabla.getSelectedRow());
 					BufferedImage imagen = null;
@@ -108,10 +108,10 @@ public class VentanaMisMascotas extends JPanel {
 						e.printStackTrace();
 					}
 					labelImagen.setIcon(new ImageIcon(imagen));
-					PrincipalNormal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
-					PrincipalNormal.panelImagenAnimal.setVisible(true);
-					PrincipalNormal.panelImagenAnimal.repaint();
-					PrincipalNormal.panelImagenAnimal.revalidate();
+					VistaPrincipal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
+					VistaPrincipal.panelImagenAnimal.setVisible(true);
+					VistaPrincipal.panelImagenAnimal.repaint();
+					VistaPrincipal.panelImagenAnimal.revalidate();
 				}
 		  
 		       return this;

@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 import javax.swing.JOptionPane;
 
-import menu.principal.PrincipalNormal;
+import menu.principal.VistaPrincipal;
 
 
 
@@ -65,8 +65,8 @@ public class ControladorLogIn implements ActionListener{
 	}
 	
 	private void entrarASistema(){
-		vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "PrincipalNormal");
-		PrincipalNormal.listaMenu.requestFocus();
+		vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "VistaPrincipal");
+		VistaPrincipal.listaMenu.requestFocus();
 		vista.getParent().revalidate();
 		vista.getParent().repaint();
 	}

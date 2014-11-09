@@ -1,6 +1,6 @@
 /**====================================================================================
  * Proyecto     : PetSaviors
- * Archivo      : PrincipalNormal.java » Paquete: menu.principal » Proyecto: PetSaviors 
+ * Archivo      : VistaPrincipal.java » Paquete: menu.principal » Proyecto: PetSaviors 
  * Autores      : Kevin Hernández Rostrán, Jasson Moya Álvarez, 
  *				  Julián Méndez Oconitrillo, José Aguilar Quesada.
  * Curso        : Programación Orientada a Objetos - Instituto Tecnológico de Costa Rica
@@ -11,26 +11,44 @@
 package menu.principal;
 
 import individuos.Individuo;
+
 import javax.swing.*;
+
 import java.awt.*;
+
 import javax.swing.border.*;
+
 import java.awt.event.*;
+
+import registrar.mascota.VistaEtapaDatos;
 import render.listas.RenderPrincipal;
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 
-public class PrincipalNormal extends JPanel {
+public class VistaPrincipal extends JPanel {
 	
 	
 	public static JList listaMenu;
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
+	
 	/**
 	 * TODO Cambiar Individuo a private
 	 */
 	public static Individuo usuario= null;
 	
-	public PrincipalNormal() {
+	private static VistaPrincipal instance = null;
+	
+	protected VistaPrincipal() {
+	    
+	}
+	
+	public static VistaPrincipal getInstance() {
+		if (instance == null) {	instance = new VistaPrincipal(); }
+		return instance;
+	}
+
+	public void crearVista(){
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);
 	    setLayout(null);
@@ -51,7 +69,7 @@ public class PrincipalNormal extends JPanel {
 		lblProfile.setBounds(0, 0, 51, 43);
 		panelConfig.add(lblProfile);
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);
-		lblProfile.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/profile.png")));
+		lblProfile.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/profile.png")));
 		lblProfile.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) { if (e.getButton()==MouseEvent.BUTTON1)new Menu(panelConfig); }
 			public void mouseEntered(MouseEvent e) {}
@@ -62,7 +80,7 @@ public class PrincipalNormal extends JPanel {
 		lblProfile.setText("");
 		
 		JLabel lblLogo = new JLabel("");
-		lblLogo.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/LogoMenu.png")));
+		lblLogo.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/LogoMenu.png")));
 		lblLogo.setBounds(163, 17, 141, 141);
 		add(lblLogo);
 		
@@ -146,23 +164,20 @@ public class PrincipalNormal extends JPanel {
 	    		panelImagenAnimal.removeAll();
 	    	}
 	    });
-	    btnAtras.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/BotonAtras.png")));
+	    btnAtras.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/BotonAtras.png")));
 	    btnAtras.setBounds(10, 169, 61, 61);
 	    btnAtras.setOpaque(false);
 	    btnAtras.setContentAreaFilled(false);
 	    btnAtras.setBorder(null);
 	    add(btnAtras);
-	  
-	    
 	}
-
 	
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
 		f.setSize(1280, 720);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setLocationRelativeTo(null);
-		f.getContentPane().add(new PrincipalNormal());
+		f.getContentPane().add(new VistaPrincipal());
 		
 		f.setVisible(true);
 

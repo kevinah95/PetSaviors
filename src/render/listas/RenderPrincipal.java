@@ -2,7 +2,7 @@ package render.listas;
 
 import java.awt.*;
 import javax.swing.*;
-import menu.principal.PrincipalNormal;
+import menu.principal.VistaPrincipal;
 
 public class RenderPrincipal implements ListCellRenderer{
 	
@@ -14,7 +14,7 @@ public class RenderPrincipal implements ListCellRenderer{
 		    JLabel renderer = (JLabel) defaultRenderer.getListCellRendererComponent(list, value, index,
 		        isSelected, cellHasFocus);
 		   
-			renderer.setIcon(new ImageIcon(PrincipalNormal.class.getResource("/recursos/punta.png")));
+			renderer.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/punta.png")));
 		    renderer.setBackground(new Color(130, 177, 166));
 		    renderer.setPreferredSize(new Dimension(79, 50));
 		    renderer.setBorder(null);

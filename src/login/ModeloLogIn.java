@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import javax.swing.JOptionPane;
 
 import logicaExterna.Usuarios;
-import menu.principal.PrincipalNormal;
+import menu.principal.VistaPrincipal;
 
 
 public class ModeloLogIn {
@@ -41,7 +41,7 @@ public class ModeloLogIn {
 	
 	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
-		PrincipalNormal.usuario = individuo;
+		VistaPrincipal.getInstance().usuario = individuo;
 	}
 	
 	

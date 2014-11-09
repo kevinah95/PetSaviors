@@ -2,7 +2,7 @@ package render.listas;
 
 import java.awt.*;
 import javax.swing.*;
-import menu.principal.PrincipalNormal;
+import menu.principal.VistaPrincipal;
 
 public class RenderMenu implements ListCellRenderer{
 	
