@@ -6,6 +6,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
@@ -14,7 +16,7 @@ import javax.swing.JButton;
 import fabrica.botones.FabricaBotones;
 import fabrica.botones.JButtonTransparente;
 
-public class ControladorEtapaImagenes implements ActionListener,MouseListener{
+public class ControladorEtapaImagenes implements ActionListener,MouseListener,PropertyChangeListener{
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
@@ -30,14 +32,14 @@ public class ControladorEtapaImagenes implements ActionListener,MouseListener{
 		vista.btnAtras.addActionListener(escuchador);
 		vista.btnGuardar.addActionListener(escuchador);
 		
-		
-		
 		vista.btnImagen0.addMouseListener(this);
 		vista.btnImagen1.addMouseListener(this);
 		vista.btnImagen2.addMouseListener(this);
 		vista.btnImagen3.addMouseListener(this);
 		vista.btnImagen4.addMouseListener(this);
 		vista.btnImagen5.addMouseListener(this);
+		
+		vista.txtRecompensa.addPropertyChangeListener("value", this);
 	}
 	
 	
@@ -87,6 +89,15 @@ public class ControladorEtapaImagenes implements ActionListener,MouseListener{
 	public void mousePressed(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}
 	
+	public void propertyChange(PropertyChangeEvent e) {
+		Object source = e.getSource();
+        if (source == vista.txtRecompensa) {
+            /*Anadir resultado*/vista.txtRecompensa.getValue();
+            
+        }
+		
+	}
+	
 	public void seleccionBotonDefault(){
 		if(btnTemp==vista.btnImagen0 && vista.btnImagen1.getIcon()== null){
 			vista.btnImagen1.setIcon(new ImageIcon(VistaEtapaImagenes.ICONO_DEFAULT));
@@ -109,6 +120,9 @@ public class ControladorEtapaImagenes implements ActionListener,MouseListener{
 			vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo.obtenerImagenPrincipal()));
 		} 
 	}
+
+	
+	
 	
 	
 	

@@ -2,21 +2,15 @@ package registrar.mascota;
 
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 
-import javax.imageio.ImageIO;
+import java.net.URL;
+import java.text.NumberFormat;
+
+
 import javax.swing.*;
 
 import fabrica.botones.FabricaBotones;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
-
-import net.coobird.thumbnailator.Thumbnails;
 
 public class VistaEtapaImagenes extends JPanel{
 
@@ -34,19 +28,14 @@ public class VistaEtapaImagenes extends JPanel{
 	JButton btnImagen4;
 	JButton btnImagen5;
 	JLabel lblImagenPrincipal;
+
+	JTextField txtLugar;
+	JFormattedTextField txtRecompensa;
+	NumberFormat formatoCantidad = NumberFormat.getCurrencyInstance();
+	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
+	
 	
 	protected VistaEtapaImagenes() {
-		
-	}
-	
-	public static VistaEtapaImagenes getInstance() {
-		if (instance == null) {	instance = new VistaEtapaImagenes(); }
-		return instance;
-	}
-	
-	
-	
-	public void crearVista(){
 		setLayout(null);
 		setSize(600, 600);
 		
@@ -98,8 +87,29 @@ public class VistaEtapaImagenes extends JPanel{
 		btnImagen5.setName("5");
 		panelMiniaturas.add(btnImagen5);
 		
-		lblImagenPrincipal = new JLabel("ImagenPrincipal");
+		txtLugar = new JTextField();
+		txtLugar.setBounds(44, 416, 177, 30);
+		panelSurround.add(txtLugar);
+		txtLugar.setOpaque(false);
+		txtLugar.setForeground(new Color(27, 39, 51));
+		txtLugar.setFont(fontTextos);
+		txtLugar.setColumns(10);
+		txtLugar.setBorder(null);
+		
+		txtRecompensa = new JFormattedTextField(formatoCantidad);
+		txtRecompensa.setValue(new Double(0.0));
+		txtRecompensa.setOpaque(false);
+		txtRecompensa.setForeground(new Color(27, 39, 51));
+		txtRecompensa.setFont(fontTextos);
+		txtRecompensa.setColumns(10);
+		txtRecompensa.setBorder(null);
+		txtRecompensa.setBounds(248, 416, 177, 30);
+		panelSurround.add(txtRecompensa);
+		
+		lblImagenPrincipal = new JLabel("Imagen Principal");
 		lblImagenPrincipal.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImagenPrincipal.setForeground(new Color(27, 39, 51));
+		lblImagenPrincipal.setFont(fontTextos);
 		lblImagenPrincipal.setBounds(44, 79, 382, 207);
 		panelSurround.add(lblImagenPrincipal);
 		
@@ -109,6 +119,17 @@ public class VistaEtapaImagenes extends JPanel{
 		lblBG.setIcon(new ImageIcon(VistaEtapaImagenes.class.getResource("/recursos/RegistrarMascota2.png")));
 		setFocusable(true);
 		requestFocusInWindow();
+	}
+	
+	public static VistaEtapaImagenes getInstance() {
+		if (instance == null) {	instance = new VistaEtapaImagenes(); }
+		return instance;
+	}
+	
+	
+	
+	public void crearVista(){
+		
 	}
 	
 	

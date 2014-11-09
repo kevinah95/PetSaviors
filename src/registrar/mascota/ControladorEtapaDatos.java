@@ -21,14 +21,14 @@ public class ControladorEtapaDatos implements ActionListener{
 	}
 	
 	private void setAcciones(ActionListener escuchador){
-		vista.btnCancelar.addActionListener(escuchador);
+		vista.btnAtras.addActionListener(escuchador);
 		vista.btnSiguiente.addActionListener(escuchador);
 		vista.cbEspecie.addActionListener(new accionCBEspecie(vista.cbEspecie));
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand() == "Cancelar"){
-			RegistrarMascota.getInstance().dispose();
+		if (e.getSource()==vista.btnAtras){
+			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaSeleccion");
 		}
 		
 		if (e.getActionCommand().equals("Siguiente")){

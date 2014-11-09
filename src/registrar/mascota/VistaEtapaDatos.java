@@ -26,11 +26,11 @@ public class VistaEtapaDatos extends JPanel{
 	JTextField txtNombre;
 	JTextField txtChip;
 	JComboBox<String> cbColor;
-	JEditorPane textField;
+	JEditorPane txtDescripcion;
 	DefaultStyledDocument doc;
 	JLabel remaningLabel;
 	JButton btnSiguiente;
-	JButton btnCancelar;
+	JButton btnAtras;
 	JComboBox<String> cbEspecie;
 	JComboBox<String> cbRaza;
 	JRadioButton rdbtnHembra;
@@ -128,7 +128,7 @@ public class VistaEtapaDatos extends JPanel{
 		
 		
 		remaningLabel = new JLabel();
-		textField = new JEditorPane();
+		txtDescripcion = new JEditorPane();
 		doc = new DefaultStyledDocument();
 		doc.setDocumentFilter(new DocumentSizeFilter(200));
 		doc.addDocumentListener(new DocumentListener() {
@@ -142,10 +142,10 @@ public class VistaEtapaDatos extends JPanel{
 				updateCount();
 			}
 		});
-		textField.setDocument(doc);
+		txtDescripcion.setDocument(doc);
 		
-		textField.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		textField.setForeground(new Color(27,39,51));
+		txtDescripcion.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		txtDescripcion.setForeground(new Color(27,39,51));
 		remaningLabel.setBackground(new Color(0,0,0,0.0f));
 		remaningLabel.setForeground(new Color(27,39,51));
 		updateCount();
@@ -154,7 +154,7 @@ public class VistaEtapaDatos extends JPanel{
 		panelTextPane.setBounds(87, 373, 290, 104);
 		panelTextPane.setBackground(new Color(0,0,0,0.0f));
 		panelTextPane.setLayout(new BorderLayout());
-		panelTextPane.add(textField, BorderLayout.CENTER);
+		panelTextPane.add(txtDescripcion, BorderLayout.CENTER);
 		panelTextPane.add(remaningLabel, BorderLayout.SOUTH);
 		panelDatos.add(panelTextPane);
 		
@@ -164,11 +164,11 @@ public class VistaEtapaDatos extends JPanel{
 		btnSiguiente.setBounds(264, 503, 131, 41);
 		panelDatos.add(btnSiguiente);
 		
-		btnCancelar = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Cancelar");
-		btnCancelar.setForeground(Color.WHITE);
-		btnCancelar.setFont(fontTextos);
-		btnCancelar.setBounds(130, 503, 131, 41);
-		panelDatos.add(btnCancelar);
+		btnAtras = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Atrás");
+		btnAtras.setForeground(Color.WHITE);
+		btnAtras.setFont(fontTextos);
+		btnAtras.setBounds(130, 503, 131, 41);
+		panelDatos.add(btnAtras);
 
 		JLabel lblBGDatos = new JLabel("");
 		lblBGDatos.setBounds(0, 0, 470, 560);
