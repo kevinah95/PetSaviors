@@ -1,6 +1,7 @@
 package logicaInterna;
 
 import java.util.ArrayList;
+import logicaExterna.Mascotas;
 
 public class Comparaciones {
 	//Pet Finder
@@ -77,7 +78,7 @@ public class Comparaciones {
 	public static void PetFinder(ReporteAnimal animalPorComparar){
 		ArrayList<String> datos = todosDatosDisponibles(animalPorComparar);
 		resultadoPetFinder.clear();
-		for ( ReporteAnimal animal : ReporteAnimal.animalesSistema ){
+		for ( ReporteAnimal animal : Mascotas.mascotasRegistradas ){
 			if (!datos.get(1).equals(Integer.toString(animal.getAnimalReportado().getIdAnimal()))){
 				animal.getAnimalReportado().setContadorSemejanzas(cantidadSemejanzas (datos, animal)); //Setea la variable para ordenamiento de cada animal
 				if ( cantidadSemejanzas (datos, animal) > 0 ){
@@ -128,10 +129,10 @@ public class Comparaciones {
 				 				      "Pavas", "Nada", "010", 
 				 					  "Maximus Gorrerus", "002","Macho","005");
 		
-		ReporteAnimal.animalesSistema.add(perrito1);
-		ReporteAnimal.animalesSistema.add(perrito2);
-		ReporteAnimal.animalesSistema.add(perrito3);
-		ReporteAnimal.animalesSistema.add(perrito4);
+		Mascotas.mascotasRegistradas.add(perrito1);
+		Mascotas.mascotasRegistradas.add(perrito2);
+		Mascotas.mascotasRegistradas.add(perrito3);
+		Mascotas.mascotasRegistradas.add(perrito4);
 		
 		PetFinder(perrito1);
 		System.out.println("Pet Finder: ");

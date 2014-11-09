@@ -4,8 +4,6 @@ import java.util.*;
 import logicaExterna.Tiempo;
 
 public class ReporteAnimal{
-
-	public static ArrayList<ReporteAnimal> animalesSistema = new ArrayList<ReporteAnimal>();
 	
 	public ReporteAnimal(String pTipoMascota, String pRaza, String pColor,
 			   			String pTelefonoContacto, String pCorreoContacto,

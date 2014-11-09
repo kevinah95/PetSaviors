@@ -18,7 +18,7 @@ public class Mascotas extends Archivos implements java.io.Serializable{
 		return instance;
 	}
 	
-	public void agregarMascotas(ReporteAnimal nuevaMascota){
+	public static void agregarMascotas(ReporteAnimal nuevaMascota){
 		mascotasRegistradas.add(nuevaMascota);
 	}
 

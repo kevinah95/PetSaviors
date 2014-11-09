@@ -1,6 +1,7 @@
 package logicaInterna;
 
 import java.util.*;
+import logicaExterna.Mascotas;
 import individuos.*;
 
 public class MainPruebaReg {
@@ -31,7 +32,7 @@ public class MainPruebaReg {
 		String[] s = {"as.png","as.png","as.png"};
 		ArrayList<String> fotos= new ArrayList<String>(); 
 		Collections.addAll(fotos, s);
-		for (ReporteAnimal animal : ReporteAnimal.animalesSistema){
+		for (ReporteAnimal animal : Mascotas.mascotasRegistradas){
 			animal.setFotosAnimal(fotos);
 			if(animal.getIdentificacionReportante().equals("1")){
 				System.out.println(animal.toString());

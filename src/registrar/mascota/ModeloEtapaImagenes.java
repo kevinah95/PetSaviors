@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import logicaExterna.Mascotas;
 import logicaInterna.ReporteAnimal;
 import menu.principal.VistaPrincipal;
 import net.coobird.thumbnailator.Thumbnails;
@@ -114,8 +115,8 @@ public class ModeloEtapaImagenes {
 	};
 	
 	public void cargarImagenes(){
-		ReporteAnimal.animalesSistema.stream().filter(predicadoCedula).forEach(p->p.setFotosAnimal(imagenes));
-		ReporteAnimal.animalesSistema.stream().filter(predicadoCedula).forEach(p->System.out.println(p.toString()));
+		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->p.setFotosAnimal(imagenes));
+		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->System.out.println(p.toString()));
 		
 	}
 	

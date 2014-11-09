@@ -1,5 +1,6 @@
 package individuos;
 
+import logicaExterna.Mascotas;
 import logicaInterna.*;
 
 public class Individuo {
@@ -114,7 +115,7 @@ public class Individuo {
 										this.getTelefono(),this.getCorreo(), pLugarContacto,
 										pCondicionEntrada, pChipIdentificacion,
 										pNombreMascota, pRecompensa, pSexo, this.getIdentificacion());
-		ReporteAnimal.animalesSistema.add(animalReportado);
+		Mascotas.agregarMascotas(animalReportado);
 	}
 	
 	@Override
