@@ -29,12 +29,21 @@ public class ControladorEtapaDatos implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==vista.btnAtras){
 			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaSeleccion");
+			vista.limpiarRegistros();
+			VistaEtapaImagenes.getInstance().limpiarDatos();
 		}
 		
 		if (e.getActionCommand().equals("Siguiente")){
-			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaImagenes");
-			vista.getParent().repaint();
-			vista.getParent().revalidate();
+			if (modelo.verificarDatos(vista.txtNombre.getText(),
+					vista.txtChip.getText(), vista.txtDescripcion.getText())) {
+				RegistrarMascota.getInstance().cardlayout.show(
+						RegistrarMascota.getInstance().panelCards,
+						"VistaEtapaImagenes");
+				vista.getParent().repaint();
+				vista.getParent().revalidate();
+			}
+			
+			
 		}
 		
 	}

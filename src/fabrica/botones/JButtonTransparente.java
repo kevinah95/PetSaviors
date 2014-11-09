@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 public class JButtonTransparente extends JButton {
-	public String dirImagen=null;
+	private String dirImagen=null;
 
 	public JButtonTransparente(String nombreBoton) {
 		super(nombreBoton);
@@ -13,6 +13,16 @@ public class JButtonTransparente extends JButton {
 		setContentAreaFilled(false);
 		setBorder(null);
 		setBackground(new Color(0,0,0,0));
+	}
+
+	
+	public String getDirImagen() {
+		return dirImagen;
+	}
+
+	
+	public void setDirImagen(String dirImagen) {
+		this.dirImagen = dirImagen;
 	}
 
 	

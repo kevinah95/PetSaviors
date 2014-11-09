@@ -2,14 +2,21 @@ package registrar.mascota;
 
 
 import java.awt.*;
-
 import java.net.URL;
 import java.text.NumberFormat;
 
 
+
+
+
+
+
 import javax.swing.*;
 
+import javax.swing.text.DefaultStyledDocument;
+
 import fabrica.botones.FabricaBotones;
+import fabrica.botones.JButtonTransparente;
 
 
 public class VistaEtapaImagenes extends JPanel{
@@ -21,71 +28,93 @@ public class VistaEtapaImagenes extends JPanel{
 	String[] Imagenes = new String[6]; 
 	JButton btnAtras;
 	JButton btnGuardar;
-	JButton btnImagen0;
-	JButton btnImagen1;
-	JButton btnImagen2;
-	JButton btnImagen3;
-	JButton btnImagen4;
-	JButton btnImagen5;
+	JButtonTransparente btnImagen0;
+	JButtonTransparente btnImagen1;
+	JButtonTransparente btnImagen2;
+	JButtonTransparente btnImagen3;
+	JButtonTransparente btnImagen4;
+	JButtonTransparente btnImagen5;
 	JLabel lblImagenPrincipal;
-
+	JLabel lblLugar;
 	JTextField txtLugar;
 	JFormattedTextField txtRecompensa;
 	NumberFormat formatoCantidad = NumberFormat.getCurrencyInstance();
+	
 	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 	
 	
 	protected VistaEtapaImagenes() {
+		
+	}
+	
+
+	
+	public static VistaEtapaImagenes getInstance() {
+		if (instance == null) {	instance = new VistaEtapaImagenes(); }
+		return instance;
+	}
+	
+	
+	
+	public void crearVista(){
 		setLayout(null);
 		setSize(600, 600);
-		
-		btnAtras = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Atrás");
-		btnAtras.setForeground(Color.WHITE);
-		btnAtras.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnAtras.setBounds(190, 509, 131, 41);
-		add(btnAtras);
-		
-		btnGuardar = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Guardar");
-		btnGuardar.setForeground(Color.WHITE);
-		btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnGuardar.setBounds(323, 509, 131, 41);
-		add(btnGuardar);
 		
 		JPanel panelSurround = new JPanel();
 		panelSurround.setBounds(57, 5, 470, 560);
 		add(panelSurround);
 		panelSurround.setLayout(null);
 		
+		btnAtras = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Atrás");
+		btnAtras.setForeground(Color.WHITE);
+		btnAtras.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		btnAtras.setBounds(130, 503, 131, 41);
+		panelSurround.add(btnAtras);
+		
+		btnGuardar = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Guardar");
+		btnGuardar.setForeground(Color.WHITE);
+		btnGuardar.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		btnGuardar.setBounds(264, 503, 131, 41);
+		panelSurround.add(btnGuardar);
+		
+		
+		
 		JPanel panelMiniaturas = new JPanel();
         panelMiniaturas.setBackground(Color.WHITE);
 		panelMiniaturas.setBounds(44, 314, 382, 68);
 		panelSurround.add(panelMiniaturas);
 		
-		btnImagen0 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen0 = new JButtonTransparente("");
 		btnImagen0.setName("0");
 		panelMiniaturas.setLayout(new GridLayout(0, 6, 2, 0));
 		btnImagen0.setIcon(new ImageIcon(ICONO_DEFAULT));
 		panelMiniaturas.add(btnImagen0);
 		
-		btnImagen1 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen1 = new JButtonTransparente("");
 		btnImagen1.setName("1");
 		panelMiniaturas.add(btnImagen1);
 		
-		btnImagen2 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen2 = new JButtonTransparente("");
 		btnImagen2.setName("2");
 		panelMiniaturas.add(btnImagen2);
 		
-		btnImagen3 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen3 = new JButtonTransparente("");
 		btnImagen3.setName("3");
 		panelMiniaturas.add(btnImagen3);
 		
-		btnImagen4 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen4 = new JButtonTransparente("");
 		btnImagen4.setName("4");
 		panelMiniaturas.add(btnImagen4);
 		
-		btnImagen5 = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "");
+		btnImagen5 = new JButtonTransparente("");
 		btnImagen5.setName("5");
 		panelMiniaturas.add(btnImagen5);
+		
+		lblLugar = new JLabel("Lugar");
+		lblLugar.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblLugar.setForeground(new Color(27,39,51));
+		lblLugar.setBounds(44, 391, 177, 17);
+		panelSurround.add(lblLugar);
 		
 		txtLugar = new JTextField();
 		txtLugar.setBounds(44, 416, 177, 30);
@@ -121,25 +150,22 @@ public class VistaEtapaImagenes extends JPanel{
 		requestFocusInWindow();
 	}
 	
-	public static VistaEtapaImagenes getInstance() {
-		if (instance == null) {	instance = new VistaEtapaImagenes(); }
-		return instance;
-	}
-	
-	
-	
-	public void crearVista(){
-		
-	}
-	
-	
-	
-	
-
-	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		
-		f.getContentPane().add(new VistaEtapaImagenes());
-		f.setVisible(true);
+	public void limpiarDatos(){
+		btnImagen0.setDirImagen("");
+		btnImagen1.setDirImagen("");
+		btnImagen2.setDirImagen("");
+		btnImagen3.setDirImagen("");
+		btnImagen4.setDirImagen("");
+		btnImagen5.setDirImagen("");
+		btnImagen0.setIcon(new ImageIcon(ICONO_DEFAULT));
+		btnImagen1.setIcon(null);
+		btnImagen2.setIcon(null);
+		btnImagen3.setIcon(null);
+		btnImagen4.setIcon(null);
+		btnImagen5.setIcon(null);
+		lblImagenPrincipal.setIcon(null);
+		lblImagenPrincipal.setText("");
+		txtLugar.setText("");
+		txtRecompensa.setValue(new Double(0.0));
 	}
 }

@@ -36,7 +36,7 @@ public class VistaEtapaDatos extends JPanel{
 	JRadioButton rdbtnHembra;
 	JRadioButton rdbtnMacho;
 	
-	String[] colores= {"Rojo","Azul","Blanco"};
+	String[] colores= {"Rojo","Azul","Verde","Amarillo","Naranja","Morado","Rosa","Marrón","Blanco","Negro"};
 	
 	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 	
@@ -117,6 +117,7 @@ public class VistaEtapaDatos extends JPanel{
 		rdbtnMacho = new JRadioButton("");
 		rdbtnMacho.setContentAreaFilled(false);
 		rdbtnMacho.setBounds(159, 318, 21, 23);
+		rdbtnMacho.setSelected(true);
 		panelDatos.add(rdbtnMacho);
 		
 		rdbtnHembra = new JRadioButton("");
@@ -174,7 +175,6 @@ public class VistaEtapaDatos extends JPanel{
 		lblBGDatos.setBounds(0, 0, 470, 560);
 		panelDatos.add(lblBGDatos);
 		lblBGDatos.setIcon(new ImageIcon(VistaEtapaDatos.class.getResource("/recursos/RegistrarMascota.png")));
-		
 		setVisible(true);
 	}
 	
@@ -182,6 +182,15 @@ public class VistaEtapaDatos extends JPanel{
 		remaningLabel.setText((200 - doc.getLength()) + " caracteres restantes");
 		revalidate();
 		repaint();
+	}
+	
+	public void limpiarRegistros(){
+		txtNombre.setText("");
+		txtChip.setText("");
+		cbColor.setSelectedIndex(0);
+		rdbtnMacho.setSelected(true);
+		txtDescripcion.setText("");
+		
 	}
 	
 	static class ColorArrowUI extends BasicComboBoxUI {

@@ -29,6 +29,7 @@ public class ControladorEtapaSeleccion implements ActionListener{
 		}
 		
 		if (source == vista.btnMascotaEncontrada) {
+			VistaEtapaImagenes.getInstance().lblLugar.setText("Lugar donde la encontró");
 			RegistrarMascota.modoRegistro = RegistrarMascota.ENCONTRADO;
 			RegistrarMascota.actualizarModo();
 			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaDatos");
@@ -37,6 +38,7 @@ public class ControladorEtapaSeleccion implements ActionListener{
 		}
 		
 		if (source == vista.btnMascotaPerdida) {
+			VistaEtapaImagenes.getInstance().lblLugar.setText("Lugar donde se extravió");
 			RegistrarMascota.modoRegistro = RegistrarMascota.EXTRAVIADO;
 			RegistrarMascota.actualizarModo();
 			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaDatos");

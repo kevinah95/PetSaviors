@@ -237,27 +237,27 @@ public class vistaRegistrarme extends JPanel {
 	
 	public boolean verificarDatos(){
 		//Comprobar Nombre
-		if ( txtNombre.getText().matches("\\s*") ){ //Verifica si tiene espacios en blanco
+		if ( txtNombre.getText().trim().isEmpty() ){ //Verifica si tiene espacios en blanco
 			JOptionPane.showMessageDialog(null, "El dato Nombre no ha sido ingresado");	return false;}
 		//Comprobar pApellido
-		if ( txtPApellido.getText().matches("\\s*") ){
+		if ( txtPApellido.getText().trim().isEmpty() ){
 			JOptionPane.showMessageDialog(null, "El dato Primer Apellido no ha sido ingresado"); return false;}
 		//Comprobar sApellido
-		if ( txtSApellido.getText().matches("\\s*") ){
+		if ( txtSApellido.getText().trim().isEmpty() ){
 			JOptionPane.showMessageDialog(null, "El dato Segundo Apellido no ha sido ingresado"); return false;}
-		if (!txtTelefono.getText().matches("\\d*") || txtTelefono.getText().matches("\\s*")){
+		if (!txtTelefono.getText().matches("\\d*") || txtTelefono.getText().trim().isEmpty()){
 			JOptionPane.showMessageDialog(null, "El dato Teléfono solo acepta digitos");	return false;}
 		//Comprobar cédula
-		if (!txtCedula.getText().matches("\\d*") || txtCedula.getText().matches("\\s*")){
+		if (!txtCedula.getText().matches("\\d*") || txtCedula.getText().trim().isEmpty()){
 			JOptionPane.showMessageDialog(null, "El dato Cédula solo acepta digitos");	return false;}
 		//Comprobar Correo
-		if ( txtCorreo.getText().matches("\\s*") ){
+		if ( txtCorreo.getText().trim().isEmpty() ){
 			JOptionPane.showMessageDialog(null, "El dato Correo no ha sido ingresado");	return false;}
 		else{
 			if (verificarEmail() == false){ return false; }
 		}
 		//Comprobar segundo apellido
-		if ( txtContrasenia.getText().matches("\\s*") ){
+		if ( txtContrasenia.getText().trim().isEmpty() ){
 			JOptionPane.showMessageDialog(null, "El dato Contraseña no ha sido ingresado");	return false;}
 		
 		return true;

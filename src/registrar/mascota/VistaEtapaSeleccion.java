@@ -1,6 +1,7 @@
 package registrar.mascota;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -23,6 +24,8 @@ public class VistaEtapaSeleccion extends JPanel{
 	JButton btnMascotaEncontrada;
 	JButton btnSiguiente;
 	JButton btnCancelar;
+	
+	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 
 	protected VistaEtapaSeleccion() {
 		
@@ -53,11 +56,13 @@ public class VistaEtapaSeleccion extends JPanel{
 		btnSiguiente = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Siguiente");
 		btnSiguiente.setForeground(Color.WHITE);
 		btnSiguiente.setEnabled(false);
+		btnSiguiente.setFont(fontTextos);
 		btnSiguiente.setBounds(264, 503, 131, 41);
 		panelSurround.add(btnSiguiente);
 		
 		btnCancelar = FabricaBotones.crearBoton(FabricaBotones.TRANSPARENTE, "Cancelar");
 		btnCancelar.setForeground(Color.WHITE);
+		btnCancelar.setFont(fontTextos);
 		btnCancelar.setBounds(130, 503, 131, 41);
 		panelSurround.add(btnCancelar);
 		

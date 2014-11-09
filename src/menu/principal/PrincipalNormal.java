@@ -36,6 +36,7 @@ public class PrincipalNormal extends JPanel {
 	 * TODO Cambiar Individuo a private
 	 */
 	public static Individuo usuario= null;
+	
 	public PrincipalNormal() {
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);

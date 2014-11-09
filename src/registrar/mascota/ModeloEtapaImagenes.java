@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import net.coobird.thumbnailator.Thumbnails;
@@ -79,11 +80,22 @@ public class ModeloEtapaImagenes {
 		return thumbnail;
 	}
 	
+	
 	public BufferedImage obtenerImagenPrincipal() throws IOException{
 		BufferedImage imagenTemp = null;
 		imagenTemp = ImageIO.read(new File(path));			
 		return imagenTemp;
 	}
+	
+	public boolean verificarLugar(String lugar){
+		if (lugar.trim().isEmpty()){
+			JOptionPane.showMessageDialog(null, "Por favor ingrese el lugar.");
+			return false;
+		}
+		return true;
+	}
+	
+	
 	
 	private static void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
