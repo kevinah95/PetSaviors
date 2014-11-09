@@ -1,25 +1,16 @@
 package registrar.mascota;
 
-<<<<<<< HEAD
+
 import javax.swing.JDialog;
 import javax.swing.JPanel;
-
-
-=======
 import javax.swing.*;
->>>>>>> origin/master
+
 import java.awt.CardLayout;
 
 
-<<<<<<< HEAD
+
 public class RegistrarMascota extends JDialog {
 
-	
-
-=======
-	private static final long serialVersionUID = 1L;
-	private static RegistrarMascota instance = null;
->>>>>>> origin/master
 	public static String modoRegistro= "";
 	public static final String ENCONTRADO = "Encontrado";
 	public static final String EXTRAVIADO = "Extraviado";

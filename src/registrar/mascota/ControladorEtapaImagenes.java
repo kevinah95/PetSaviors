@@ -1,17 +1,15 @@
 package registrar.mascota;
 
-<<<<<<< HEAD
-import java.awt.Window;
+
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-=======
-import java.awt.event.*;
-import java.beans.*;
->>>>>>> origin/master
+
+
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import fabrica.botones.JButtonTransparente;
