@@ -1,13 +1,9 @@
 package individuos;
 
-import java.util.*;
-import com.google.gson.annotations.SerializedName;
 import logicaInterna.*;
 
 public class Individuo {
 
-	public static ArrayList<Individuo> individuosInvolucrados = new ArrayList<Individuo>();
-	
 	public Individuo(String pIdentificacion, String pNombre, String primerApellido,
 					 String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
 					 String pCasaCuna,String pAdoptante,String pAdmin) 

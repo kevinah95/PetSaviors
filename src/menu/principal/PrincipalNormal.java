@@ -11,18 +11,11 @@
 package menu.principal;
 
 import individuos.Individuo;
-
 import javax.swing.*;
-
 import java.awt.*;
-
 import javax.swing.border.*;
-
 import java.awt.event.*;
-
 import render.listas.RenderPrincipal;
-
-
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 

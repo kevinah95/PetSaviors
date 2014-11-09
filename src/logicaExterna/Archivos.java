@@ -1,7 +1,5 @@
 package logicaExterna;
 
-import individuos.*;
-import logicaInterna.*;
 import java.io.*;
 
 public class Archivos {
@@ -23,6 +21,7 @@ public class Archivos {
     	    return true;
 		return false; }
 	
+	/*
 	public static void guardarEstadoActualSistema () {
 		File archivo = new File(dirFileRegist);
 		try {
@@ -41,6 +40,7 @@ public class Archivos {
 			bw.close();}
 		catch(IOException e){
 			e.printStackTrace();}}
+	*/
 	
 	public static void recuperarEstadoSistema (){
 		File archivo = null;

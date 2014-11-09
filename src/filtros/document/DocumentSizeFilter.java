@@ -1,7 +1,5 @@
 package filtros.document;
 
-
-import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.Toolkit;
 

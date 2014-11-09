@@ -2,14 +2,7 @@ package registrar.mascota;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
-
-
-
-
 import java.awt.CardLayout;
-
-
-
 
 public class RegistrarMascota extends JDialog{
 
