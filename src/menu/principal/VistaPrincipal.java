@@ -40,7 +40,7 @@ public class VistaPrincipal extends JPanel {
 	private static VistaPrincipal instance = null;
 	
 	protected VistaPrincipal() {
-	    
+		
 	}
 	
 	public static VistaPrincipal getInstance() {
@@ -60,13 +60,18 @@ public class VistaPrincipal extends JPanel {
 		add(lblDisenadoPor);
 		
 		JPanel panelConfig = new JPanel();
-		panelConfig.setBounds(1070, 98, 51, 43);
+		panelConfig.setBounds(1107, 70, 84, 84);
 		panelConfig.setBackground(new Color(0,0,0,0));
 		add(panelConfig);
 		panelConfig.setLayout(null);
 		
+		JLabel lblEncima = new JLabel("");
+		lblEncima.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/profileEncima.png")));
+		lblEncima.setBounds(0, 0, 84, 84);
+		panelConfig.add(lblEncima);
+		
 		JLabel lblProfile = new JLabel("Profile");
-		lblProfile.setBounds(0, 0, 51, 43);
+		lblProfile.setBounds(16, 20, 51, 43);
 		panelConfig.add(lblProfile);
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProfile.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/profile.png")));

@@ -27,17 +27,7 @@ public class VistaEtapaSeleccion extends JPanel{
 	
 	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 
-	protected VistaEtapaSeleccion() {
-		
-	}
-	
-	public static VistaEtapaSeleccion getInstance() {
-		if (instance == null) {	instance = new VistaEtapaSeleccion(); }
-		return instance;
-	}
-	
-	public void crearVista(){
-		
+	public VistaEtapaSeleccion() {
 		setLayout(null);
 		JPanel panelSurround = new JPanel();
 		panelSurround.setBounds(57, 5, 470, 560);
@@ -71,4 +61,8 @@ public class VistaEtapaSeleccion extends JPanel{
 		panelSurround.add(lblBG);
 		lblBG.setIcon(new ImageIcon(VistaEtapaSeleccion.class.getResource("/recursos/RegistrarMascota3.png")));
 	}
+	
+	
+	
+	
 }

@@ -2,52 +2,67 @@ package registrar.mascota;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+
+
 import java.awt.CardLayout;
 
-public class RegistrarMascota extends JDialog{
 
-	private static RegistrarMascota instance = null;
+public class RegistrarMascota extends JDialog {
+
+	
+
 	public static String modoRegistro= "";
 	public static final String ENCONTRADO = "Encontrado";
 	public static final String EXTRAVIADO = "Extraviado";
-	JPanel panelCards = new JPanel();
-	CardLayout cardlayout = new CardLayout();
-	protected RegistrarMascota() {
-		
-	}
+	static JPanel panelCards = new JPanel();
+	static CardLayout cardlayout = new CardLayout();
+	static VistaEtapaDatos etapadatos;
+	static VistaEtapaImagenes etapaimagenes;
+	static VistaEtapaSeleccion etapaseleccion;
 	
-	public static RegistrarMascota getInstance() {
-		if (instance == null) {	instance = new RegistrarMascota(); }
-		return instance;
-	}
 	
-	public void crearDialog (){
+	
+
+	public RegistrarMascota() {
 		setSize(600, 600);
 		setContentPane(panelCards);
 		panelCards.setLayout(cardlayout);
 		setLocationRelativeTo(null);
 		agregarPaneles();
-		
+//		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+//		addWindowListener(new WindowAdapter() {
+//            public void windowClosing(WindowEvent e) {
+//                System.out.println("closing...");
+//                dispose();
+//                instance = null;
+//            }
+//        });
 		setResizable(false);
 		setVisible(true);
 	}
 	
+	
+	
+	
+	
+	
+	
 	public void agregarPaneles(){
 		
-		VistaEtapaSeleccion etapaseleccion = VistaEtapaSeleccion.getInstance();
-		etapaseleccion.crearVista();
+		etapaseleccion = new VistaEtapaSeleccion();
+		
 		new ControladorEtapaSeleccion();
 		panelCards.add("VistaEtapaSeleccion",etapaseleccion);
 		
 		
-		VistaEtapaDatos etapadatos = VistaEtapaDatos.getInstance();
-		etapadatos.crearVista();
-		new ControladorEtapaDatos();
+		etapadatos = new VistaEtapaDatos();
+		
+		new ControladorEtapaDatos(etapadatos);
 		panelCards.add("VistaEtapaDatos",etapadatos);
 
 		
-		VistaEtapaImagenes etapaimagenes = VistaEtapaImagenes.getInstance();
-		etapaimagenes.crearVista();
+		etapaimagenes = new VistaEtapaImagenes();
+		
 		new ControladorEtapaImagenes();
 		panelCards.add("VistaEtapaImagenes",etapaimagenes);
 		
@@ -55,16 +70,19 @@ public class RegistrarMascota extends JDialog{
 	}
 
 	public static void main(String[] args) {
-		getInstance().crearDialog();
+		RegistrarMascota reg = new RegistrarMascota();
+		
 	}
 	
 	public static void actualizarModo(){
 		if (modoRegistro.equals(ENCONTRADO)){
-			VistaEtapaImagenes.getInstance().txtRecompensa.setEnabled(false);
+			etapaimagenes.txtRecompensa.setEnabled(false);
 		}else if(modoRegistro.equals(EXTRAVIADO)){
-			VistaEtapaImagenes.getInstance().txtRecompensa.setEnabled(true);
+			etapaimagenes.txtRecompensa.setEnabled(true);
+			
 		}
 	}
+	
 
 	
 	public JPanel getPanelCards() {
@@ -75,5 +93,8 @@ public class RegistrarMascota extends JDialog{
 	public void setPanelCards(JPanel panelCards) {
 		this.panelCards = panelCards;
 	}
+
+	
+	
 
 }

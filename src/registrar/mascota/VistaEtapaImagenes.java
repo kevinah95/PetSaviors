@@ -10,7 +10,7 @@ import fabrica.botones.JButtonTransparente;
 
 public class VistaEtapaImagenes extends JPanel{
 
-	private static VistaEtapaImagenes instance = null;
+	
 	
 	public static final URL ICONO_DEFAULT = VistaEtapaImagenes.class.getResource("/recursos/framepeq.png");
 	
@@ -32,20 +32,7 @@ public class VistaEtapaImagenes extends JPanel{
 	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
 	
 	
-	protected VistaEtapaImagenes() {
-		
-	}
-	
-
-	
-	public static VistaEtapaImagenes getInstance() {
-		if (instance == null) {	instance = new VistaEtapaImagenes(); }
-		return instance;
-	}
-	
-	
-	
-	public void crearVista(){
+	public VistaEtapaImagenes() {
 		setLayout(null);
 		setSize(600, 600);
 		
@@ -138,6 +125,7 @@ public class VistaEtapaImagenes extends JPanel{
 		setFocusable(true);
 		requestFocusInWindow();
 	}
+
 	
 	public void limpiarDatos(){
 		btnImagen0.setDirImagen("");

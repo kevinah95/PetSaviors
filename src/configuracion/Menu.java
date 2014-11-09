@@ -98,7 +98,8 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 		setFocusableWindowState(true);
 		setAlwaysOnTop(true);
 		setFocusable(true);
-		setLocation(relativo.getX()-90, relativo.getY()+70);
+		setLocationRelativeTo(relativo);
+		setLocation(getX()-60, getY()+120);
 		addWindowFocusListener(this);
 		setVisible(true);
 	}
@@ -110,7 +111,9 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 	public void valueChanged(ListSelectionEvent e) {
 		if (e.getValueIsAdjusting() == false) {
 			if (listaMenu.getSelectedIndex()==1){
-				RegistrarMascota.getInstance().crearDialog();
+				RegistrarMascota registrarmascota = new RegistrarMascota();
+				
+				
 			}
 		}
 		

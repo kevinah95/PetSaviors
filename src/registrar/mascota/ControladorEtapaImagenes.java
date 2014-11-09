@@ -1,8 +1,8 @@
 package registrar.mascota;
 
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.beans.PropertyChangeEvent;
@@ -22,7 +22,7 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 
 	public ControladorEtapaImagenes() {
 		this.modelo = ModeloEtapaImagenes.getInstance();
-		this.vista = VistaEtapaImagenes.getInstance();
+		this.vista = RegistrarMascota.etapaimagenes;
 		setAcciones(this);
 	}
 	
@@ -42,8 +42,8 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == vista.btnAtras) {
-			RegistrarMascota.getInstance().cardlayout.show(
-					RegistrarMascota.getInstance().panelCards,
+			RegistrarMascota.cardlayout.show(
+					RegistrarMascota.panelCards,
 					"VistaEtapaDatos");
 			vista.limpiarDatos();
 		}
@@ -53,13 +53,14 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 				joinDatos();
 				joinImagenes();
 				modelo.cargarImagenes();
+				javax.swing.SwingUtilities.getWindowAncestor(vista).dispose();
 			}
 
 		}
 	}
 
 	private void joinDatos(){
-		VistaEtapaDatos vistaDatos = VistaEtapaDatos.getInstance();
+		VistaEtapaDatos vistaDatos = RegistrarMascota.etapadatos;
 		String sexo = null;
 		if (vistaDatos.rdbtnMacho.isSelected()) {
 			sexo = vistaDatos.rdbtnMacho.getText();

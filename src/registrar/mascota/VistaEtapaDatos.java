@@ -44,18 +44,9 @@ public class VistaEtapaDatos extends JPanel{
 	public ControlEspecie controlEspecie = ControlEspecie.getInstance();
 	
 	//singleton
-	private static VistaEtapaDatos instance = null;
 	
-	protected VistaEtapaDatos() {
-		
-	}
 	
-	public static VistaEtapaDatos getInstance() {
-		if (instance == null) {	instance = new VistaEtapaDatos(); }
-		return instance;
-	}
-	
-	public void crearVista(){
+	public VistaEtapaDatos() {
 		setLayout(null);
 		setSize(600, 600);
 		JPanel panelDatos = new JPanel();
@@ -177,6 +168,10 @@ public class VistaEtapaDatos extends JPanel{
 		lblBGDatos.setIcon(new ImageIcon(VistaEtapaDatos.class.getResource("/recursos/RegistrarMascota.png")));
 		setVisible(true);
 	}
+	
+	
+	
+	
 	
 	private void updateCount() {
 		remaningLabel.setText((200 - doc.getLength()) + " caracteres restantes");

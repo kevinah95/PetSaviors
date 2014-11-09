@@ -11,12 +11,12 @@ import clasificacion.animales.ControlEspecie;
 public class ControladorEtapaDatos implements ActionListener{
 
 	ModeloEtapaDatos modelo = null;
-	VistaEtapaDatos vista = null;
+	static VistaEtapaDatos vista = null;
 	
 	
-	public ControladorEtapaDatos() {
+	public ControladorEtapaDatos(VistaEtapaDatos etapadatos) {
 		this.modelo = ModeloEtapaDatos.getInstance();
-		this.vista = VistaEtapaDatos.getInstance();
+		this.vista = etapadatos;
 		setAcciones(this);
 	}
 	
@@ -28,16 +28,16 @@ public class ControladorEtapaDatos implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==vista.btnAtras){
-			RegistrarMascota.getInstance().cardlayout.show(RegistrarMascota.getInstance().panelCards,"VistaEtapaSeleccion");
+			RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,"VistaEtapaSeleccion");
 			vista.limpiarRegistros();
-			VistaEtapaImagenes.getInstance().limpiarDatos();
+			RegistrarMascota.etapaimagenes.limpiarDatos();
 		}
 		
 		if (e.getActionCommand().equals("Siguiente")){
 			if (modelo.verificarDatos(vista.txtNombre.getText(),
 					vista.txtChip.getText(), vista.txtDescripcion.getText())) {
-				RegistrarMascota.getInstance().cardlayout.show(
-						RegistrarMascota.getInstance().panelCards,
+				RegistrarMascota.cardlayout.show(
+						RegistrarMascota.panelCards,
 						"VistaEtapaImagenes");
 				vista.getParent().repaint();
 				vista.getParent().revalidate();
@@ -53,7 +53,7 @@ public class ControladorEtapaDatos implements ActionListener{
 class accionCBEspecie implements ActionListener {
     JComboBox<String> cbEspecie;
     ModeloEtapaDatos modelo = new ModeloEtapaDatos();
-    VistaEtapaDatos vista = VistaEtapaDatos.getInstance();
+    VistaEtapaDatos vista = ControladorEtapaDatos.vista;
     public accionCBEspecie(JComboBox<String> cbEspecie) {
         this.cbEspecie = cbEspecie;
     }
