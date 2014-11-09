@@ -11,7 +11,7 @@ public class Asociacion extends Individuo{
 	{
 		super ( pIdentificacion,pNombre,primerApellido,
 			    segundoApellido,pTelefono,pCorreo, pContrasena,
-			    "false","false","false");
+			    "false","false","false","none");
 		setActividadRegistrada(pActividadRegistrada);
 	}
 	private ArrayList<String> actividadRegistrada = new ArrayList<String>();

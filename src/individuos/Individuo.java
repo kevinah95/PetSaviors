@@ -7,7 +7,7 @@ public class Individuo {
 
 	public Individuo(String pIdentificacion, String pNombre, String primerApellido,
 					 String segundoApellido,String pTelefono, String pCorreo,String pContrasena, 
-					 String pCasaCuna,String pAdoptante,String pAdmin) 
+					 String pCasaCuna,String pAdoptante,String pAdmin,String pDirFotoPerfil) 
 	{
 		setIdentificacion(pIdentificacion);
 		setNombre(pNombre);
@@ -20,10 +20,11 @@ public class Individuo {
 		setAdoptante(Boolean.parseBoolean(pAdoptante));
 		setAdministrador(Boolean.parseBoolean(pAdmin));
 		setDatosSistema(new ElementosIndividuoSistema());
+		setDirFotoPerfil(pDirFotoPerfil);
 	}
 	
 	
-	protected String identificacion,nombre,pApellido,sApellido,telefono,contrasena,correo = null; 
+	protected String identificacion,nombre,pApellido,sApellido,telefono,contrasena,correo,dirFotoPerfil = null; 
 	protected boolean casaCuna,adoptante,administrador;
 	protected ElementosIndividuoSistema datosSistema;
 	protected InformacionCasaCuna informacionCasaCuna;
@@ -38,6 +39,10 @@ public class Individuo {
 		return datosSistema;}
 	public void setDatosSistema(ElementosIndividuoSistema datosSistema) {
 		this.datosSistema = datosSistema;}
+	public String getDirFotoPerfil() {
+		return dirFotoPerfil;}
+	public void setDirFotoPerfil(String dirFotoPerfil) {
+		this.dirFotoPerfil = dirFotoPerfil;}
 	public String getIdentificacion() {
 		return identificacion;}
 	public void setIdentificacion(String identificacion) {

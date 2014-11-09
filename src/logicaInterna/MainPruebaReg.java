@@ -20,9 +20,9 @@ public class MainPruebaReg {
 	 */
 	
 	public static void main (String [] args){
-		Individuo manolo = new Individuo ("0101123", "Julián","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false","false","false");	
+		Individuo manolo = new Individuo ("0101123", "Julián","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false","false","false","none");	
 		System.out.println(manolo.toString());
-		Individuo manolo2 = new Individuo ("1", "Kevin","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false","false","false");
+		Individuo manolo2 = new Individuo ("1", "Kevin","Méndez","Oconitrillo","22152150", "menoc.sk27@gmail.com", "contraseña12345", "false","false","false","none");
 		manolo.reportarMascota("Perro","Huski",
 								"Blanco","Afuerita de mi chante",
 								"Encontrado","0101","No","124124","macho");
