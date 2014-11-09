@@ -1,37 +1,16 @@
 package registrar.CasaCuna;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Font;
-
-import javax.swing.BorderFactory;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.ListCellRenderer;
-import javax.swing.plaf.ComboBoxUI;
-import javax.swing.plaf.basic.BasicArrowButton;
-import javax.swing.plaf.basic.BasicComboBoxUI;
-import javax.swing.text.DefaultStyledDocument;
-
-import render.listas.RenderPrincipal;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.plaf.*;
+import javax.swing.plaf.basic.*;
+import javax.swing.text.*;
 import clasificacion.animales.ControlEspecie;
 import fabrica.botones.FabricaBotones;
 import filtros.document.DocumentSizeFilter;
 
 public class VistaCasaCuna extends JFrame {
+	private static final long serialVersionUID = 1L;
 	public VistaCasaCuna() {
 		setBackground(new Color(102, 204, 204));
 	}

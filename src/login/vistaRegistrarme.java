@@ -14,13 +14,14 @@ import individuos.Individuo;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.io.IOException;
 import java.util.regex.*;
 
 import logicaExterna.Usuarios;
 
 
 public class vistaRegistrarme extends JPanel {
+
+	private static final long serialVersionUID = 1L;
 	private JTextField txtNombre;
 	private JTextField txtPApellido;
 	private JTextField txtCorreo;
@@ -162,10 +163,7 @@ public class vistaRegistrarme extends JPanel {
 		panel.add(lblBG);
 		lblBG.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblBG.setIcon(new ImageIcon(vistaRegistrarme.class.getResource("/recursos/Registrar.png")));
-		
-		
-		
-		
+	
 	}
 	
 	public void registrarNuevoUsuario(){
@@ -180,7 +178,7 @@ public class vistaRegistrarme extends JPanel {
 		Individuo nuevoUsuario = new Individuo(pIdentificacion, pNombre, primerApellido, 
 				segundoApellido,pTelefono, pCorreo, pContrasena, "false","false","false");
 		usuarios.agregarUsuario(nuevoUsuario);
-		usuarios.actualizarJsonUsuarios();
+		usuarios.actualizarJson();
 		
 	}
 	

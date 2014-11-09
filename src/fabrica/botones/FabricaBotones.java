@@ -1,10 +1,6 @@
 package fabrica.botones;
 
-import java.io.IOException;
-
 import javax.swing.JButton;
-
-
 
 public class FabricaBotones {
 

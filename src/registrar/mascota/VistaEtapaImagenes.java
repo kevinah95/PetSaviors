@@ -4,11 +4,10 @@ import java.awt.*;
 import java.net.URL;
 import java.text.NumberFormat;
 import javax.swing.*;
-
-import fabrica.botones.FabricaBotones;
-import fabrica.botones.JButtonTransparente;
+import fabrica.botones.*;
 
 public class VistaEtapaImagenes extends JPanel{
+	private static final long serialVersionUID = 1L;
 
 	private static VistaEtapaImagenes instance = null;
 	

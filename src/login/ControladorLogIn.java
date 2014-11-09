@@ -1,18 +1,10 @@
 package login;
 
 import individuos.Individuo;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.function.Predicate;
-
 import javax.swing.JOptionPane;
-
 import menu.principal.VistaPrincipal;
-
-
-
-
 
 public class ControladorLogIn implements ActionListener{
 	

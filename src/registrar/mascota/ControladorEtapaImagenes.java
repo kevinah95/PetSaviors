@@ -1,16 +1,9 @@
 package registrar.mascota;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
+import java.awt.event.*;
+import java.beans.*;
 import java.io.IOException;
-
 import javax.swing.ImageIcon;
-
 import fabrica.botones.JButtonTransparente;
 
 public class ControladorEtapaImagenes implements ActionListener, MouseListener,

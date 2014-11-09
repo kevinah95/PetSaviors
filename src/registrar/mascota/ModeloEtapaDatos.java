@@ -1,7 +1,6 @@
 package registrar.mascota;
 
 import javax.swing.JOptionPane;
-
 import clasificacion.animales.ControlEspecie;
 
 public class ModeloEtapaDatos {
