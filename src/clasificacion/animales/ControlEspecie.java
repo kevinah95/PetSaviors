@@ -2,6 +2,9 @@ package clasificacion.animales;
 
 import java.io.*;
 import java.util.*;
+
+import javax.swing.JOptionPane;
+
 import com.google.gson.*;
 
 public class ControlEspecie {
@@ -37,15 +40,25 @@ public class ControlEspecie {
 	}
 	
 	private static void cargarEspecies(){
-		JsonParser parser = new JsonParser();
+		try {
+			verificarArchivo();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		String representacion = null;
 		try { representacion = representacion(); } catch (IOException e) { e.printStackTrace();}
-	    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
-	    for(JsonElement obj : jArray )
-	    {
-	        Especie individuo = prettyGson.fromJson( obj , Especie.class);
-	        especiesRegistradas.add(individuo);
-	    }
+		if(!representacion.trim().isEmpty()){
+			JsonParser parser = new JsonParser();
+		    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
+		    for(JsonElement obj : jArray )
+		    {
+		        Especie individuo = prettyGson.fromJson( obj , Especie.class);
+		        especiesRegistradas.add(individuo);
+		    }
+		}
+		
 	}
 	
 	private static String representacion() throws IOException {
@@ -62,6 +75,17 @@ public class ControlEspecie {
 		} finally {
 			br.close();
 		}
+	}
+	
+	public static void verificarArchivo() throws IOException { 
+		File file = new File(dirFileEspecies);
+		
+		
+    	if (!file.exists() && !file.isDirectory()) {
+    		file.getParentFile().mkdirs();
+    		file.createNewFile();
+    		JOptionPane.showMessageDialog(null, "Directorio CREADO: "+file.getCanonicalPath());
+    	} 
 	}
 
 }

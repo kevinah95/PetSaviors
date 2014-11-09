@@ -2,54 +2,33 @@
   {
     "identificacion": "1",
     "nombre": "Kevin",
-    "pApellido": "hdew",
-    "sApellido": "dqqd",
-    "telefono": "12324",
+    "pApellido": "Hernández",
+    "sApellido": "Rostrán",
+    "telefono": "123",
     "contrasena": "1",
-    "correo": "k@gmailc.om",
-    "casaCuna": false
-  },
-  {
-    "identificacion": "3124243523",
-    "nombre": "Jasson",
-    "pApellido": "Moya",
-    "sApellido": "Alvarez",
-    "telefono": "123123",
-    "contrasena": "asdasdasf",
-    "correo": "j@gmail.com",
-    "casaCuna": false
-  },
-  {
-    "identificacion": "364563456",
-    "nombre": "Julián",
-    "pApellido": "Mendez",
-    "sApellido": "Oconitrillo",
-    "telefono": "35345346",
-    "contrasena": "eqweqeq",
-    "correo": "j@g.com",
-    "casaCuna": false
-  },
-  {
-    "identificacion": "12312",
-    "nombre": "jasdklasjkdaslk",
-    "pApellido": "jdklasjdlkasjdlk",
-    "sApellido": "lkjklajslkf",
-    "telefono": "24234",
-    "contrasena": "dasdasdas",
-    "correo": "j@g.vom",
-    "casaCuna": false
-  },
-  {
-    "identificacion": "6",
-    "nombre": "j",
-    "pApellido": "j",
-    "sApellido": "j",
-    "telefono": "4",
-    "contrasena": "dsa",
-    "correo": "j@g.com",
+    "correo": "kevinah95@gmail.com",
     "casaCuna": false,
+    "adoptante": false,
+    "administrador": false,
     "datosSistema": {
       "identificadorIndividuo": 1,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "123",
+    "nombre": "asdf",
+    "pApellido": "asdffads",
+    "sApellido": "fsad",
+    "telefono": "3213123",
+    "contrasena": "fasf",
+    "correo": "f@g.com",
+    "casaCuna": false,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 2,
       "eventosParticipado": [],
       "reportes": []
     }

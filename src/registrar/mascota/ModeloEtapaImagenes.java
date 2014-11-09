@@ -4,9 +4,11 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.function.Predicate;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 import logicaExterna.Mascotas;
 import logicaInterna.ReporteAnimal;
 import menu.principal.VistaPrincipal;
@@ -25,9 +27,15 @@ public class ModeloEtapaImagenes {
 		
 	}
 	
-	public static ModeloEtapaImagenes getInstance() {
+	public static ModeloEtapaImagenes getInstance()  {
 		if (instance == null) {
 			instance = new ModeloEtapaImagenes();
+			try {
+				verificarArchivo();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			limpiarDirTemporal();
 		}
 		return instance;
@@ -135,6 +143,15 @@ public class ModeloEtapaImagenes {
 	private static void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
 			file.delete();
+	}
+	
+	public static void verificarArchivo() throws IOException { 
+		
+    	if (!dirTemporal.exists()) {
+    		dirTemporal.mkdirs();
+    	    System.out.println(dirTemporal.getParentFile());
+    	    JOptionPane.showMessageDialog(null, "Directorio CREADO: "+dirTemporal.getCanonicalPath());
+    	} 
 	}
 	
 	

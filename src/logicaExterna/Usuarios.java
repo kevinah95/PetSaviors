@@ -1,9 +1,12 @@
 package logicaExterna;
 
 import individuos.Individuo;
+
 import java.io.*;
 import java.util.*;
+
 import javax.swing.*;
+
 import com.google.gson.*;
 
 public class Usuarios extends Archivos implements java.io.Serializable {
@@ -37,15 +40,24 @@ public class Usuarios extends Archivos implements java.io.Serializable {
 	}
 	
 	public void cargar(){
-		JsonParser parser = new JsonParser();
+		try {
+			verificarArchivo();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		String representacion = null;
 		try { representacion = representacion(); } catch (IOException e) { e.printStackTrace();}
-	    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
-	    for(JsonElement obj : jArray )
-	    {
-	        Individuo individuo = prettyGson.fromJson( obj , Individuo.class);
-	        usuariosRegistrados.add(individuo);
-	    }
+		if(!representacion.trim().isEmpty()){
+			JsonParser parser = new JsonParser();
+		    JsonArray jArray = parser.parse(representacion).getAsJsonArray();
+		    for(JsonElement obj : jArray )
+		    {
+		        Individuo individuo = prettyGson.fromJson( obj , Individuo.class);
+		        usuariosRegistrados.add(individuo);
+		    }
+		}
+		
 	}
 	
 	public String representacion() throws IOException {
@@ -66,10 +78,12 @@ public class Usuarios extends Archivos implements java.io.Serializable {
 	
 	public void verificarArchivo() throws IOException { 
 		File file = new File(dirFileUsuarios);
-    	if (file.getParentFile().mkdirs()) {
-    	    file.createNewFile();
-    	    System.out.println(file.getParentFile());
-    	    JOptionPane.showMessageDialog(null, "Directorio CREADO: "+file.getCanonicalPath());
+		
+		
+    	if (!file.exists() && !file.isDirectory()) {
+    		file.getParentFile().mkdirs();
+    		file.createNewFile();
+    		JOptionPane.showMessageDialog(null, "Directorio CREADO: "+file.getCanonicalPath());
     	} 
 	}
 }

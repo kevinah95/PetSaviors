@@ -74,15 +74,19 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 		} else {
 			raza = vistaDatos.cbRaza.getSelectedItem().toString();
 		}
+		String especie = null;
+		if (vistaDatos.cbEspecie.getSelectedItem() == null) {
+			especie = "";
+		} else {
+			especie = vistaDatos.cbEspecie.getSelectedItem().toString();
+		}
+		
 		modelo.cargarDatos(RegistrarMascota.modoRegistro,
-				vistaDatos.txtNombre.getText(), vistaDatos.txtChip
-						.getText(), vistaDatos.cbColor
-						.getSelectedItem().toString(),
-				vistaDatos.cbEspecie.getSelectedItem().toString(),
-				raza, sexo,
-				vistaDatos.txtDescripcion.getText(), vista.txtLugar
-						.getText(), String.valueOf(vista.txtRecompensa
-						.getValue()));
+				vistaDatos.txtNombre.getText(), vistaDatos.txtChip.getText(),
+				vistaDatos.cbColor.getSelectedItem().toString(), especie, raza,
+				sexo, vistaDatos.txtDescripcion.getText(),
+				vista.txtLugar.getText(),
+				String.valueOf(vista.txtRecompensa.getValue()));
 	}
 	
 	private void joinImagenes(){
