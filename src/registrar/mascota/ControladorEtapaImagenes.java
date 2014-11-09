@@ -11,7 +11,10 @@ import java.beans.PropertyChangeListener;
 
 
 import java.io.IOException;
+
 import javax.swing.ImageIcon;
+
+import logicaExterna.Mascotas;
 import fabrica.botones.JButtonTransparente;
 
 public class ControladorEtapaImagenes implements ActionListener, MouseListener,
@@ -52,10 +55,14 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 		if (e.getSource() == vista.btnGuardar) {
 			if (modelo.verificarLugar(vista.txtLugar.getText())) {
 				joinDatos();
-				joinImagenes();
+				try {
+					modelo.copiarTempToImagenes();
+				} catch (IOException e1) { e1.printStackTrace(); }
 				modelo.cargarImagenes();
 				javax.swing.SwingUtilities.getWindowAncestor(vista).dispose();
 			}
+			modelo.limpiarDirTemporal();
+			Mascotas.getInstance().actualizarJson();
 
 		}
 	}
@@ -89,14 +96,7 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 				String.valueOf(vista.txtRecompensa.getValue()));
 	}
 	
-	private void joinImagenes(){
-		modelo.anadirImagenes(vista.btnImagen0.getDirImagen(),
-				vista.btnImagen1.getDirImagen(),
-				vista.btnImagen2.getDirImagen(),
-				vista.btnImagen3.getDirImagen(),
-				vista.btnImagen4.getDirImagen(),
-				vista.btnImagen5.getDirImagen());
-	}
+	
 	
 	
 

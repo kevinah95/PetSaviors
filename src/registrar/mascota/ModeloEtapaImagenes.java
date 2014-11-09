@@ -3,11 +3,14 @@ package registrar.mascota;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Predicate;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.apache.commons.io.FileUtils;
 
 import logicaExterna.Mascotas;
 import logicaInterna.ReporteAnimal;
@@ -21,7 +24,8 @@ public class ModeloEtapaImagenes {
 	private static final boolean CORRECTA = true;
 	private static final boolean INCORRECTA = false;
 	private static final File dirTemporal = new File("Pet_Saviors/temp");
-	private String indexImagen = null;
+	private static final File dirImagenes = new File("Pet_Saviors/imagenes");
+	private static int indexImagen = 0;
 	private ArrayList<String> imagenes = new ArrayList<String>();
 	protected ModeloEtapaImagenes() {
 		
@@ -37,6 +41,7 @@ public class ModeloEtapaImagenes {
 				e.printStackTrace();
 			}
 			limpiarDirTemporal();
+			indexImagen = getIndice();
 		}
 		return instance;
 	}
@@ -69,12 +74,13 @@ public class ModeloEtapaImagenes {
 	}
 	
 	private void guardarCopiaRedimensionada() throws IOException{
-		indexImagen = String.valueOf(ControladorEtapaImagenes.btnTemp.getName());
 		Thumbnails.of(path)
         .size(300, 300)
         .outputFormat("png")
         .toFile(new File( ""+dirTemporal+"\\img"+String.valueOf(indexImagen) ));
 		path= ""+dirTemporal+"\\img"+String.valueOf(indexImagen)+".png";
+		System.out.println(path);
+		indexImagen++;
 	}
 	
 	public BufferedImage obtenerImagen() throws IOException{
@@ -125,33 +131,45 @@ public class ModeloEtapaImagenes {
 	public void cargarImagenes(){
 		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->p.setFotosAnimal(imagenes));
 		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->System.out.println(p.toString()));
+	}
+	
+	
+	
+	public static void limpiarDirTemporal(){
+		for(File file: dirTemporal.listFiles()) 
+			file.delete();
 		
 	}
 	
-	public void anadirImagenes(String imagen0, String imagen1, String imagen2,
-			String imagen3, String imagen4, String imagen5) {
-		imagenes.clear();
-		imagenes.add(imagen0);
-		imagenes.add(imagen1);
-		imagenes.add(imagen2);
-		imagenes.add(imagen3);
-		imagenes.add(imagen4);
-		imagenes.add(imagen5);
-
+	public static  int getIndice(){
+		int indice = dirImagenes.listFiles().length;
+		return indice;
 	}
 	
-	private static void limpiarDirTemporal(){
-		for(File file: dirTemporal.listFiles()) 
-			file.delete();
+	public void copiarTempToImagenes() throws IOException{
+		imagenes.clear();
+		FileUtils.copyDirectory(dirTemporal, dirImagenes);
+		for (File file : dirTemporal.listFiles()) {
+			String temp = file.getPath();
+			imagenes.add(temp.replace("temp", "imagenes"));
+			
+			
+			
+		}
 	}
 	
 	public static void verificarArchivo() throws IOException { 
 		
     	if (!dirTemporal.exists()) {
     		dirTemporal.mkdirs();
-    	    System.out.println(dirTemporal.getParentFile());
+    	    
     	    JOptionPane.showMessageDialog(null, "Directorio CREADO: "+dirTemporal.getCanonicalPath());
     	} 
+    	
+    	if (!dirImagenes.exists()) {
+    		dirImagenes.mkdirs();
+    	    JOptionPane.showMessageDialog(null, "Directorio CREADO: "+dirImagenes.getCanonicalPath());
+    	}
 	}
 	
 	

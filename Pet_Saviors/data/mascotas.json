@@ -1,0 +1,28 @@
+[
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "kevinah95@gmail.com",
+    "lugarContacto": "fewfef",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img0.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "",
+      "chipIdentificacion": "ewfewf",
+      "nombreMascota": "fewfefef"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  }
+]
