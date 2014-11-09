@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 import javax.swing.JOptionPane;
 
 import logicaExterna.Usuarios;
+import menu.principal.PrincipalNormal;
 
 
 public class ModeloLogIn {
@@ -33,12 +34,14 @@ public class ModeloLogIn {
 			JOptionPane.showMessageDialog(null, "No hay usuarios registrados en el sistema");
 			
 		}else{
-			usuarios.usuariosRegistrados.stream().filter(predicadoFull).forEach(p->concederAcceso());
+			usuarios.usuariosRegistrados.stream().filter(predicadoFull).forEach(p->concederAcceso(p));
+			
 		}
 	}
 	
-	private void concederAcceso(){
+	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
+		PrincipalNormal.usuario = individuo;
 	}
 	
 	

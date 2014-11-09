@@ -10,6 +10,8 @@
 
 package menu.principal;
 
+import individuos.Individuo;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -20,16 +22,20 @@ import java.awt.event.*;
 
 import render.listas.RenderPrincipal;
 
-import javax.swing.*;
 
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 
 public class PrincipalNormal extends JPanel {
+	
+	
 	public static JList listaMenu;
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
-	
+	/**
+	 * TODO Cambiar Individuo a private
+	 */
+	public static Individuo usuario= null;
 	public PrincipalNormal() {
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);

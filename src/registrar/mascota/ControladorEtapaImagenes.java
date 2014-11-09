@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import fabrica.botones.FabricaBotones;
 import fabrica.botones.JButtonTransparente;
 
-public class ControladorEtapaImagenes implements ActionListener,KeyListener,MouseListener{
+public class ControladorEtapaImagenes implements ActionListener,MouseListener{
 
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
@@ -30,12 +30,7 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener,Mous
 		vista.btnAtras.addActionListener(escuchador);
 		vista.btnGuardar.addActionListener(escuchador);
 		
-		vista.btnImagen0.addKeyListener(this);
-		vista.btnImagen1.addKeyListener(this);
-		vista.btnImagen2.addKeyListener(this);
-		vista.btnImagen3.addKeyListener(this);
-		vista.btnImagen4.addKeyListener(this);
-		vista.btnImagen5.addKeyListener(this);
+		
 		
 		vista.btnImagen0.addMouseListener(this);
 		vista.btnImagen1.addMouseListener(this);
@@ -59,24 +54,7 @@ public class ControladorEtapaImagenes implements ActionListener,KeyListener,Mous
 	}
 
 	
-	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode()== KeyEvent.VK_LEFT){
-			System.out.println("Izq");
-			
-		}		
-	}
-
 	
-	public void keyReleased(KeyEvent e) {
-		
-		
-	}
-
-	
-	public void keyTyped(KeyEvent e) {
-		
-		
-	}
 
 	
 	public void mouseClicked(MouseEvent e) {
