@@ -1,9 +1,16 @@
 package correosRedesSociales;
 //Basado en el ejemplo de http://xmeng.wordpress.com/2011/07/10/how-to-handle-sign-in-with-twitter-using-twitter4j/
 import twitter4j.*;
-import twitter4j.auth.*;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
-import java.io.*;
+
+import java.awt.Desktop;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
  
 public final class TwitterPost {
  
@@ -42,8 +49,8 @@ public final class TwitterPost {
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                  
                 while (null == accessToken) {
-                    System.out.println("Open the following URL and grant access to your account:");
-                    System.out.println(requestToken.getAuthorizationURL());
+                    URL url= new URL(requestToken.getAuthorizationURL());
+                    openWebpage(url);
                     System.out.print("Enter the PIN(if available) and hit enter after you granted access.[PIN]:");
                     String pin = br.readLine();
                 
@@ -88,6 +95,25 @@ public final class TwitterPost {
             ioe.printStackTrace();
             System.out.println("Failed to read the system input.");
             System.exit(-1);
+        }
+    }
+    //Funcion Auxiliar de openWebpage para URL
+    public static void openWebpage(java.net.URI string) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(string);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    //Abre el navegador predeterminado con el URL que reciba
+    public static void openWebpage(URL url) {
+        try {
+            openWebpage(url.toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 }
