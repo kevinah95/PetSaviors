@@ -62,8 +62,8 @@ public class ModeloEtapaImagenes {
 				"jpg", "png", "gif", "bmp");
 		
 		fileChooser.setFileFilter(filter);
-
-		int returnValue = fileChooser.showOpenDialog(null);
+		
+		int returnValue = fileChooser.showOpenDialog(RegistrarMascota.etapaimagenes);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fileChooser.getSelectedFile();
 			

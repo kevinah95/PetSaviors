@@ -37,7 +37,9 @@ public class RegistrarMascota extends JDialog {
 //                instance = null;
 //            }
 //        });
-		
+		setModal (true);
+		setAlwaysOnTop(true);
+		setModalityType (ModalityType.APPLICATION_MODAL);
 		setResizable(false);
 		setVisible(true);
 	}
