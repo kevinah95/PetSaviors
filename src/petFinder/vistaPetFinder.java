@@ -1,7 +1,9 @@
 package petFinder;
 
 import java.awt.*;
+
 import javax.swing.*;
+
 import java.awt.event.*;
 
 /*
@@ -47,6 +49,11 @@ public class vistaPetFinder extends JPanel{
 		btnMisMascotas.setContentAreaFilled(false);
 		btnMisMascotas.setBorder(null);
 		
+		btnPorCategoria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				cardsPanel.show(contenedor, "Mascotas Duenio");
+			}
+		});
 		btnPorCategoria.setIcon(new ImageIcon(vistaPetFinder.class.getResource("/recursos/BotonPorCategoria.png")));
 		btnPorCategoria.setContentAreaFilled(false);
 		btnPorCategoria.setBorder(null);
@@ -65,6 +72,8 @@ public class vistaPetFinder extends JPanel{
 		VentanaMisMascotas misMascotas = new VentanaMisMascotas();
 		contenedor.add("Mis Mascotas", misMascotas);
 		
+		VentanaMascotaDuenio mascotasDuenio = new VentanaMascotaDuenio();
+		contenedor.add("Mascotas Duenio", mascotasDuenio);
 		//cardsPanel.show(contenedor, "Mis Mascotas");
 	}
 		

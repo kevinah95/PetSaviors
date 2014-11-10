@@ -11,11 +11,20 @@
 package menu.principal;
 
 import individuos.Individuo;
+
 import javax.swing.*;
+
 import java.awt.*;
+
 import javax.swing.border.*;
+
+import misReportes.VentanaMisReportes;
+
 import java.awt.event.*;
+
 import render.listas.RenderPrincipal;
+import reportesActivos.VentanaReportesActivos;
+import petFinder.VentanaMisMascotas;
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
 
@@ -86,6 +95,14 @@ public class VistaPrincipal extends JPanel {
 		petFinder.setBounds(0,0,766,458);
 		panel.add("Pet Finder", petFinder);
 		
+		VentanaReportesActivos reportesActivos = new VentanaReportesActivos();
+		reportesActivos.setBounds(0,0,766,458);
+		panel.add("Reportes Activos", reportesActivos);
+		
+		VentanaMisReportes misReportes = new VentanaMisReportes();
+		misReportes.setBounds(0,0,766,458);
+		panel.add("Mis Reportes", misReportes);
+		
 		JPanel panelLista = new JPanel();
 		panelLista.setBounds(869, 0, 227, 230);
 		panelSurround.add(panelLista);
@@ -105,6 +122,7 @@ public class VistaPrincipal extends JPanel {
 	    listaMenu.setBorder(null);
 	    listaMenu.setSelectedIndex(0);
 	    listaMenu.setCellRenderer(renderer);
+	    cardsPrincipal.show(panel, "Reportes Activos");
 	    listaMenu.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseReleased(MouseEvent e) {}
@@ -119,10 +137,14 @@ public class VistaPrincipal extends JPanel {
 				int identificador = listaMenu.getSelectedIndex();
 				switch(identificador) {
 					case 0:
-						System.out.println("El uno");
+						cardsPrincipal.show(panel, "Reportes Activos");
+						repaint();
+						revalidate();
 						break;
 					case 1:
-						System.out.println("El dos");
+						cardsPrincipal.show(panel, "Mis Reportes");
+						repaint();
+						revalidate();
 						break;
 					case 2:
 						cardsPrincipal.show(panel, "Pet Finder");
@@ -149,6 +171,8 @@ public class VistaPrincipal extends JPanel {
 	    	public void actionPerformed(ActionEvent e) {
 	    		vistaPetFinder.cardsPanel.show(vistaPetFinder.contenedor, "PetFinder");
 	    		panelImagenAnimal.removeAll();
+	    		panelImagenAnimal.repaint();
+	    		panelImagenAnimal.revalidate();
 	    	}
 	    });
 	    btnAtras.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/BotonAtras.png")));

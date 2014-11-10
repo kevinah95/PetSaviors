@@ -1,20 +1,32 @@
-package petFinder;
+package misReportes;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableRowSorter;
 
-import net.coobird.thumbnailator.Thumbnails;
 import logicaExterna.Mascotas;
-import menu.principal.*;
+import menu.principal.VistaPrincipal;
+import net.coobird.thumbnailator.Thumbnails;
 
-public class VentanaMisMascotas extends JPanel {
-	private static final long serialVersionUID = 1L;
-	//Esta clase va a contener una JTable con los animales que tiene el usuario.
+public class VentanaMisReportes extends JPanel{
 	public static JTable tabla;
 	private  DefaultTableModel modelo;
 	private JPanel panelContenedor = new JPanel();
@@ -23,7 +35,7 @@ public class VentanaMisMascotas extends JPanel {
 	
 	public static ArrayList<String> listaPath = new ArrayList<>();
 	
-	public VentanaMisMascotas() {
+	public VentanaMisReportes() {
 		setSize(766, 458);
 		setBackground(new Color(155, 196, 188));
 		//setLayout(null);
@@ -36,7 +48,7 @@ public class VentanaMisMascotas extends JPanel {
 		
 		panelContenedor.removeAll();
 		
-		String col[] = {"Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre"};
+		String col[] = {"Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre", "Estado"};
 		modelo = new DefaultTableModel(col, 0){
 			private static final long serialVersionUID = 1L;
 
@@ -76,6 +88,7 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.getColumn("Sexo").setCellRenderer(normal);
 		tabla.getColumn("Chip ID").setCellRenderer(normal);
 		tabla.getColumn("Nombre").setCellRenderer(normal);
+		tabla.getColumn("Estado").setCellRenderer(normal);
 		panelContenedor.setLayout(new CardLayout(0, 0));
 		
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -94,25 +107,23 @@ public class VentanaMisMascotas extends JPanel {
 			//if(instanciaVP.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
 			//	System.out.println("Diay pos soy yo");
 			//}
-			if(totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada().toLowerCase().equals("extraviado")) {
+			String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
+			String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
+			String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
+			String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
+			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
+			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
+			String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
 			
-				String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
-				String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
-				String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
-				String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
-				String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
-				String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
-				
-				String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
-				if(!pathImagen.isEmpty()) {
-					listaPath.add(pathImagen);
-				}
-				else {
-					listaPath.add("");
-				}
-				Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre};
-				modelo.addRow(nuevaFila);
+			String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+			if(!pathImagen.isEmpty()) {
+				listaPath.add(pathImagen);
 			}
+			else {
+				listaPath.add("");
+			}
+			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
+			modelo.addRow(nuevaFila);
 		}
 	}
 	
@@ -129,7 +140,7 @@ public class VentanaMisMascotas extends JPanel {
 				setBackground(new Color(127, 200, 176));
 				if(isSelected) {
 					setBackground(new Color(200, 232, 221));
-					String path = VentanaMisMascotas.listaPath.get(tabla.convertRowIndexToModel(tabla.getSelectedRow()));
+					String path = VentanaMisReportes.listaPath.get(tabla.convertRowIndexToModel(tabla.getSelectedRow()));
 					if(!path.equals("")) {
 						VistaPrincipal.panelImagenAnimal.removeAll();
 						JLabel labelImagen = new JLabel();
