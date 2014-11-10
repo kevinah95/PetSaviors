@@ -19,6 +19,8 @@ public class vistaIngreso extends JFrame {
 	static CardLayout cardlayout = new CardLayout();
 	static JPanel panelCards;
 	
+	static VistaPrincipal principalnormal;
+	
 	public vistaIngreso() {
 		setSize(1280, 720);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,8 +48,7 @@ public class vistaIngreso extends JFrame {
 		panelCards.add("Ingresar",login);
 		
 		
-		VistaPrincipal principalnormal = VistaPrincipal.getInstance();
-		principalnormal.crearVista();
+		principalnormal = new VistaPrincipal();
 		panelCards.add("VistaPrincipal",principalnormal);
 		
 		cardlayout.show(panelCards, "Ingresar");

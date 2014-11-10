@@ -78,8 +78,6 @@ public class Usuarios extends Archivos implements java.io.Serializable {
 	
 	public void verificarArchivo() throws IOException { 
 		File file = new File(dirFileUsuarios);
-		
-		
     	if (!file.exists() && !file.isDirectory()) {
     		file.getParentFile().mkdirs();
     		file.createNewFile();

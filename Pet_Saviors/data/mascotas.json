@@ -4,7 +4,9 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "fasdfasdf",
-    "fotosAnimal": [],
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
     "condicionEntrada": "Encontrado",
     "recompensa": 0.0,
     "animalReportado": {
@@ -16,6 +18,110 @@
       "sexo": "",
       "chipIdentificacion": "fdsa",
       "nombreMascota": "fasdf"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "asdfasfasfdsadf",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Alaskan Dwarf (Enano de Alaska)",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "dfafsd",
+      "nombreMascota": "fasdfasdfafsd"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fasdfasdfasdf",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 8.3127931274671278E18,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pokémon",
+      "raza": "Abra",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "dsaf",
+      "nombreMascota": "asdfasdfafsd"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "sadffsad",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "sadf",
+      "nombreMascota": "asdf"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fsadfasd",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "fsdaf",
+      "nombreMascota": "asdf"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",

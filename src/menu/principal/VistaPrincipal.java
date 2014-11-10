@@ -26,23 +26,11 @@ public class VistaPrincipal extends JPanel {
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
 	
-	/**
-	 * TODO Cambiar Individuo a private
-	 */
-	private Individuo usuario= null;
+	private static Individuo usuario= null;
 	
-	private static VistaPrincipal instance = null;
 	
-	protected VistaPrincipal() {
-		
-	}
 	
-	public static VistaPrincipal getInstance() {
-		if (instance == null) {	instance = new VistaPrincipal(); }
-		return instance;
-	}
-
-	public void crearVista(){
+	public VistaPrincipal() {
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);
 	    setLayout(null);
@@ -171,6 +159,10 @@ public class VistaPrincipal extends JPanel {
 	    add(btnAtras);
 	}
 	
+	
+
+	
+	
 	public static void main(String[] args) {
 		JFrame f = new JFrame();
 		f.setSize(1280, 720);
@@ -185,7 +177,7 @@ public class VistaPrincipal extends JPanel {
 	/**
 	 * @return the usuario
 	 */
-	public Individuo getUsuario() {
+	public static Individuo getUsuario() {
 		return usuario;
 	}
 

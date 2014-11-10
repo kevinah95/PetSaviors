@@ -115,7 +115,6 @@ public class ModeloEtapaImagenes {
 			String color, String tipoMascota, String razaMascota, String sexo,
 			String descripcion, String lugar, String recompensa) {
 		VistaPrincipal
-				.getInstance()
 				.getUsuario()
 				.reportarMascota(tipoMascota, razaMascota, color, lugar,
 						modoRegistro, chip, nombre, recompensa, sexo);
@@ -124,7 +123,7 @@ public class ModeloEtapaImagenes {
 	
 	Predicate<ReporteAnimal> predicadoCedula = new Predicate<ReporteAnimal>() {
 		public boolean test(ReporteAnimal t) {
-			return t.getIdentificacionReportante().equals(VistaPrincipal.getInstance().getUsuario().getIdentificacion());
+			return t.getIdentificacionReportante().equals(VistaPrincipal.getUsuario().getIdentificacion());
 		}
 	};
 	

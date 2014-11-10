@@ -37,7 +37,7 @@ public class ModeloLogIn {
 	
 	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
-		VistaPrincipal.getInstance().setUsuario(individuo); 
+		vistaIngreso.principalnormal.setUsuario(individuo); 
 	}
 	
 	
