@@ -2,12 +2,10 @@
   {
     "identificacionReportante": "1",
     "telefonoContacto": "123",
-    "correoContacto": "kevinah95@gmail.com",
-    "lugarContacto": "fewfef",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img0.png"
-    ],
-    "condicionEntrada": "Extraviado",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fasdfasdf",
+    "fotosAnimal": [],
+    "condicionEntrada": "Encontrado",
     "recompensa": 0.0,
     "animalReportado": {
       "idAnimal": 1,
@@ -16,8 +14,8 @@
       "raza": "",
       "color": "Rojo",
       "sexo": "",
-      "chipIdentificacion": "ewfewf",
-      "nombreMascota": "fewfefef"
+      "chipIdentificacion": "fdsa",
+      "nombreMascota": "fasdf"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",

@@ -9,6 +9,8 @@ public class RegistarUsuario extends JDialog {
 	
 	static JPanel panelCards = new JPanel();
 	static CardLayout cardlayout = new CardLayout();
+	
+	
 
 	public RegistarUsuario() {
 		setSize(600, 600);
@@ -37,7 +39,8 @@ public class RegistarUsuario extends JDialog {
 		
 		cardlayout.show(panelCards, "VistaRegistroDatos");
 	}
-
+	
+	
 
 	public static void main(String[] args) {
 		RegistarUsuario reg = new RegistarUsuario();

@@ -10,13 +10,13 @@ public class ControladorRegistroDatos implements ActionListener{
 	public static VistaRegistroDatos vista = null;
 	ModeloRegistroDatos modelo = null;
 	
-	String nombre = "";
-	String pApellido = "";
-	String sApellido = "";
-	String telefono = "";
-	String cedula = "";
-	String correo = "";
-	String contrasenia = "";
+	public static String nombre = "";
+	public static String pApellido = "";
+	public static String sApellido = "";
+	public static String telefono = "";
+	public static String cedula = "";
+	public static String correo = "";
+	public static String contrasenia = "";
 	
 	public ControladorRegistroDatos(VistaRegistroDatos vista, ModeloRegistroDatos modelo) {
 		this.vista = vista;
@@ -41,8 +41,8 @@ public class ControladorRegistroDatos implements ActionListener{
 			boolean flagverificar = modelo.verificarDatos(nombre, pApellido,
 					sApellido, telefono, cedula, correo, contrasenia);
 			if (flagverificar){
+				
 				RegistarUsuario.cardlayout.show(RegistarUsuario.panelCards, "VistaRegistroTipo");
-//				modelo.registrarNuevoUsuario(nombre, pApellido, sApellido, telefono, cedula, correo, contrasenia);
 				
 			}
 		}

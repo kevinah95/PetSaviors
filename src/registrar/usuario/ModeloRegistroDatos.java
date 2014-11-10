@@ -81,17 +81,7 @@ public class ModeloRegistroDatos {
 		return false;
 	}
 	
-//	public void registrarNuevoUsuario(String nombre, String pApellido,
-//			String sApellido, String telefono, String cedula, String correo,
-//			String contrasenia) {
-//
-//		Individuo nuevoUsuario = new Individuo(cedula, nombre, pApellido,
-//				sApellido, telefono, correo, contrasenia, "false", "false",
-//				"false");
-//		usuarios.agregarUsuario(nuevoUsuario);
-//		usuarios.actualizarJson();
-//
-//	}
+
 	
 	
 

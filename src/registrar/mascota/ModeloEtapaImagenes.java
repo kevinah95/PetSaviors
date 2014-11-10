@@ -138,7 +138,6 @@ public class ModeloEtapaImagenes {
 	public static void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
 			file.delete();
-		
 	}
 	
 	public static  int getIndice(){
@@ -152,9 +151,7 @@ public class ModeloEtapaImagenes {
 		for (File file : dirTemporal.listFiles()) {
 			String temp = file.getPath();
 			imagenes.add(temp.replace("temp", "imagenes"));
-			
-			
-			
+
 		}
 	}
 	

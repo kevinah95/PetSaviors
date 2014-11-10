@@ -20,6 +20,7 @@ public class VistaRegistroTipo extends JPanel{
 	JCheckBox checkAdoptante;
 	JButtonTransparente btnAtras;
 	JButtonTransparente btnConfirmar;
+	JPanel panelPerfil;
 	
 	public VistaRegistroTipo() {
 		setBackground(new Color(179, 209, 202));
@@ -31,19 +32,17 @@ public class VistaRegistroTipo extends JPanel{
 		add(panel);
 		panel.setLayout(null);
 		
-		JPanel panelPerfil = new JPanel();
-		panelPerfil.setBounds(193, 73, 84, 84);
+		panelPerfil = new JPanel();
+		panelPerfil.setBounds(175, 63, 120, 120);
 		panel.add(panelPerfil);
 		panelPerfil.setLayout(null);
 		
-		JLabel lblEncima = new JLabel("");
-		lblEncima.setIcon(new ImageIcon(VistaRegistroTipo.class.getResource("/recursos/profileEncima2.png")));
-		lblEncima.setBounds(0, 0, 84, 84);
-		panelPerfil.add(lblEncima);
+		
 		
 		btnPerfil = new JButtonTransparente("");
 		btnPerfil.setIcon(new ImageIcon(VistaRegistroTipo.class.getResource("/recursos/profileEncima3.png")));
-		btnPerfil.setBounds(0, 0, 84, 84);
+		btnPerfil.setBounds(0, 0, 120, 120);
+		btnPerfil.setDirImagen("/recursos/profileEncima3.png");
 		panelPerfil.add(btnPerfil);
 		
 		checkCasaCuna = new JCheckBox("Casa Cuna");

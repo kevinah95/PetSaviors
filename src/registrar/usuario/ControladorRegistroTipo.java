@@ -4,13 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.IOException;
+
+import javax.swing.ImageIcon;
 
 public class ControladorRegistroTipo implements ActionListener,ItemListener{
 
 	VistaRegistroTipo vista;
 	ModeloRegistroTipo modelo;
 	
-	String imgPerfil = "";
+	String dirImgPerfil = "";
 	String casaCuna = "";
 	String adoptante = "";
 	
@@ -37,10 +40,27 @@ public class ControladorRegistroTipo implements ActionListener,ItemListener{
 			RegistarUsuario.cardlayout.show(RegistarUsuario.panelCards, "VistaRegistroDatos");
 		}
 		if (source == vista.btnConfirmar){
+			try {modelo.copiarImgToPerfiles();} catch (IOException e1) { e1.printStackTrace(); }
+			referenciaDatos();
+			
+			modelo.registrarNuevoUsuario(ControladorRegistroDatos.nombre,
+					ControladorRegistroDatos.pApellido,
+					ControladorRegistroDatos.sApellido,
+					ControladorRegistroDatos.telefono,
+					ControladorRegistroDatos.cedula,
+					ControladorRegistroDatos.correo,
+					ControladorRegistroDatos.contrasenia, casaCuna, adoptante,
+					dirImgPerfil);
+			javax.swing.SwingUtilities.getWindowAncestor(vista).dispose();
 			
 		}
 		if (source == vista.btnPerfil) {
-			
+			if (modelo.verificarImagen()){
+				try {
+					modelo.verificarArchivo();
+					vista.btnPerfil.setIcon(new ImageIcon(modelo.obtenerImagen()));					
+				} catch (IOException e1) { e1.printStackTrace(); }
+			}
 		}
 		
 	}
@@ -51,6 +71,12 @@ public class ControladorRegistroTipo implements ActionListener,ItemListener{
 		Object source = e.getItemSelectable();
 		
 		
+	}
+	
+	private void referenciaDatos(){
+		dirImgPerfil = modelo.path;
+		casaCuna = String.valueOf(vista.checkCasaCuna.isSelected());
+		adoptante = String.valueOf(vista.checkAdoptante.isSelected());
 	}
 
 }
