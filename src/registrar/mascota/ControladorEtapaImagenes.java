@@ -71,9 +71,9 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 		VistaEtapaDatos vistaDatos = RegistrarMascota.etapadatos;
 		String sexo = null;
 		if (vistaDatos.rdbtnMacho.isSelected()) {
-			sexo = vistaDatos.rdbtnMacho.getText();
+			sexo = "Macho";
 		} else {
-			sexo = vistaDatos.rdbtnHembra.getText();
+			sexo = "Hembra";
 		}
 		String raza = null;
 		if (vistaDatos.cbRaza.getSelectedItem() == null) {

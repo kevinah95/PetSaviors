@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 
 import net.coobird.thumbnailator.Thumbnails;
+import logicaExterna.Mascotas;
 import menu.principal.*;
 
 public class VentanaMisMascotas extends JPanel {
@@ -35,7 +36,7 @@ public class VentanaMisMascotas extends JPanel {
 		
 		panelContenedor.removeAll();
 		
-		String col[] = {"ID", "Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre"};
+		String col[] = {"Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre"};
 		modelo = new DefaultTableModel(col, 0){
 			private static final long serialVersionUID = 1L;
 
@@ -47,16 +48,18 @@ public class VentanaMisMascotas extends JPanel {
 		tabla = new JTable(modelo);
 		
 		//Aquí se usa un ciclo para llenar la tabla
+		llenarTabla();
+		
 		//Se supone que le debería pasar una lista o algo así
 		//Ejemplo:
-		Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
+		//Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
 		String path1 = "/recursos/Peludito.jpg";
 		String path2 = "/recursos/Miaucito.jpg";
 		listaPath.add(path1);
 		listaPath.add(path2);
-		modelo.addRow(datos);
-		Object[] datos1 = {"333333", "Gato", "Peterbald", "Blanco", "Hembra", "33EE212", "Miaucito <3"};
-		modelo.addRow(datos1);
+		//modelo.addRow(datos);
+		//Object[] datos1 = {"333333", "Gato", "Peterbald", "Blanco", "Hembra", "33EE212", "Miaucito <3"};
+		//modelo.addRow(datos1);
 		sorter = new TableRowSorter<DefaultTableModel>(modelo);
 		
 		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -67,7 +70,6 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.setRowSelectionAllowed(true);
 				
 		NormalCellRenderer normal = new NormalCellRenderer();
-		tabla.getColumn("ID").setCellRenderer(normal);
 		tabla.getColumn("Tipo").setCellRenderer(normal);
 		tabla.getColumn("Raza").setCellRenderer(normal);
 		tabla.getColumn("Color").setCellRenderer(normal);
@@ -83,6 +85,26 @@ public class VentanaMisMascotas extends JPanel {
 		JTableHeader cabecera = tabla.getTableHeader();
 		cabecera.setForeground(new Color(255, 255, 255));
 		cabecera.setBackground(new Color(69, 147, 160));
+	}
+	
+	public void llenarTabla() { 
+		Mascotas totalMascotas = Mascotas.getInstance();
+		//VistaPrincipal instanciaVP = VistaPrincipal.getInstance();
+		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
+			//if(instanciaVP.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
+			//	System.out.println("Diay pos soy yo");
+			//}
+			String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
+			String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
+			String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
+			String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
+			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
+			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
+			
+			//String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre};
+			modelo.addRow(nuevaFila);
+		}
 	}
 	
 	public static class NormalCellRenderer extends JLabel implements TableCellRenderer {

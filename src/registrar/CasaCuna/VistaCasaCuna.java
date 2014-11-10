@@ -1,10 +1,17 @@
 package registrar.CasaCuna;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 import javax.swing.plaf.*;
 import javax.swing.plaf.basic.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.text.*;
+
+import logicaExterna.Mascotas;
+import logicaInterna.ReporteAnimal;
 import clasificacion.animales.ControlEspecie;
 import fabrica.botones.FabricaBotones;
 import filtros.document.DocumentSizeFilter;
@@ -15,11 +22,9 @@ public class VistaCasaCuna extends JFrame {
 		setBackground(new Color(102, 204, 204));
 	}
 	JTextField txtLugar;
-	JComboBox<String> cbEspecie;
 	JButton btnAceptar;
 	JButton btnCancelar;
 	JButton btnAgregar;
-	JList listaTiposAnimales;
 	JEditorPane textField;
 	DefaultStyledDocument doc;
 	JCheckBox checkBox;
@@ -83,6 +88,27 @@ public class VistaCasaCuna extends JFrame {
 		checkBox.setSelectedIcon(new ImageIcon(getClass().getResource("/recursos/Selected.png")));
 		panelDatos.add(checkBox);
 		
+		String col[] = {"Especie", "Seleccionar"};
+		DefaultTableModel modelo = new DefaultTableModel(col, 0);
+		for(int i = 0; i < controlEspecie.especiesRegistradas.size(); i++) {
+			Object[] especie = {controlEspecie.especiesRegistradas.get(i).getNombre(), false};
+			modelo.addRow(especie);
+		}
+		tabla = new JTable(modelo) {
+	        public Class getColumnClass(int column) {
+                switch (column) {
+                	case 0: 
+                		return String.class;
+                	default:
+                		return Boolean.class;
+                }
+	       }
+		};
+		tabla.setBounds(100, 200, 200, 200);
+		JScrollPane panelLista = new JScrollPane(tabla, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		panelLista.setBounds(50, 190, 357, 137);
+		panelDatos.add(panelLista);
+		
 		JLabel lblCasaCuna = new JLabel("");
 		lblCasaCuna.setBounds(0, 0, 470, 560);
 		panelDatos.add(lblCasaCuna);
@@ -104,7 +130,7 @@ public class VistaCasaCuna extends JFrame {
 	        return boton;
 	    }
 	}
-	
+
 	public static void main(String[] arg) {
 		VistaCasaCuna prueba = VistaCasaCuna.getInstance();
 		prueba.crearVista();
