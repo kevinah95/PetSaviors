@@ -16,8 +16,8 @@ public class ControladorEditarTipo implements ActionListener,ItemListener{
 	ModeloEditarTipo modelo;
 	
 	String dirImgPerfil = "";
-	String casaCuna = "";
-	String adoptante = "";
+	boolean casaCuna = false;
+	boolean adoptante = false;
 	
 	
 	public ControladorEditarTipo(VistaEditarTipo vista,ModeloEditarTipo modelo) {
@@ -39,10 +39,15 @@ public class ControladorEditarTipo implements ActionListener,ItemListener{
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
 		if (source == vista.btnAtras){
-			RegistarUsuario.cardlayout.show(RegistarUsuario.panelCards, "VistaRegistroDatos");
+			EditarUsuario.cardlayout.show(EditarUsuario.panelCards, "VistaEditarDatos");
 		}
 		if (source == vista.btnConfirmar){
-			try {modelo.copiarImgToPerfiles();} catch (IOException e1) { e1.printStackTrace(); }
+			referenciaImagen();
+			if(!dirImgPerfil.trim().isEmpty()){
+				try {modelo.copiarImgToPerfiles();} catch (IOException e1) { e1.printStackTrace(); }
+				
+			}
+			
 			referenciaDatos();
 			
 			modelo.registrarNuevoUsuario(ControladorEditarDatos.nombre,
@@ -71,14 +76,14 @@ public class ControladorEditarTipo implements ActionListener,ItemListener{
 	
 	public void itemStateChanged(ItemEvent e) {
 		Object source = e.getItemSelectable();
-		
-		
+	}
+	private void referenciaImagen(){
+		dirImgPerfil = modelo.path;
 	}
 	
 	private void referenciaDatos(){
-		dirImgPerfil = modelo.path;
-		casaCuna = String.valueOf(vista.checkCasaCuna.isSelected());
-		adoptante = String.valueOf(vista.checkAdoptante.isSelected());
+		casaCuna = vista.checkCasaCuna.isSelected();
+		adoptante = vista.checkAdoptante.isSelected();
 	}
 
 }

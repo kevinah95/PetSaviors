@@ -73,10 +73,13 @@ public class ModeloEditarTipo {
 	}
 	
 	public void copiarImgToPerfiles() throws IOException{
+		System.out.println(new File(""+dirImagenes.getAbsolutePath()+"\\"+VistaPrincipal.getUsuario().getIdentificacion()+".png").getAbsolutePath());
+		new File(""+dirImagenes+"\\"+VistaPrincipal.getUsuario().getIdentificacion()+".png").delete();
 		Thumbnails.of(path)
         .size(84, 84)
         .outputFormat("png")
         .toFile(new File(""+dirImagenes+"\\"+VistaPrincipal.getUsuario().getIdentificacion()));
+		File f;
 		
 		path = ""+dirImagenes+"\\"+VistaPrincipal.getUsuario().getIdentificacion()+".png";
 		System.out.println(path);
@@ -86,22 +89,25 @@ public class ModeloEditarTipo {
 	
 	public void registrarNuevoUsuario(String nombre, String pApellido,
 			String sApellido, String telefono, String cedula, String correo,
-			String contrasenia,String casaCuna, String adoptante,String dirImgPerfil) {
+			String contrasenia,boolean casaCuna, boolean adoptante,String dirImgPerfil) {
 
-//		JOptionPane.showMessageDialog(null, "Cambiar función");
-//		Usuarios.usuariosRegistrados.stream().filter(
-//				p -> p.getIdentificacion().equals(
-//						VistaPrincipal.getUsuario().getIdentificacion())).forEach(p->usuario = p);
-//		usuario.setNombre(nombre);
-//		usuario.setpApellido(pApellido);
-//		usuario.setsApellido(sApellido);
-//		usuario.setTelefono(telefono);
-//		usuario.setCorreo(correo);
-//		usuario.setContrasena(contrasenia);
-//		usuario.setCasaCuna(casaCuna);
-//		usuario.setAdministrador(adoptante);
-//		usuario.setDirFotoPerfil(dirImgPerfil);
 		
+		JOptionPane.showMessageDialog(null, "Cambiar función");
+		Usuarios.usuariosRegistrados.stream().filter(
+				p -> p.getIdentificacion().equals(
+						VistaPrincipal.getUsuario().getIdentificacion())).forEach(p->usuario = p);
+		if(!nombre.trim().isEmpty()){usuario.setNombre(nombre);}
+		if(!pApellido.trim().isEmpty()){usuario.setpApellido(pApellido);}
+		if(!sApellido.trim().isEmpty()){usuario.setsApellido(sApellido);}
+		if(!telefono.trim().isEmpty()){	usuario.setTelefono(telefono); }
+		if(!correo.trim().isEmpty()){usuario.setCorreo(correo);	}
+		if(!contrasenia.trim().isEmpty()){usuario.setContrasena(contrasenia);}
+		usuario.setCasaCuna(casaCuna);
+		usuario.setAdoptante(adoptante);
+		if(!dirImgPerfil.trim().isEmpty()){
+			usuario.setDirFotoPerfil(dirImgPerfil);
+		}
+		usuarios.actualizarJson();
 		
 //		Individuo nuevoUsuario = new Individuo(cedula, nombre, pApellido,
 //				sApellido, telefono, correo, contrasenia, casaCuna, adoptante,
