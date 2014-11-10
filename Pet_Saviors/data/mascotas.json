@@ -1,9 +1,9 @@
 [
   {
-    "identificacionReportante": "1",
-    "telefonoContacto": "1",
-    "correoContacto": "k@g.com",
-    "lugarContacto": "jdlkasjlkdaslkdalksdjalksjdlk",
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Cartago",
     "fotosAnimal": [
       "Pet_Saviors\\imagenes\\img0.png"
     ],
@@ -12,12 +12,12 @@
     "animalReportado": {
       "idAnimal": 1,
       "contadorSemejanzas": 0.0,
-      "tipoMascota": "Alpaca",
+      "tipoMascota": "Cisne",
       "raza": "",
-      "color": "Rojo",
+      "color": "Azul",
       "sexo": "Macho",
-      "chipIdentificacion": "1",
-      "nombreMascota": "1"
+      "chipIdentificacion": "62347",
+      "nombreMascota": "Sammy"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",
@@ -26,10 +26,10 @@
     "diasSistema": 1
   },
   {
-    "identificacionReportante": "1",
-    "telefonoContacto": "1",
-    "correoContacto": "k@g.com",
-    "lugarContacto": "jdlkasdjaslkdasl",
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "San José",
     "fotosAnimal": [
       "Pet_Saviors\\imagenes\\img1.png"
     ],
@@ -38,12 +38,12 @@
     "animalReportado": {
       "idAnimal": 2,
       "contadorSemejanzas": 0.0,
-      "tipoMascota": "Alpaca",
+      "tipoMascota": "Codorniz",
       "raza": "",
-      "color": "Rojo",
+      "color": "Verde",
       "sexo": "Macho",
-      "chipIdentificacion": "2",
-      "nombreMascota": "jaslkdasdhjkas"
+      "chipIdentificacion": "23423",
+      "nombreMascota": "Viscaya"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",
@@ -52,24 +52,24 @@
     "diasSistema": 1
   },
   {
-    "identificacionReportante": "1",
-    "telefonoContacto": "1",
-    "correoContacto": "k@g.com",
-    "lugarContacto": "Saltadilla",
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
     "fotosAnimal": [
       "Pet_Saviors\\imagenes\\img2.png"
     ],
     "condicionEntrada": "Extraviado",
-    "recompensa": 1000000.0,
+    "recompensa": 0.0,
     "animalReportado": {
       "idAnimal": 1,
       "contadorSemejanzas": 0.0,
-      "tipoMascota": "Pokémon",
-      "raza": "Abra",
-      "color": "Azul",
+      "tipoMascota": "Canario",
+      "raza": "",
+      "color": "Verde",
       "sexo": "Macho",
-      "chipIdentificacion": "702",
-      "nombreMascota": "Raulin"
+      "chipIdentificacion": "1331231",
+      "nombreMascota": "Lucas"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",
@@ -78,24 +78,128 @@
     "diasSistema": 1
   },
   {
-    "identificacionReportante": "1",
-    "telefonoContacto": "1",
-    "correoContacto": "k@g.com",
-    "lugarContacto": "fsdafadsfsadf",
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
     "fotosAnimal": [
       "Pet_Saviors\\imagenes\\img3.png"
     ],
     "condicionEntrada": "Extraviado",
-    "recompensa": 1.28391283E9,
+    "recompensa": 0.0,
     "animalReportado": {
       "idAnimal": 1,
       "contadorSemejanzas": 0.0,
-      "tipoMascota": "Alpaca",
+      "tipoMascota": "Oveja",
       "raza": "",
       "color": "Rojo",
       "sexo": "Macho",
-      "chipIdentificacion": "sadfads",
-      "nombreMascota": "fadsfsad"
+      "chipIdentificacion": "324234",
+      "nombreMascota": "Touring"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img4.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Cerdo",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "23432",
+      "nombreMascota": "Hamachi"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img5.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Alano español",
+      "color": "Amarillo",
+      "sexo": "Macho",
+      "chipIdentificacion": "3e2423",
+      "nombreMascota": "Julious"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img6.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Canario",
+      "raza": "",
+      "color": "Amarillo",
+      "sexo": "Macho",
+      "chipIdentificacion": "12e13",
+      "nombreMascota": "Canaris"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "9999",
+    "telefonoContacto": "25522131",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Nada",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img7.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Morado",
+      "sexo": "Macho",
+      "chipIdentificacion": "1231",
+      "nombreMascota": "Alpaquin"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",

@@ -39,7 +39,8 @@ public class VistaPrincipal extends JPanel {
 	
 	
 	
-	public VistaPrincipal() {
+	public VistaPrincipal(Individuo individuo) {
+		setUsuario(individuo);
 		setBackground(new Color(179, 209, 202));
 		setSize(1280, 720);
 	    setLayout(null);

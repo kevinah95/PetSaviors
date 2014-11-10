@@ -22,13 +22,14 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
 
+import petFinder.NormalCellRenderer;
 import logicaExterna.Mascotas;
 import menu.principal.VistaPrincipal;
 import net.coobird.thumbnailator.Thumbnails;
 
 public class VentanaMisReportes extends JPanel{
 	public static JTable tabla;
-	private  DefaultTableModel modelo;
+	private  DefaultTableModel modeloMisReportes;
 	private JPanel panelContenedor = new JPanel();
 	private TableRowSorter<DefaultTableModel> sorter;
 	private GridBagConstraints grid = new GridBagConstraints();
@@ -49,7 +50,7 @@ public class VentanaMisReportes extends JPanel{
 		panelContenedor.removeAll();
 		
 		String col[] = {"Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre", "Estado"};
-		modelo = new DefaultTableModel(col, 0){
+		modeloMisReportes = new DefaultTableModel(col, 0){
 			private static final long serialVersionUID = 1L;
 
 			public boolean isCellEditable(int fila, int columna) {
@@ -57,22 +58,12 @@ public class VentanaMisReportes extends JPanel{
 			}
 		};
 		
-		tabla = new JTable(modelo);
+		tabla = new JTable(modeloMisReportes);
 		
 		//Aquí se usa un ciclo para llenar la tabla
 		llenarTabla();
 		
-		//Se supone que le debería pasar una lista o algo así
-		//Ejemplo:
-		//Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
-//		String path1 = "/recursos/Peludito.jpg";
-//		String path2 = "/recursos/Miaucito.jpg";
-//		listaPath.add(path1);
-//		listaPath.add(path2);
-		//modelo.addRow(datos);
-		//Object[] datos1 = {"333333", "Gato", "Peterbald", "Blanco", "Hembra", "33EE212", "Miaucito <3"};
-		//modelo.addRow(datos1);
-		sorter = new TableRowSorter<DefaultTableModel>(modelo);
+		sorter = new TableRowSorter<DefaultTableModel>(modeloMisReportes);
 		
 		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		tabla.setPreferredScrollableViewportSize(new Dimension(766, 458));
@@ -81,7 +72,7 @@ public class VentanaMisReportes extends JPanel{
 		tabla.setRowHeight(60);
 		tabla.setRowSelectionAllowed(true);
 				
-		NormalCellRenderer normal = new NormalCellRenderer();
+		NormalCellRenderer normal = new NormalCellRenderer(tabla, listaPath);
 		tabla.getColumn("Tipo").setCellRenderer(normal);
 		tabla.getColumn("Raza").setCellRenderer(normal);
 		tabla.getColumn("Color").setCellRenderer(normal);
@@ -101,66 +92,29 @@ public class VentanaMisReportes extends JPanel{
 	}
 	
 	public void llenarTabla() { 
+		listaPath.clear();
 		Mascotas totalMascotas = Mascotas.getInstance();
-		//VistaPrincipal instanciaVP = VistaPrincipal.getInstance();
 		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
-			//if(instanciaVP.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
-			//	System.out.println("Diay pos soy yo");
-			//}
-			String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
-			String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
-			String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
-			String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
-			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
-			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
-			String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
+			if(VistaPrincipal.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
 			
-			String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
-			if(!pathImagen.isEmpty()) {
-				listaPath.add(pathImagen);
-			}
-			else {
-				listaPath.add("");
-			}
-			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
-			modelo.addRow(nuevaFila);
-		}
-	}
-	
-	public static class NormalCellRenderer extends JLabel implements TableCellRenderer {
-		private static final long serialVersionUID = 1L;
-		public Component getTableCellRendererComponent(JTable table, Object value,
-				boolean isSelected, boolean hasFocus, int row, int column) {
-
-				setToolTipText("<html><p>"+(String)value+"</p></html>");
-				setHorizontalAlignment(SwingConstants.CENTER);
-				setText((String)value);
-				setForeground(new Color(14, 28, 29));
-				setOpaque(true);
-				setBackground(new Color(127, 200, 176));
-				if(isSelected) {
-					setBackground(new Color(200, 232, 221));
-					String path = VentanaMisReportes.listaPath.get(tabla.convertRowIndexToModel(tabla.getSelectedRow()));
-					if(!path.equals("")) {
-						VistaPrincipal.panelImagenAnimal.removeAll();
-						JLabel labelImagen = new JLabel();
-						BufferedImage imagen = null;
-						try {
-							imagen = Thumbnails.of(path)
-									.size(227, 230)
-									.asBufferedImage();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						labelImagen.setIcon(new ImageIcon(imagen));
-						VistaPrincipal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
-						VistaPrincipal.panelImagenAnimal.setVisible(true);
-						VistaPrincipal.panelImagenAnimal.repaint();
-						VistaPrincipal.panelImagenAnimal.revalidate();
-					}
+				String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
+				String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
+				String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
+				String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
+				String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
+				String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
+				String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
+				
+				String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+				if(!pathImagen.isEmpty()) {
+					listaPath.add(pathImagen);
 				}
-		  
-		       return this;
+				else {
+					listaPath.add("");
+				}
+				Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
+				modeloMisReportes.addRow(nuevaFila);
+			}
 		}
 	}
 }
