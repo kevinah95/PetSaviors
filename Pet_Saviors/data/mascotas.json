@@ -76,5 +76,31 @@
     "enAdopcion": false,
     "condicionSalida": "false",
     "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "1",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fsdafadsfsadf",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img3.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 1.28391283E9,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "sadfads",
+      "nombreMascota": "fadsfsad"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
   }
 ]

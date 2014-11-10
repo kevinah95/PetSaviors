@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import net.sf.json.JSONObject;
-import net.sf.json.JsonConfig;
+//import net.sf.json.JSONObject;
+//import net.sf.json.JsonConfig;
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
 import facebook4j.FacebookFactory;
@@ -86,14 +86,14 @@ public class FacebookPost {
 	}
 
 	// This method is used to create JSON object from data string
-	public static String stringToJson(String data) {
-		JsonConfig cfg = new JsonConfig();
-		try {
-			JSONObject jsonObject = JSONObject.fromObject(data, cfg);
-			System.out.println("JSON = " + jsonObject.toString());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "JSON Created";
-	}
+//	public static String stringToJson(String data) {
+////		JsonConfig cfg = new JsonConfig();
+////		try {
+////			JSONObject jsonObject = JSONObject.fromObject(data, cfg);
+////			System.out.println("JSON = " + jsonObject.toString());
+////		} catch (Exception e) {
+////			e.printStackTrace();
+////		}
+////		return "JSON Created";
+//	}
 }

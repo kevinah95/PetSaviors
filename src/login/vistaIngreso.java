@@ -16,10 +16,9 @@ import menu.principal.VistaPrincipal;
 import java.awt.*;
 
 public class vistaIngreso extends JFrame {
-	static CardLayout cardlayout = new CardLayout();
-	static JPanel panelCards;
+	public static CardLayout cardlayout = new CardLayout();
+	public static JPanel panelCards;
 	
-	static VistaPrincipal principalnormal;
 	
 	public vistaIngreso() {
 		setSize(1280, 720);
@@ -47,9 +46,6 @@ public class vistaIngreso extends JFrame {
 		new ControladorLogIn();
 		panelCards.add("Ingresar",login);
 		
-		
-		principalnormal = new VistaPrincipal();
-		panelCards.add("VistaPrincipal",principalnormal);
 		
 		cardlayout.show(panelCards, "Ingresar");
 	}

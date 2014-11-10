@@ -18,8 +18,8 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class vistaLogIn extends JPanel{
 	
-	JTextField txtCedula;
-	JPasswordField txtContrasenia;
+	public JTextField txtCedula;
+	public JPasswordField txtContrasenia;
 	JButton btnEntrar;
 	JButton btnRegistrarme;
 	JLabel lblLogo;

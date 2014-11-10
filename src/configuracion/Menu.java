@@ -9,6 +9,8 @@ import editar.usuario.EditarUsuario;
 import java.awt.*;
 import java.awt.event.*;
 
+import login.vistaIngreso;
+import login.vistaLogIn;
 import registrar.mascota.RegistrarMascota;
 import render.listas.RenderMenu;
 
@@ -94,6 +96,12 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 				RegistrarMascota registrarmascota = new RegistrarMascota();
 				System.out.println(listaMenu.getSelectedIndex());
 				
+			}
+			if (listaMenu.getSelectedIndex() == 2) {
+				vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "Ingresar");
+				dispose();
+				vistaLogIn.getInstance().txtCedula.setText("Cédula");
+				vistaLogIn.getInstance().txtContrasenia.setText("Contrasenia");
 			}
 			
 		}

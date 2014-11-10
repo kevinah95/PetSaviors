@@ -37,7 +37,10 @@ public class ModeloLogIn {
 	
 	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
-		vistaIngreso.principalnormal.setUsuario(individuo); 
+		VistaPrincipal principalnormal = new VistaPrincipal();
+		vistaIngreso.panelCards.add("VistaPrincipal",principalnormal);
+		principalnormal.setUsuario(individuo);
+		
 	}
 	
 	
