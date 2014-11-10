@@ -12,6 +12,7 @@ package login;
 
 import javax.swing.*;
 import menu.principal.VistaPrincipal;
+
 import java.awt.*;
 
 public class vistaIngreso extends JFrame {
@@ -44,8 +45,6 @@ public class vistaIngreso extends JFrame {
 		new ControladorLogIn();
 		panelCards.add("Ingresar",login);
 		
-		vistaRegistrarme registrarme = new vistaRegistrarme();
-		panelCards.add("vistaRegistrarme",registrarme);
 		
 		VistaPrincipal principalnormal = VistaPrincipal.getInstance();
 		principalnormal.crearVista();

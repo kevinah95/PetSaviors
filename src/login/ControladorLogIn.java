@@ -1,9 +1,13 @@
 package login;
 
 import individuos.Individuo;
+
 import java.awt.event.*;
 import java.util.function.Predicate;
+
 import javax.swing.JOptionPane;
+
+import registrar.usuario.RegistarUsuario;
 import menu.principal.VistaPrincipal;
 
 public class ControladorLogIn implements ActionListener{
@@ -40,9 +44,7 @@ public class ControladorLogIn implements ActionListener{
 		if (e.getSource()==vista.btnRegistrarme){
 			if (!vista.txtCedula.getText().equals("Usuario") && 
 					!vista.txtContrasenia.getText().equals("Contrasenia")){ limpiarDatos(); }
-			vistaIngreso.cardlayout.show(vistaIngreso.panelCards, "vistaRegistrarme");
-			vista.getParent().revalidate();
-			vista.getParent().repaint();
+			RegistarUsuario regUsuario = new RegistarUsuario();
 		}
 		
 		if (e.getSource()==vista.btnEntrar){
