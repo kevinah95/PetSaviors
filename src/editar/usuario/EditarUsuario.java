@@ -1,9 +1,14 @@
 package editar.usuario;
 
+import individuos.Individuo;
+
 import java.awt.CardLayout;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+
+import login.vistaIngreso;
+import menu.principal.VistaPrincipal;
 
 public class EditarUsuario extends JDialog {
 	
@@ -24,7 +29,11 @@ public class EditarUsuario extends JDialog {
 	}
 	
 	public void agregarPaneles(){
-		VistaEditarDatos vistaEditarDatos = new VistaEditarDatos();
+		Individuo usuario = VistaPrincipal.getUsuario();
+		VistaEditarDatos vistaEditarDatos = new VistaEditarDatos(
+				usuario.getNombre(), usuario.getpApellido(),
+				usuario.getsApellido(), usuario.getTelefono(),
+				usuario.getCorreo(), usuario.getContrasena());
 		ModeloEditarDatos modeloEditarDatos = new ModeloEditarDatos();
 		new ControladorEditarDatos(vistaEditarDatos, modeloEditarDatos);
 		panelCards.add(vistaEditarDatos,"VistaEditarDatos");

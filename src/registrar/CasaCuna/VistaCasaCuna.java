@@ -19,28 +19,9 @@ import filtros.document.DocumentSizeFilter;
 public class VistaCasaCuna extends JFrame {
 	private static final long serialVersionUID = 1L;
 	public VistaCasaCuna() {
-		setBackground(new Color(102, 204, 204));
-	}
-	JTextField txtLugar;
-	JButton btnAceptar;
-	JButton btnCancelar;
-	JButton btnAgregar;
-	JEditorPane textField;
-	DefaultStyledDocument doc;
-	JCheckBox checkBox;
-	JTable tabla;
-	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
-	public ControlEspecie controlEspecie = ControlEspecie.getInstance();
-	private static VistaCasaCuna instance = null;
-	
-	public static VistaCasaCuna getInstance() {
-		if (instance == null) {	instance = new VistaCasaCuna(); }
-		return instance;
-	}
-	
-	public void crearVista() {
 		setLayout(null);
 		setSize(486, 600);
+		setBackground(new Color(102, 204, 204));
 		JPanel panelDatos = new JPanel();
 		panelDatos.setBackground(new Color(179, 209, 202));
 		panelDatos.setBounds(0, 0, 470, 563);
@@ -118,6 +99,20 @@ public class VistaCasaCuna extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	JTextField txtLugar;
+	JButton btnAceptar;
+	JButton btnCancelar;
+	JButton btnAgregar;
+	JEditorPane textField;
+	DefaultStyledDocument doc;
+	JCheckBox checkBox;
+	JTable tabla;
+	final static Font fontTextos = new Font("Segoe UI", Font.BOLD, 13);
+	public ControlEspecie controlEspecie = ControlEspecie.getInstance();
+	private static VistaCasaCuna instance = null;
+	
+	
+	
 	
 	static class ColorArrowUI extends BasicComboBoxUI {
 	    public static ComboBoxUI createUI(JComponent c) { return new ColorArrowUI(); }
@@ -132,7 +127,7 @@ public class VistaCasaCuna extends JFrame {
 	}
 
 	public static void main(String[] arg) {
-		VistaCasaCuna prueba = VistaCasaCuna.getInstance();
-		prueba.crearVista();
+		VistaCasaCuna prueba = new VistaCasaCuna();
+		
 	}
 }

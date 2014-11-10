@@ -206,5 +206,53 @@
     "enAdopcion": false,
     "condicionSalida": "false",
     "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "1",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "tertert",
+    "fotosAnimal": [],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Dragón",
+      "raza": "Dragón de Comodo",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "tertert",
+      "nombreMascota": "ertert"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "1",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "asdfsadf",
+    "fotosAnimal": [],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Alaskan Dwarf (Enano de Alaska)",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "fasd",
+      "nombreMascota": "sadf"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
   }
 ]

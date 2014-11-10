@@ -32,7 +32,7 @@ public class VistaEditarDatos extends JPanel {
 	
 	JTextField txtTelefono;
 
-	public VistaEditarDatos(){
+	public VistaEditarDatos(String nombre,String pApellido,String sApellido,String telefono,String correo,String contrasenia){
 		setBackground(new Color(179, 209, 202));
 		setSize(600, 600);
 		setLayout(null);
@@ -59,7 +59,7 @@ public class VistaEditarDatos extends JPanel {
 		btnCancelar.setBorder(null);
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
-		txtNombre = new JTextField();
+		txtNombre = new JTextField(nombre);
 		txtNombre.setBounds(78, 76, 312, 28);
 		panel.add(txtNombre);
 		txtNombre.setOpaque(false);
@@ -68,7 +68,7 @@ public class VistaEditarDatos extends JPanel {
 		txtNombre.setColumns(10);
 		
 		
-		txtPApellido = new JTextField();
+		txtPApellido = new JTextField(pApellido);
 		txtPApellido.setBounds(78, 138, 312, 28);
 		panel.add(txtPApellido);
 		txtPApellido.setOpaque(false);
@@ -77,7 +77,7 @@ public class VistaEditarDatos extends JPanel {
 		txtPApellido.setColumns(10);
 		
 		
-		txtSApellido = new JTextField();
+		txtSApellido = new JTextField(sApellido);
 		txtSApellido.setOpaque(false);
 		txtSApellido.setFont(new Font("Tahoma", Font.BOLD, 15));
 		txtSApellido.setColumns(10);
@@ -85,7 +85,7 @@ public class VistaEditarDatos extends JPanel {
 		txtSApellido.setBounds(78, 200, 312, 28);
 		panel.add(txtSApellido);
 		
-		txtTelefono = new JTextField();
+		txtTelefono = new JTextField(telefono);
 		txtTelefono.setOpaque(false);
 		txtTelefono.setFont(new Font("Tahoma", Font.BOLD, 15));
 		txtTelefono.setColumns(10);
@@ -93,7 +93,7 @@ public class VistaEditarDatos extends JPanel {
 		txtTelefono.setBounds(78, 267, 312, 28);
 		panel.add(txtTelefono);
 		
-		txtCorreo = new JTextField();
+		txtCorreo = new JTextField(correo);
 		txtCorreo.setBounds(78, 332, 312, 28);
 		panel.add(txtCorreo);
 		txtCorreo.setOpaque(false);
@@ -109,7 +109,7 @@ public class VistaEditarDatos extends JPanel {
             }
         });
 		
-		txtContrasenia = new JPasswordField();
+		txtContrasenia = new JPasswordField(contrasenia);
 		txtContrasenia.setBounds(78, 397, 312, 28);
 		panel.add(txtContrasenia);
 		txtContrasenia.setOpaque(false);
