@@ -1,16 +1,11 @@
 package correosRedesSociales;
 //Basado en el ejemplo de http://xmeng.wordpress.com/2011/07/10/how-to-handle-sign-in-with-twitter-using-twitter4j/
 import twitter4j.*;
-import twitter4j.auth.AccessToken;
-import twitter4j.auth.RequestToken;
+import twitter4j.auth.*;
 import twitter4j.conf.ConfigurationBuilder;
-
 import java.awt.Desktop;
-//import java.io.BufferedReader;
 import java.io.IOException;
-//import java.io.InputStreamReader;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.net.*;
  
 public final class TwitterPost {
 
@@ -54,31 +49,22 @@ public final class TwitterPost {
     try{
     	String testStatus = "Encontré a mi mascota gracias a Pet Saviors, pruébalo tu también";
 	    try {
-	        System.out.println("-----");
+	        //System.out.println("-----");
 	
 	        // get request token.
 	        // this will throw IllegalStateException if access token is already available
 	        // this is oob, desktop client version
 	        //RequestToken requestToken = twitter.getOAuthRequestToken(); 
 	
-	        System.out.println("Got request token.");
-	        System.out.println("Request token: " + requestToken.getToken());
-	        System.out.println("Request token secret: " + requestToken.getTokenSecret());
+	        //System.out.println("Got request token.");
+	       // System.out.println("Request token: " + requestToken.getToken());
+	        //System.out.println("Request token secret: " + requestToken.getTokenSecret());
 	
-	        System.out.println("|-----");
+	        //System.out.println("|-----");
 	
 	        AccessToken accessToken = null;
-	
-	        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	        
-	        //URL url= new URL(requestToken.getAuthorizationURL());
-	        //openWebpage(url);
 	        
 	        while (null == accessToken) {
-	            //URL url= new URL(requestToken.getAuthorizationURL());
-	            //openWebpage(url);
-	            //System.out.print("Enter the PIN(if available) and hit enter after you granted access.[PIN]:");
-	            //String pin = br.readLine();
 	        
 	            try {
 	                if (pin.length() > 0) {
@@ -139,10 +125,5 @@ public final class TwitterPost {
             e.printStackTrace();
         }
     }
-   // public void setPIN(String num){
-    	//pin = num;
-    //}
-   // public void setAdvance(boolean adv){
-    	//advance = adv;
-    //}
+   
 }

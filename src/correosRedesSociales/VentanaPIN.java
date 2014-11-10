@@ -8,7 +8,7 @@ public class VentanaPIN extends JFrame implements ActionListener{
     private JTextField textfield;
     private JLabel label1;
     private JButton boton1;
-    private JButton boton2;
+    //private JButton boton2;
     private String pin;
     TwitterPost post;
     
@@ -23,15 +23,11 @@ public class VentanaPIN extends JFrame implements ActionListener{
         textfield.setBounds(80,30,150,20);
         add(textfield);
         boton1=new JButton("Validar");
-        boton1.setBounds(170,60,100,30);
+        boton1.setBounds(100,60,100,30);
         add(boton1);
-        boton2=new JButton("Generar Autorización");
-        boton2.setBounds(15,60,160,30);
-        add(boton2);
         //post = new TwitterPost();
         boton1.addActionListener(this);
-        boton2.addActionListener(this);
-        //post = new TwitterPost();
+        post = new TwitterPost();
         
         
     }
@@ -41,9 +37,6 @@ public class VentanaPIN extends JFrame implements ActionListener{
             pin = textfield.getText();
             post.validarPIN(pin);
             setVisible(false);
-        }
-        if (e.getSource()==boton2){
-        	post = new TwitterPost();
         }
     }
     
