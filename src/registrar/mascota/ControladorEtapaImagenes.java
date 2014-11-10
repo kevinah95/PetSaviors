@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 
 import petFinder.VentanaMisMascotas;
 import logicaExterna.Mascotas;
+import menu.principal.VistaPrincipal;
 import fabrica.botones.JButtonTransparente;
 
 public class ControladorEtapaImagenes implements ActionListener, MouseListener,

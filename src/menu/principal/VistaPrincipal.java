@@ -18,6 +18,7 @@ import java.awt.*;
 
 import javax.swing.border.*;
 
+import logicaInterna.ReporteAnimal;
 import misReportes.VentanaMisReportes;
 
 import java.awt.event.*;
@@ -34,6 +35,10 @@ public class VistaPrincipal extends JPanel {
 	public static JList listaMenu;
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
+	
+	vistaPetFinder petFinder;
+	VentanaReportesActivos reportesActivos;
+	VentanaMisReportes misReportes;
 	
 	private static Individuo usuario= null;
 	
@@ -81,6 +86,7 @@ public class VistaPrincipal extends JPanel {
 		lblLogo.setBounds(163, 17, 141, 141);
 		add(lblLogo);
 		
+		
 		JPanel panelSurround = new JPanel();
 		panelSurround.setBackground(null);
 		panelSurround.setBounds(79, 169, 1121, 458);
@@ -92,15 +98,16 @@ public class VistaPrincipal extends JPanel {
 		panelSurround.add(panel);
 		panel.setBackground(new Color(100, 166, 155));
 		panel.setLayout(cardsPrincipal);
-		vistaPetFinder petFinder = new vistaPetFinder();
+		
+		petFinder = new vistaPetFinder();
 		petFinder.setBounds(0,0,766,458);
 		panel.add("Pet Finder", petFinder);
 		
-		VentanaReportesActivos reportesActivos = new VentanaReportesActivos();
+		reportesActivos = new VentanaReportesActivos();
 		reportesActivos.setBounds(0,0,766,458);
 		panel.add("Reportes Activos", reportesActivos);
 		
-		VentanaMisReportes misReportes = new VentanaMisReportes();
+		misReportes = new VentanaMisReportes();
 		misReportes.setBounds(0,0,766,458);
 		panel.add("Mis Reportes", misReportes);
 		
@@ -182,6 +189,26 @@ public class VistaPrincipal extends JPanel {
 	    btnAtras.setContentAreaFilled(false);
 	    btnAtras.setBorder(null);
 	    add(btnAtras);
+	    
+		JButton actualizar = new JButton("");
+		actualizar.setBounds(1180, 169, 88, 50);
+		actualizar.setIcon(new ImageIcon(getClass().getResource("/recursos/actualize.png")));
+		actualizar.setOpaque(false);
+		actualizar.setContentAreaFilled(false);
+		actualizar.setBorder(null);
+		add(actualizar);
+		actualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panel.removeAll();
+				petFinder = new vistaPetFinder();
+				reportesActivos = new VentanaReportesActivos();
+				misReportes = new VentanaMisReportes();
+				panel.add("Pet Finder", petFinder);
+				panel.add("Reportes Activos", reportesActivos);
+				panel.add("Mis Reportes", misReportes);
+				cardsPrincipal.show(panel, "Reportes Activos");
+			}
+		});
 	}
 
 
