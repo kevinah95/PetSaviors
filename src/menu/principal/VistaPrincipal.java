@@ -163,16 +163,7 @@ public class VistaPrincipal extends JPanel {
 
 	
 	
-	public static void main(String[] args) {
-		JFrame f = new JFrame();
-		f.setSize(1280, 720);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.setLocationRelativeTo(null);
-		f.getContentPane().add(new VistaPrincipal());
-		
-		f.setVisible(true);
-
-	}
+	
 
 	/**
 	 * @return the usuario

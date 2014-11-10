@@ -1,36 +1,18 @@
 [
   {
     "identificacion": "1",
-    "nombre": "Kevin",
-    "pApellido": "Hernandez",
-    "sApellido": "Rostran",
-    "telefono": "123",
+    "nombre": "1",
+    "pApellido": "1",
+    "sApellido": "1",
+    "telefono": "1",
     "contrasena": "1",
-    "correo": "k@g.com",
-    "dirFotoPerfil": "Pet_Saviors\\perfiles\\1.png",
+    "correo": "g@h.com",
+    "dirFotoPerfil": "",
     "casaCuna": true,
-    "adoptante": true,
+    "adoptante": false,
     "administrador": false,
     "datosSistema": {
       "identificadorIndividuo": 1,
-      "eventosParticipado": [],
-      "reportes": []
-    }
-  },
-  {
-    "identificacion": "2312412",
-    "nombre": "ahskash",
-    "pApellido": "fhgf",
-    "sApellido": "ghf",
-    "telefono": "1231212",
-    "contrasena": "safasdf",
-    "correo": "k@gsd.con",
-    "dirFotoPerfil": "Pet_Saviors\\perfiles\\2312412.png",
-    "casaCuna": true,
-    "adoptante": true,
-    "administrador": false,
-    "datosSistema": {
-      "identificadorIndividuo": 2,
       "eventosParticipado": [],
       "reportes": []
     }
