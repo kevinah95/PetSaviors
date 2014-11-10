@@ -24,8 +24,11 @@ public class ModeloEtapaImagenes {
 	private static final boolean INCORRECTA = false;
 	private static final File dirTemporal = new File("Pet_Saviors/temp");
 	private static final File dirImagenes = new File("Pet_Saviors/imagenes");
-	private static int indexImagen = 0;
-	private ArrayList<String> imagenes = new ArrayList<String>();
+	private int indexBoton = 0;
+	int partirDe = 0;
+	private ArrayList<String> imagenes;
+	Predicate<ReporteAnimal> predicadoChipAnimal;
+	Predicate<ReporteAnimal> predicadoFull;
 	public ModeloEtapaImagenes() {
 		try {
 			verificarArchivo();
@@ -34,7 +37,6 @@ public class ModeloEtapaImagenes {
 			e.printStackTrace();
 		}
 		limpiarDirTemporal();
-		indexImagen = getIndice();
 	}
 	
 	
@@ -70,16 +72,15 @@ public class ModeloEtapaImagenes {
 		Thumbnails.of(path)
         .size(300, 300)
         .outputFormat("png")
-        .toFile(new File( ""+dirTemporal+"\\img"+String.valueOf(indexImagen) ));
-		path= ""+dirTemporal+"\\img"+String.valueOf(indexImagen)+".png";
+        .toFile(new File( ""+dirTemporal+"\\img"+String.valueOf(partirDe+indexBoton) ));
+		path= ""+dirTemporal+"\\img"+String.valueOf(partirDe+indexBoton)+".png";
 		System.out.println(path);
-		indexImagen++;
 	}
 	
-	public BufferedImage obtenerImagen() throws IOException{
+	public BufferedImage obtenerImagen(int indiceBoton) throws IOException{
 		BufferedImage originalImage = null;
 		BufferedImage thumbnail = null;
-		
+		indexBoton = indiceBoton;
 		guardarCopiaRedimensionada();
 		
 		originalImage = ImageIO.read(new File(path));
@@ -111,39 +112,52 @@ public class ModeloEtapaImagenes {
 				.getUsuario()
 				.reportarMascota(tipoMascota, razaMascota, color, lugar,
 						modoRegistro, chip, nombre, recompensa, sexo);
+		 predicadoChipAnimal = new Predicate<ReporteAnimal>() {
+			public boolean test(ReporteAnimal t) {
+				
+				return t.getAnimalReportado().getChipIdentificacion().equals(chip);
+			}
+		};
 
 	}
 	
 	Predicate<ReporteAnimal> predicadoCedula = new Predicate<ReporteAnimal>() {
 		public boolean test(ReporteAnimal t) {
+			
 			return t.getIdentificacionReportante().equals(VistaPrincipal.getUsuario().getIdentificacion());
 		}
 	};
 	
-	public void cargarImagenes(){
-		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->p.setFotosAnimal(imagenes));
-		Mascotas.mascotasRegistradas.stream().filter(predicadoCedula).forEach(p->System.out.println(p.toString()));
+	public void cargarFullPredicado(){
+		predicadoFull = predicadoCedula.and(predicadoChipAnimal);
 	}
 	
 	
 	
-	public static void limpiarDirTemporal(){
+	public void cargarImagenes(){
+		cargarFullPredicado();
+		Mascotas.mascotasRegistradas.stream().filter(predicadoFull).forEach(p->p.setFotosAnimal(imagenes));
+		Mascotas.mascotasRegistradas.stream().filter(predicadoFull).forEach(p->System.out.println(p.toString()));
+	}
+	
+	
+	
+	public void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
 			file.delete();
 	}
 	
-	public static  int getIndice(){
+	public int getIndice(){
 		int indice = dirImagenes.listFiles().length;
 		return indice;
 	}
 	
 	public void copiarTempToImagenes() throws IOException{
-		imagenes.clear();
+		imagenes = new ArrayList<String>();
 		FileUtils.copyDirectory(dirTemporal, dirImagenes);
 		for (File file : dirTemporal.listFiles()) {
 			String temp = file.getPath();
 			imagenes.add(temp.replace("temp", "imagenes"));
-
 		}
 	}
 	

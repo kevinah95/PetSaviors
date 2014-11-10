@@ -61,28 +61,34 @@ public class VistaEtapaImagenes extends JPanel{
 		
 		btnImagen0 = new JButtonTransparente("");
 		btnImagen0.setName("0");
+		btnImagen0.setIndiceBoton(0);
 		panelMiniaturas.setLayout(new GridLayout(0, 6, 2, 0));
 		btnImagen0.setIcon(new ImageIcon(ICONO_DEFAULT));
 		panelMiniaturas.add(btnImagen0);
 		
 		btnImagen1 = new JButtonTransparente("");
 		btnImagen1.setName("1");
+		btnImagen1.setIndiceBoton(1);
 		panelMiniaturas.add(btnImagen1);
 		
 		btnImagen2 = new JButtonTransparente("");
 		btnImagen2.setName("2");
+		btnImagen2.setIndiceBoton(2);
 		panelMiniaturas.add(btnImagen2);
 		
 		btnImagen3 = new JButtonTransparente("");
 		btnImagen3.setName("3");
+		btnImagen3.setIndiceBoton(3);
 		panelMiniaturas.add(btnImagen3);
 		
 		btnImagen4 = new JButtonTransparente("");
 		btnImagen4.setName("4");
+		btnImagen4.setIndiceBoton(4);
 		panelMiniaturas.add(btnImagen4);
 		
 		btnImagen5 = new JButtonTransparente("");
 		btnImagen5.setName("5");
+		btnImagen5.setIndiceBoton(5);
 		panelMiniaturas.add(btnImagen5);
 		
 		lblLugar = new JLabel("Lugar");

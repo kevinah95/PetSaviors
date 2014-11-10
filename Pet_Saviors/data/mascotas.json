@@ -2,8 +2,8 @@
   {
     "identificacionReportante": "1",
     "telefonoContacto": "1",
-    "correoContacto": "g@h.com",
-    "lugarContacto": "fasdfasdf",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "jdlkasjlkdaslkdalksdjalksjdlk",
     "fotosAnimal": [
       "Pet_Saviors\\imagenes\\img0.png"
     ],
@@ -16,8 +16,60 @@
       "raza": "",
       "color": "Rojo",
       "sexo": "Macho",
-      "chipIdentificacion": "asdf",
-      "nombreMascota": "fasdfdsaf"
+      "chipIdentificacion": "1",
+      "nombreMascota": "1"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "1",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "jdlkasdjaslkdasl",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img1.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Alpaca",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "2",
+      "nombreMascota": "jaslkdasdhjkas"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "1",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "Saltadilla",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img2.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 1000000.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pokémon",
+      "raza": "Abra",
+      "color": "Azul",
+      "sexo": "Macho",
+      "chipIdentificacion": "702",
+      "nombreMascota": "Raulin"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",

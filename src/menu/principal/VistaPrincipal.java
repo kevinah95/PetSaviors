@@ -158,12 +158,7 @@ public class VistaPrincipal extends JPanel {
 	    btnAtras.setBorder(null);
 	    add(btnAtras);
 	}
-	
-	
 
-	
-	
-	
 
 	/**
 	 * @return the usuario

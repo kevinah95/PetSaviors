@@ -24,6 +24,7 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 	ModeloEtapaImagenes modelo = null;
 	VistaEtapaImagenes vista = null;
 	public static JButtonTransparente btnTemp = null;
+	private boolean inicializado=false;
 
 	public ControladorEtapaImagenes(VistaEtapaImagenes vista,ModeloEtapaImagenes modelo) {
 		this.modelo = modelo;
@@ -62,6 +63,7 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 				modelo.cargarImagenes();
 				javax.swing.SwingUtilities.getWindowAncestor(vista).dispose();
 			}
+			inicializado = false;
 			modelo.limpiarDirTemporal();
 			Mascotas.getInstance().actualizarJson();
 			
@@ -107,8 +109,9 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 		if (e.getButton() == MouseEvent.BUTTON3) {
 			btnTemp = (JButtonTransparente) e.getSource();
 			if (modelo.verificarImagen()) {
+				inicializarIndice();
 				try {
-					btnTemp.setIcon(new ImageIcon(modelo.obtenerImagen()));
+					btnTemp.setIcon(new ImageIcon(modelo.obtenerImagen(btnTemp.getIndiceBoton())));
 					seleccionBotonDefault();
 					btnTemp.setDirImagen(modelo.path);
 					vista.lblImagenPrincipal.setIcon(new ImageIcon(modelo
@@ -144,6 +147,13 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 			vista.txtRecompensa.getValue();
 		}
 
+	}
+	
+	public void inicializarIndice(){
+		if(btnTemp==vista.btnImagen0 && inicializado == false){
+			modelo.partirDe = modelo.getIndice();
+			inicializado = true;
+		}
 	}
 	
 	public void seleccionBotonDefault(){

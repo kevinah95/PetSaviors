@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 import registrar.usuario.ModeloRegistroDatos;
 
@@ -37,10 +38,15 @@ public class ControladorEtapaDatos implements ActionListener{
 		if (e.getActionCommand().equals("Siguiente")) {
 			if (modelo.verificarDatos(vista.txtNombre.getText(),
 					vista.txtChip.getText(), vista.txtDescripcion.getText())) {
-				RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,
-						"VistaEtapaImagenes");
-				vista.getParent().repaint();
-				vista.getParent().revalidate();
+				if(!modelo.chipRepetido(vista.txtChip.getText())){
+					RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,
+							"VistaEtapaImagenes");
+					vista.getParent().repaint();
+					vista.getParent().revalidate();
+				}else{
+					JOptionPane.showMessageDialog(RegistrarMascota.panelCards, "El chip ya se encuentra registrado en el sistema.");
+				}
+				
 			}
 
 		}

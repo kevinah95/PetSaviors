@@ -7,8 +7,8 @@ import javax.swing.JPanel;
 
 public class RegistarUsuario extends JDialog {
 	
-	static JPanel panelCards = new JPanel();
-	static CardLayout cardlayout = new CardLayout();
+	public static JPanel panelCards = new JPanel();
+	public static CardLayout cardlayout = new CardLayout();
 	
 	
 

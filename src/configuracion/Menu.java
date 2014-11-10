@@ -3,14 +3,18 @@ package configuracion;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.*;
+
+import editar.usuario.EditarUsuario;
+
 import java.awt.*;
 import java.awt.event.*;
+
 import registrar.mascota.RegistrarMascota;
 import render.listas.RenderMenu;
 
 public class Menu extends JFrame implements WindowFocusListener, ListSelectionListener{
 	private static final long serialVersionUID = 1L;
-	JList listaMenu;
+	JList<String> listaMenu;
 	
 	public Menu(java.awt.Component relativo){
 		setUndecorated(true);
@@ -43,20 +47,21 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 		panelLista.setBackground(new Color(130,177,166));
 		
 		
-		DefaultListModel<String> model = new DefaultListModel();
+		DefaultListModel<String> model = new DefaultListModel<String>();
 	    model.addElement("Mi Perfil");
 	    model.addElement("Reportar Mascota");
 	    model.addElement("Cerrar Sesión");
-	    ListCellRenderer renderer = new RenderMenu();
-		listaMenu = new JList(model);
+	    ListCellRenderer<String> renderer = new RenderMenu();
+		listaMenu = new JList<String>(model);
 		listaMenu.setFont(new Font("Dialog", Font.BOLD, 15));
 	    listaMenu.setBackground(new Color(130, 177, 166));
 	    listaMenu.setBorder(null);
-	    listaMenu.setSelectedIndex(0);
+	    
 	    
 	    listaMenu.setCellRenderer(renderer);
 	    
 	    listaMenu.addListSelectionListener(this);
+	    
 	    
 	    
 		JScrollPane scrollPaneLista = new JScrollPane(listaMenu);
@@ -77,14 +82,20 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 	public void windowGainedFocus(WindowEvent e) {}
 	public void windowLostFocus(WindowEvent e) { dispose(); }
 
-	
 	public void valueChanged(ListSelectionEvent e) {
-		if (e.getValueIsAdjusting() == false) {
-			if (listaMenu.getSelectedIndex()==1){
-				RegistrarMascota registrarmascota = new RegistrarMascota();
+		
+		if (e.getValueIsAdjusting() == true) {
+			if(listaMenu.getSelectedIndex() == 0){
 				
+				EditarUsuario editarusuario = new EditarUsuario();
 				
 			}
+			if (listaMenu.getSelectedIndex() == 1) {
+				RegistrarMascota registrarmascota = new RegistrarMascota();
+				System.out.println(listaMenu.getSelectedIndex());
+				
+			}
+			
 		}
 		
 	}
