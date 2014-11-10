@@ -19,7 +19,6 @@ import net.coobird.thumbnailator.Thumbnails;
 
 public class ModeloEtapaImagenes {
 
-	private static ModeloEtapaImagenes instance = null;
 	String path="";
 	private static final boolean CORRECTA = true;
 	private static final boolean INCORRECTA = false;
@@ -27,24 +26,18 @@ public class ModeloEtapaImagenes {
 	private static final File dirImagenes = new File("Pet_Saviors/imagenes");
 	private static int indexImagen = 0;
 	private ArrayList<String> imagenes = new ArrayList<String>();
-	protected ModeloEtapaImagenes() {
-		
+	public ModeloEtapaImagenes() {
+		try {
+			verificarArchivo();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		limpiarDirTemporal();
+		indexImagen = getIndice();
 	}
 	
-	public static ModeloEtapaImagenes getInstance()  {
-		if (instance == null) {
-			instance = new ModeloEtapaImagenes();
-			try {
-				verificarArchivo();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			limpiarDirTemporal();
-			indexImagen = getIndice();
-		}
-		return instance;
-	}
+	
 	
 	public boolean verificarImagen(){
 		path="";
@@ -63,7 +56,7 @@ public class ModeloEtapaImagenes {
 		
 		fileChooser.setFileFilter(filter);
 		
-		int returnValue = fileChooser.showOpenDialog(RegistrarMascota.etapaimagenes);
+		int returnValue = fileChooser.showOpenDialog(RegistrarMascota.vistaetapaimagenes);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fileChooser.getSelectedFile();
 			

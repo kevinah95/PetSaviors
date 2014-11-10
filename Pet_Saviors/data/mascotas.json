@@ -4,9 +4,7 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "fasdfasdf",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img3.png"
-    ],
+    "fotosAnimal": [],
     "condicionEntrada": "Encontrado",
     "recompensa": 0.0,
     "animalReportado": {
@@ -30,9 +28,7 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "asdfasfasfdsadf",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img3.png"
-    ],
+    "fotosAnimal": [],
     "condicionEntrada": "Extraviado",
     "recompensa": 0.0,
     "animalReportado": {
@@ -56,9 +52,7 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "fasdfasdfasdf",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img3.png"
-    ],
+    "fotosAnimal": [],
     "condicionEntrada": "Extraviado",
     "recompensa": 8.3127931274671278E18,
     "animalReportado": {
@@ -82,9 +76,7 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "sadffsad",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img3.png"
-    ],
+    "fotosAnimal": [],
     "condicionEntrada": "Extraviado",
     "recompensa": 0.0,
     "animalReportado": {
@@ -108,9 +100,7 @@
     "telefonoContacto": "123",
     "correoContacto": "k@g.com",
     "lugarContacto": "fsadfasd",
-    "fotosAnimal": [
-      "Pet_Saviors\\imagenes\\img3.png"
-    ],
+    "fotosAnimal": [],
     "condicionEntrada": "Extraviado",
     "recompensa": 0.0,
     "animalReportado": {
@@ -121,6 +111,78 @@
       "color": "Rojo",
       "sexo": "Macho",
       "chipIdentificacion": "fsdaf",
+      "nombreMascota": "asdf"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fasfdasdf",
+    "fotosAnimal": [],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Alaskan Dwarf (Enano de Alaska)",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "asdf",
+      "nombreMascota": "adsffasd"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fasf",
+    "fotosAnimal": [],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Erizo",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Hembra",
+      "chipIdentificacion": "fasdf",
+      "nombreMascota": "asfd"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1",
+    "telefonoContacto": "123",
+    "correoContacto": "k@g.com",
+    "lugarContacto": "fasdf",
+    "fotosAnimal": [],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Cobaya",
+      "raza": "",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "asdf",
       "nombreMascota": "asdf"
     },
     "fechaRegistrado": "0//0",

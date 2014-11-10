@@ -35,10 +35,7 @@ public class VistaEtapaDatos extends JPanel{
 	
 	//Instancia de suma relevancia debido a la carga de especies
 	public ControlEspecie controlEspecie = ControlEspecie.getInstance();
-	
-	//singleton
-	
-	
+
 	public VistaEtapaDatos() {
 		setLayout(null);
 		setSize(600, 600);

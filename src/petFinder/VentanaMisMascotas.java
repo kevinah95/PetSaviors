@@ -16,7 +16,7 @@ public class VentanaMisMascotas extends JPanel {
 	private static final long serialVersionUID = 1L;
 	//Esta clase va a contener una JTable con los animales que tiene el usuario.
 	public static JTable tabla;
-	private DefaultTableModel modelo;
+	private  DefaultTableModel modelo;
 	private JPanel panelContenedor = new JPanel();
 	private TableRowSorter<DefaultTableModel> sorter;
 	private GridBagConstraints grid = new GridBagConstraints();

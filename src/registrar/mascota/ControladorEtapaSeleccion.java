@@ -13,9 +13,9 @@ public class ControladorEtapaSeleccion implements ActionListener{
 	VistaEtapaSeleccion vista = null;
 	ModeloEtapaSeleccion modelo = null;
 	
-	public ControladorEtapaSeleccion() {
-		this.modelo = ModeloEtapaSeleccion.getInstance();
-		this.vista = RegistrarMascota.etapaseleccion;
+	public ControladorEtapaSeleccion(VistaEtapaSeleccion vista, ModeloEtapaSeleccion modelo) {
+		this.modelo = modelo;
+		this.vista = vista;
 		setAcciones(this);
 	}
 
@@ -34,7 +34,7 @@ public class ControladorEtapaSeleccion implements ActionListener{
 		}
 		
 		if (source == vista.btnMascotaEncontrada) {
-			RegistrarMascota.etapaimagenes.lblLugar.setText("Lugar donde la encontró");
+			RegistrarMascota.vistaetapaimagenes.lblLugar.setText("Lugar donde la encontró");
 			RegistrarMascota.modoRegistro = RegistrarMascota.ENCONTRADO;
 			RegistrarMascota.actualizarModo();
 			RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,"VistaEtapaDatos");
@@ -43,7 +43,7 @@ public class ControladorEtapaSeleccion implements ActionListener{
 		}
 		
 		if (source == vista.btnMascotaPerdida) {
-			RegistrarMascota.etapaimagenes.lblLugar.setText("Lugar donde se extravió");
+			RegistrarMascota.vistaetapaimagenes.lblLugar.setText("Lugar donde se extravió");
 			RegistrarMascota.modoRegistro = RegistrarMascota.EXTRAVIADO;
 			RegistrarMascota.actualizarModo();
 			RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,"VistaEtapaDatos");

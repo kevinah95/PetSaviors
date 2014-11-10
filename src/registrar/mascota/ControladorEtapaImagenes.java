@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 
+import petFinder.VentanaMisMascotas;
 import logicaExterna.Mascotas;
 import fabrica.botones.JButtonTransparente;
 
@@ -24,9 +25,9 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 	VistaEtapaImagenes vista = null;
 	public static JButtonTransparente btnTemp = null;
 
-	public ControladorEtapaImagenes() {
-		this.modelo = ModeloEtapaImagenes.getInstance();
-		this.vista = RegistrarMascota.etapaimagenes;
+	public ControladorEtapaImagenes(VistaEtapaImagenes vista,ModeloEtapaImagenes modelo) {
+		this.modelo = modelo;
+		this.vista = vista;
 		setAcciones(this);
 	}
 	
@@ -63,12 +64,13 @@ public class ControladorEtapaImagenes implements ActionListener, MouseListener,
 			}
 			modelo.limpiarDirTemporal();
 			Mascotas.getInstance().actualizarJson();
+			
 
 		}
 	}
 
 	private void joinDatos(){
-		VistaEtapaDatos vistaDatos = RegistrarMascota.etapadatos;
+		VistaEtapaDatos vistaDatos = RegistrarMascota.vistaetapadatos;
 		String sexo = null;
 		if (vistaDatos.rdbtnMacho.isSelected()) {
 			sexo = "Macho";

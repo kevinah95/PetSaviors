@@ -2,8 +2,11 @@ package registrar.mascota;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+
+import registrar.usuario.ModeloRegistroDatos;
 
 public class ControladorEtapaDatos implements ActionListener{
 
@@ -11,8 +14,8 @@ public class ControladorEtapaDatos implements ActionListener{
 	static VistaEtapaDatos vista = null;
 	
 	
-	public ControladorEtapaDatos(VistaEtapaDatos etapadatos) {
-		this.modelo = ModeloEtapaDatos.getInstance();
+	public ControladorEtapaDatos(VistaEtapaDatos etapadatos,ModeloEtapaDatos modelo) {
+		this.modelo = modelo;
 		this.vista = etapadatos;
 		setAcciones(this);
 	}
@@ -24,25 +27,24 @@ public class ControladorEtapaDatos implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==vista.btnAtras){
-			RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,"VistaEtapaSeleccion");
+		if (e.getSource() == vista.btnAtras) {
+			RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,
+					"VistaEtapaSeleccion");
 			vista.limpiarRegistros();
-			RegistrarMascota.etapaimagenes.limpiarDatos();
+			RegistrarMascota.vistaetapaimagenes.limpiarDatos();
 		}
-		
-		if (e.getActionCommand().equals("Siguiente")){
+
+		if (e.getActionCommand().equals("Siguiente")) {
 			if (modelo.verificarDatos(vista.txtNombre.getText(),
 					vista.txtChip.getText(), vista.txtDescripcion.getText())) {
-				RegistrarMascota.cardlayout.show(
-						RegistrarMascota.panelCards,
+				RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,
 						"VistaEtapaImagenes");
 				vista.getParent().repaint();
 				vista.getParent().revalidate();
 			}
-			
-			
+
 		}
-		
+
 	}
 
 }

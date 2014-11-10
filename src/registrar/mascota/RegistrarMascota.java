@@ -13,9 +13,9 @@ public class RegistrarMascota extends JDialog {
 	public static final String EXTRAVIADO = "Extraviado";
 	static JPanel panelCards = new JPanel();
 	static CardLayout cardlayout = new CardLayout();
-	static VistaEtapaDatos etapadatos;
-	static VistaEtapaImagenes etapaimagenes;
-	static VistaEtapaSeleccion etapaseleccion;
+	
+	public static VistaEtapaImagenes vistaetapaimagenes;
+	public static VistaEtapaDatos vistaetapadatos;
 
 	public RegistrarMascota() {
 		setSize(600, 600);
@@ -32,19 +32,21 @@ public class RegistrarMascota extends JDialog {
 
 	public void agregarPaneles() {
 
-		etapaseleccion = new VistaEtapaSeleccion();
-		new ControladorEtapaSeleccion();
+		
+		ModeloEtapaSeleccion modeloetapaseleccion = new ModeloEtapaSeleccion();
+		VistaEtapaSeleccion etapaseleccion = new VistaEtapaSeleccion();
+		new ControladorEtapaSeleccion(etapaseleccion,modeloetapaseleccion);
 		panelCards.add("VistaEtapaSeleccion", etapaseleccion);
 
-		etapadatos = new VistaEtapaDatos();
+		vistaetapadatos = new VistaEtapaDatos();
+		ModeloEtapaDatos modeloetapadatos = new ModeloEtapaDatos();
+		new ControladorEtapaDatos(vistaetapadatos,modeloetapadatos);
+		panelCards.add("VistaEtapaDatos", vistaetapadatos);
 
-		new ControladorEtapaDatos(etapadatos);
-		panelCards.add("VistaEtapaDatos", etapadatos);
-
-		etapaimagenes = new VistaEtapaImagenes();
-
-		new ControladorEtapaImagenes();
-		panelCards.add("VistaEtapaImagenes", etapaimagenes);
+		ModeloEtapaImagenes modeloetapaimagenes = new ModeloEtapaImagenes();
+		vistaetapaimagenes = new VistaEtapaImagenes();
+		new ControladorEtapaImagenes(vistaetapaimagenes,modeloetapaimagenes);
+		panelCards.add("VistaEtapaImagenes", vistaetapaimagenes);
 
 		cardlayout.show(panelCards, "VistaEtapaSeleccion");
 	}
@@ -56,9 +58,9 @@ public class RegistrarMascota extends JDialog {
 
 	public static void actualizarModo() {
 		if (modoRegistro.equals(ENCONTRADO)) {
-			etapaimagenes.txtRecompensa.setEnabled(false);
+			vistaetapaimagenes.txtRecompensa.setEnabled(false);
 		} else if (modoRegistro.equals(EXTRAVIADO)) {
-			etapaimagenes.txtRecompensa.setEnabled(true);
+			vistaetapaimagenes.txtRecompensa.setEnabled(true);
 
 		}
 	}
