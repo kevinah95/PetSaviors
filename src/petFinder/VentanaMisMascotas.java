@@ -53,10 +53,10 @@ public class VentanaMisMascotas extends JPanel {
 		//Se supone que le debería pasar una lista o algo así
 		//Ejemplo:
 		//Object[] datos = {"222341", "Perro", "Komondor", "Negro", "Macho", "44RT12", "Peludito :3"};
-		String path1 = "/recursos/Peludito.jpg";
-		String path2 = "/recursos/Miaucito.jpg";
-		listaPath.add(path1);
-		listaPath.add(path2);
+//		String path1 = "/recursos/Peludito.jpg";
+//		String path2 = "/recursos/Miaucito.jpg";
+//		listaPath.add(path1);
+//		listaPath.add(path2);
 		//modelo.addRow(datos);
 		//Object[] datos1 = {"333333", "Gato", "Peterbald", "Blanco", "Hembra", "33EE212", "Miaucito <3"};
 		//modelo.addRow(datos1);
@@ -101,7 +101,13 @@ public class VentanaMisMascotas extends JPanel {
 			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
 			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
 			
-			//String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+			String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+			if(!pathImagen.isEmpty()) {
+				listaPath.add(pathImagen);
+			}
+			else {
+				listaPath.add("");
+			}
 			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre};
 			modelo.addRow(nuevaFila);
 		}
@@ -120,22 +126,24 @@ public class VentanaMisMascotas extends JPanel {
 				setBackground(new Color(127, 200, 176));
 				if(isSelected) {
 					setBackground(new Color(200, 232, 221));
-					VistaPrincipal.panelImagenAnimal.removeAll();
-					JLabel labelImagen = new JLabel();
-					String path = VentanaMisMascotas.listaPath.get(tabla.getSelectedRow());
-					BufferedImage imagen = null;
-					try {
-						imagen = Thumbnails.of(getClass().getResource(path))
-								.size(227, 230)
-								.asBufferedImage();
-					} catch (IOException e) {
-						e.printStackTrace();
+					String path = VentanaMisMascotas.listaPath.get(tabla.convertRowIndexToModel(tabla.getSelectedRow()));
+					if(!path.equals("")) {
+						VistaPrincipal.panelImagenAnimal.removeAll();
+						JLabel labelImagen = new JLabel();
+						BufferedImage imagen = null;
+						try {
+							imagen = Thumbnails.of(getClass().getResource(path))
+									.size(227, 230)
+									.asBufferedImage();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						labelImagen.setIcon(new ImageIcon(imagen));
+						VistaPrincipal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
+						VistaPrincipal.panelImagenAnimal.setVisible(true);
+						VistaPrincipal.panelImagenAnimal.repaint();
+						VistaPrincipal.panelImagenAnimal.revalidate();
 					}
-					labelImagen.setIcon(new ImageIcon(imagen));
-					VistaPrincipal.panelImagenAnimal.add(labelImagen, BorderLayout.CENTER);
-					VistaPrincipal.panelImagenAnimal.setVisible(true);
-					VistaPrincipal.panelImagenAnimal.repaint();
-					VistaPrincipal.panelImagenAnimal.revalidate();
 				}
 		  
 		       return this;
