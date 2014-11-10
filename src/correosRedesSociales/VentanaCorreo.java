@@ -46,11 +46,15 @@ public class VentanaCorreo extends JFrame implements ActionListener{
     }
     
     public static void main(String[] ar) {
-        VentanaCorreo VentanaCorreo1=new VentanaCorreo();
-        VentanaCorreo1.setBounds(450,200,375,500);
-        VentanaCorreo1.setVisible(true);
+        llamarVentana();
     }
     public String getPIN(){
     	return pin;
     }
+    public static void llamarVentana() {
+        VentanaCorreo VentanaCorreo1=new VentanaCorreo();
+        VentanaCorreo1.setBounds(450,200,375,500);
+        VentanaCorreo1.setVisible(true);
+    }
+    
 }

@@ -143,9 +143,9 @@ public class Email {
     	//Se instancia un nuevo Email
     	Email e = new Email(correo,clave,destinatario,encabezado,mensaje);
     	if (e.sendMail()){
-    		JOptionPane.showMessageDialog(null,"El correo se envió satisfactoriamente", "Ïnforme",0);
+    		JOptionPane.showMessageDialog(null,"El correo se envió satisfactoriamente");
     	}
-    	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo", "Ïnforme",0);}
+    	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo");}
     }
     
 }
