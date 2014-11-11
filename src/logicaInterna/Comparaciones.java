@@ -81,7 +81,7 @@ public class Comparaciones {
 		for ( ReporteAnimal animal : Mascotas.mascotasRegistradas ){
 			if (!datos.get(1).equals(Integer.toString(animal.getAnimalReportado().getIdAnimal()))){
 				if (animalPorComparar.getCondicionEntrada() != animal.getCondicionEntrada()){
-					if (animal.getCondicionSalida().equals("") ){
+					if (animal.getCondicionSalida().equals("false") ){
 						animal.getAnimalReportado().setContadorSemejanzas(cantidadSemejanzas (datos, animal)); //Setea la variable para ordenamiento de cada animal
 						if ( cantidadSemejanzas (datos, animal) > 0 ){
 							resultadoPetFinder.add(animal);}
