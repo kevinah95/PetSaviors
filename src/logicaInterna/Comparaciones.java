@@ -80,11 +80,12 @@ public class Comparaciones {
 		resultadoPetFinder.clear();
 		for ( ReporteAnimal animal : Mascotas.mascotasRegistradas ){
 			if (!datos.get(1).equals(Integer.toString(animal.getAnimalReportado().getIdAnimal()))){
-				animal.getAnimalReportado().setContadorSemejanzas(cantidadSemejanzas (datos, animal)); //Setea la variable para ordenamiento de cada animal
-				if ( cantidadSemejanzas (datos, animal) > 0 ){
-					resultadoPetFinder.add(animal);}
-				if ( cantidadSemejanzas (datos, animal) == -2){
-					resultadoPetFinder.add(0,animal);}	}}
+				if (animalPorComparar.getCondicionEntrada() != animal.getCondicionEntrada()){
+					animal.getAnimalReportado().setContadorSemejanzas(cantidadSemejanzas (datos, animal)); //Setea la variable para ordenamiento de cada animal
+					if ( cantidadSemejanzas (datos, animal) > 0 ){
+						resultadoPetFinder.add(animal);}
+					if ( cantidadSemejanzas (datos, animal) == -2){
+						resultadoPetFinder.add(0,animal);}}	}}
 		ordenarResultados();
 		porcentajeSimilitud(Integer.parseInt(datos.get(0)));}
 	
@@ -118,15 +119,15 @@ public class Comparaciones {
 									  "Maximus Gorrerus", "0","Macho","001");
 		ReporteAnimal perrito2 = new ReporteAnimal ("Perro","Pastor Italiano","Rojo",
 				 					  "22152150", "menoc.sk27@gmail.com",
-				 					  "No", "Encontrado", "011",
+				 					  "No", "Extraviado", "011",
 				 					  "Maximus", "0","Macho","002");
 		ReporteAnimal perrito3 = new ReporteAnimal ("Perro", "Pastor Alemán", "Negro",
 									  "22222222", "jasc!gmail.com", 
-									  "Pavas", "Nada", "No",  
+									  "Pavas", "Extraviado", "No",  
 									  "Maximus Gorrerus", "002","Macho","004");
 		ReporteAnimal perrito4 = new ReporteAnimal ("Perro", "Pastor Alemán", "Tirando a Rojo",
 				 					  "22222222", "jasc!gmail.com", 
-				 				      "Pavas", "Nada", "010", 
+				 				      "Pavas", "Extraviado", "010", 
 				 					  "Maximus Gorrerus", "002","Macho","005");
 		
 		Mascotas.mascotasRegistradas.add(perrito1);
