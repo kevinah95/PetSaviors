@@ -1,10 +1,8 @@
 package petFinder.buscarMascota;
 
 
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Dialog.ModalityType;
 import java.util.ArrayList;
 
 import javax.swing.JDialog;
@@ -14,11 +12,10 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.JScrollPane;
 
-import petFinder.NormalCellRenderer;
 import logicaExterna.Mascotas;
+import logicaInterna.Animal;
 import logicaInterna.Comparaciones;
 import logicaInterna.ReporteAnimal;
-import menu.principal.VistaPrincipal;
 
 
 public class VistaMisMascotasPerdidas extends JDialog {
@@ -26,6 +23,7 @@ public class VistaMisMascotasPerdidas extends JDialog {
 	public DefaultTableModel modeloMascotasPerdidas;
 	
 	public static ArrayList<String> listaPath = new ArrayList<>();
+	
 
 	public VistaMisMascotasPerdidas(ReporteAnimal animalSeleccionado) {
 		setSize(800, 600);
@@ -35,11 +33,9 @@ public class VistaMisMascotasPerdidas extends JDialog {
 		scrollPane.setBounds(10, 93, 747, 384);
 		getContentPane().add(scrollPane);
 		
-		Comparaciones.PetFinder(animalSeleccionado);
-		Comparaciones.resultadoPetFinder.forEach(p->System.out.println(p.getAnimalReportado().getContadorSemejanzas()));
 		
-		tablaMascotasPerdidas = new JTable();
-		llenarTabla();
+		llenarTabla(animalSeleccionado);
+		//tablaMascotasPerdidas = new JTable();
 		scrollPane.setViewportView(tablaMascotasPerdidas);
 		tablaMascotasPerdidas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
@@ -52,11 +48,9 @@ public class VistaMisMascotasPerdidas extends JDialog {
 		
 	}
 	
-	public void setMascotaReportada(ReporteAnimal mascota){
-		
-	}
 	
-	public void llenarTabla(){
+	
+	public void llenarTabla(ReporteAnimal animalSeleccionado){
 		String col[] = {"Tipo", "Raza", "Color", "Sexo", "Chip ID", "Nombre"};
 		modeloMascotasPerdidas = new DefaultTableModel(col, 0) {
 			
@@ -66,8 +60,8 @@ public class VistaMisMascotasPerdidas extends JDialog {
 				return columna > 8;
 			}
 		};
+		cargarDatos(animalSeleccionado);
 		tablaMascotasPerdidas = new JTable(modeloMascotasPerdidas);
-		cargarDatos();
 		
 		tablaMascotasPerdidas.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 		tablaMascotasPerdidas.setPreferredScrollableViewportSize(new Dimension(766, 458));
@@ -90,33 +84,27 @@ public class VistaMisMascotasPerdidas extends JDialog {
 		
 	}
 	
-	public void cargarDatos() { 
+	public void anadirAlModel(Animal animal){
+		String Tipo = animal.getTipoMascota();
+		String Raza = animal.getRaza();
+		String Color = animal.getColor();
+		String Sexo = animal.getSexo();
+		String Chip = animal.getChipIdentificacion();
+		String Nombre = animal.getNombreMascota();
+		
+		Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre};
+		modeloMascotasPerdidas.addRow(nuevaFila);
+	}
+	public void cargarDatos(ReporteAnimal animalSeleccionado) { 
 		listaPath.clear();
 		Mascotas totalMascotas = Mascotas.getInstance();
-		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
-			if(VistaPrincipal.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
-				if(totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada().toLowerCase().equals("encontrado")) {
-				
-					String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
-					String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
-					String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
-					String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
-					String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
-					String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
-					
-					String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
-					if(!pathImagen.isEmpty()) {
-						listaPath.add(pathImagen);
-						System.out.println(listaPath);
-					}
-					else {
-						listaPath.add("");
-					}
-					Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre};
-					modeloMascotasPerdidas.addRow(nuevaFila);
-				}
-			}
-		}
+		
+		Comparaciones.PetFinder(animalSeleccionado);
+		Comparaciones.resultadoPetFinder.forEach(p->anadirAlModel(p.getAnimalReportado()));
+		
 	}
+
+	
+	
 	
 }

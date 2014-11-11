@@ -20,7 +20,7 @@ public class ControladorMisMascotasPerdidas {
 			public void mouseClicked(MouseEvent evt) {
 				if (evt.getClickCount() ==2){
 					
-					
+					System.out.println("asdasdasd");
 //					System.out.println(indexCliente);
 				}
 				

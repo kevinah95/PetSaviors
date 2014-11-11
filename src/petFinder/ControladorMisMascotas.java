@@ -43,6 +43,7 @@ public class ControladorMisMascotas{
 				Mascotas.mascotasRegistradas.stream().filter(filtroID).forEach(p->animalSeleccionado = p);
 				
 				VistaMisMascotasPerdidas nuevoPetFinder = new VistaMisMascotasPerdidas(animalSeleccionado);
+				
 				ModeloMisMascotasPerdidas modelonuevo = new ModeloMisMascotasPerdidas();
 				new ControladorMisMascotasPerdidas(nuevoPetFinder, modelonuevo);
 				
