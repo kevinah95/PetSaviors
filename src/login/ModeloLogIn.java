@@ -1,8 +1,12 @@
 package login;
 
 import individuos.Individuo;
+
 import java.util.function.Predicate;
+
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+
 import logicaExterna.Usuarios;
 import menu.principal.VistaPrincipal;
 
@@ -38,6 +42,7 @@ public class ModeloLogIn {
 	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
 		VistaPrincipal principalnormal = new VistaPrincipal(individuo);
+		principalnormal.lblProfile.setIcon(new ImageIcon(individuo.getDirFotoPerfil()));
 		vistaIngreso.panelCards.add("VistaPrincipal",principalnormal);
 		//principalnormal.setUsuario(individuo);
 		

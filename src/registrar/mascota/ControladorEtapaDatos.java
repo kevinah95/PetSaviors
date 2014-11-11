@@ -38,7 +38,7 @@ public class ControladorEtapaDatos implements ActionListener{
 		if (e.getActionCommand().equals("Siguiente")) {
 			if (modelo.verificarDatos(vista.txtNombre.getText(),
 					vista.txtChip.getText(), vista.txtDescripcion.getText())) {
-				if(!modelo.chipRepetido(vista.txtChip.getText())){
+				if(modelo.chipRepetido(vista.txtChip.getText())){
 					RegistrarMascota.cardlayout.show(RegistrarMascota.panelCards,
 							"VistaEtapaImagenes");
 					vista.getParent().repaint();

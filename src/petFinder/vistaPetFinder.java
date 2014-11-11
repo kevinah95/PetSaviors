@@ -70,6 +70,7 @@ public class vistaPetFinder extends JPanel{
 		contenedor.add("PetFinder", ventanaPetFinder);
 		
 		VentanaMisMascotas misMascotas = new VentanaMisMascotas();
+		new ControladorMisMascotas(misMascotas);
 		contenedor.add("Mis Mascotas", misMascotas);
 		
 		VentanaMascotaDuenio mascotasDuenio = new VentanaMascotaDuenio();

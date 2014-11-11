@@ -50,7 +50,7 @@ public class Menu extends JFrame implements WindowFocusListener, ListSelectionLi
 		
 		
 		DefaultListModel<String> model = new DefaultListModel<String>();
-	    model.addElement("Mi Perfil");
+	    model.addElement("Editar Perfil");
 	    model.addElement("Reportar Mascota");
 	    model.addElement("Cerrar Sesión");
 	    ListCellRenderer<String> renderer = new RenderMenu();

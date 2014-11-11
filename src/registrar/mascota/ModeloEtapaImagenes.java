@@ -22,6 +22,7 @@ public class ModeloEtapaImagenes {
 	String path="";
 	private static final boolean CORRECTA = true;
 	private static final boolean INCORRECTA = false;
+	
 	private static final File dirTemporal = new File("Pet_Saviors/temp");
 	private static final File dirImagenes = new File("Pet_Saviors/imagenes");
 	private int indexBoton = 0;
@@ -29,6 +30,9 @@ public class ModeloEtapaImagenes {
 	private ArrayList<String> imagenes;
 	Predicate<ReporteAnimal> predicadoChipAnimal;
 	Predicate<ReporteAnimal> predicadoFull;
+	
+	
+	
 	public ModeloEtapaImagenes() {
 		try {
 			verificarArchivo();
@@ -108,10 +112,8 @@ public class ModeloEtapaImagenes {
 	public void cargarDatos(String modoRegistro, String nombre, String chip,
 			String color, String tipoMascota, String razaMascota, String sexo,
 			String descripcion, String lugar, String recompensa) {
-		VistaPrincipal
-				.getUsuario()
-				.reportarMascota(tipoMascota, razaMascota, color, lugar,
-						modoRegistro, chip, nombre, recompensa, sexo);
+		
+		
 		 predicadoChipAnimal = new Predicate<ReporteAnimal>() {
 			public boolean test(ReporteAnimal t) {
 				
@@ -119,7 +121,17 @@ public class ModeloEtapaImagenes {
 			}
 		};
 
+			VistaPrincipal
+			.getUsuario()
+			.reportarMascota(tipoMascota, razaMascota, color, lugar,
+					modoRegistro, chip, nombre, recompensa, sexo);
+		
+			
+		
+		
 	}
+	
+	
 	
 	Predicate<ReporteAnimal> predicadoCedula = new Predicate<ReporteAnimal>() {
 		public boolean test(ReporteAnimal t) {
@@ -142,6 +154,8 @@ public class ModeloEtapaImagenes {
 	
 	
 	
+	
+	
 	public void limpiarDirTemporal(){
 		for(File file: dirTemporal.listFiles()) 
 			file.delete();
@@ -158,6 +172,11 @@ public class ModeloEtapaImagenes {
 		for (File file : dirTemporal.listFiles()) {
 			String temp = file.getPath();
 			imagenes.add(temp.replace("temp", "imagenes"));
+		}
+		if( dirTemporal.listFiles().length == 0){
+			for(int i=0;i<6;i++){
+				imagenes.add("");
+			}
 		}
 	}
 	

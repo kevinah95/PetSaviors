@@ -35,6 +35,7 @@ public class VistaPrincipal extends JPanel {
 	public static JList listaMenu;
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
+	public JLabel lblProfile;
 	
 	vistaPetFinder petFinder;
 	VentanaReportesActivos reportesActivos;
@@ -67,7 +68,7 @@ public class VistaPrincipal extends JPanel {
 		lblEncima.setBounds(0, 0, 84, 84);
 		panelConfig.add(lblEncima);
 		
-		JLabel lblProfile = new JLabel("Profile");
+		lblProfile = new JLabel("Profile");
 		lblProfile.setBounds(16, 20, 51, 43);
 		panelConfig.add(lblProfile);
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);

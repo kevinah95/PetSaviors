@@ -1,6 +1,8 @@
 package petFinder;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -67,6 +69,7 @@ public class VentanaMisMascotas extends JPanel {
 		tabla.getColumn("Chip ID").setCellRenderer(normal);
 		tabla.getColumn("Nombre").setCellRenderer(normal);
 		panelContenedor.setLayout(new CardLayout(0, 0));
+		
 		
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		grid.fill = GridBagConstraints.BOTH;

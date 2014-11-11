@@ -1,15 +1,25 @@
 package registrar.mascota;
 
+import java.util.function.Predicate;
+
 import javax.swing.JOptionPane;
 
 import logicaExterna.Mascotas;
+import logicaInterna.ReporteAnimal;
 import clasificacion.animales.ControlEspecie;
 
 public class ModeloEtapaDatos {
 
 	String[] listaRaza = null;
-	private boolean confirmacionChip =false;
+	
 	private static ModeloEtapaDatos instance = null;
+	private static final boolean DENEGADO = false;
+	Predicate<ReporteAnimal> predicadoChipAnimal;
+	Predicate<ReporteAnimal> predicadoModoEncontrado;
+	Predicate<ReporteAnimal> predicadoModoPerdido;
+	Predicate<ReporteAnimal> predicadoFullModo;
+	
+	private boolean condicionChip=false;
 	
 	protected ModeloEtapaDatos() {
 		
@@ -43,8 +53,48 @@ public class ModeloEtapaDatos {
 	}
 	
 	public boolean chipRepetido(String chip){
-		Mascotas.mascotasRegistradas.forEach(p->confirmacionChip=p.getAnimalReportado().getChipIdentificacion().equals(chip));
-		return confirmacionChip;
+		
+		condicionChip = true;		
+		predicadoChipAnimal = new Predicate<ReporteAnimal>() {
+			public boolean test(ReporteAnimal t) {
+				
+				return t.getAnimalReportado().getChipIdentificacion().equals(chip);
+			}
+		};
+		
+		if (RegistrarMascota.modoRegistro.equals(RegistrarMascota.ENCONTRADO)){
+			predicadoModoEncontrado = new Predicate<ReporteAnimal>() {
+				public boolean test(ReporteAnimal t) {
+					
+					return t.getCondicionEntrada().equals(RegistrarMascota.ENCONTRADO);
+				}
+			};
+			predicadoFullModo = predicadoChipAnimal.and(predicadoModoEncontrado);
+			
+		}
+			
+		if (RegistrarMascota.modoRegistro.equals(RegistrarMascota.EXTRAVIADO)){
+			predicadoModoPerdido = new Predicate<ReporteAnimal>() {
+				public boolean test(ReporteAnimal t) {
+					
+					return t.getCondicionEntrada().equals(RegistrarMascota.EXTRAVIADO);
+				}
+			};
+			predicadoFullModo = predicadoChipAnimal.and(predicadoModoPerdido);
+		}
+		
+		Mascotas.mascotasRegistradas.stream().filter(predicadoFullModo).forEach(p->cambiarCondicionChip());
+		System.out.println(condicionChip);
+		return condicionChip;
+	}
+	
+	
+		
+		
+	
+	private void cambiarCondicionChip(){
+		System.out.println("denegado");
+		condicionChip = DENEGADO; //si lo encontró entonces no se puede registrar 
 	}
 
 }
