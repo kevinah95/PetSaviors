@@ -3,27 +3,32 @@ package petFinder.buscarMascota;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.JScrollPane;
 
+import correosRedesSociales.VentanaCorreo;
 import logicaExterna.Mascotas;
 import logicaInterna.Animal;
 import logicaInterna.Comparaciones;
 import logicaInterna.ReporteAnimal;
 
 
-public class VistaMisMascotasPerdidas extends JDialog {
+public class VistaMisMascotasPerdidas extends JFrame {
 	public JTable tablaMascotasPerdidas;
 	public DefaultTableModel modeloMascotasPerdidas;
 	
 	public static ArrayList<String> listaPath = new ArrayList<>();
-	
+	String correoDueno="";
 
 	public VistaMisMascotasPerdidas(ReporteAnimal animalSeleccionado) {
 		setSize(800, 600);
@@ -38,10 +43,28 @@ public class VistaMisMascotasPerdidas extends JDialog {
 		//tablaMascotasPerdidas = new JTable();
 		scrollPane.setViewportView(tablaMascotasPerdidas);
 		tablaMascotasPerdidas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tablaMascotasPerdidas.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent evt) {
+				int indexfila = tablaMascotasPerdidas
+						.convertRowIndexToModel(tablaMascotasPerdidas
+								.getSelectedRow());
+				int indexcol = 5;
+				String IDseleccionado = (String) tablaMascotasPerdidas.getModel().getValueAt(indexfila, indexcol);
+				Predicate<ReporteAnimal> filtroID = new Predicate<ReporteAnimal>() {
+					public boolean test(ReporteAnimal t) {
+						return t.getAnimalReportado().getChipIdentificacion().equals(IDseleccionado);
+					}
+				};
+				
+				Mascotas.mascotasRegistradas.stream().filter(filtroID).forEach(p->correoDueno=p.getCorreoContacto());
+				new VentanaCorreo(correoDueno);
+				
+			}
+		});
 		
-		setModal (true);
+//		setModal (true);
 		setAlwaysOnTop(true);
-		setModalityType (ModalityType.APPLICATION_MODAL);
+//		setModalityType (ModalityType.APPLICATION_MODAL);
 		setResizable(false);
 		setVisible(true);
 		
@@ -60,7 +83,11 @@ public class VistaMisMascotasPerdidas extends JDialog {
 				return columna > 8;
 			}
 		};
-		cargarDatos(animalSeleccionado);
+		System.out.println(animalSeleccionado.getAnimalReportado().getNombreMascota());
+		if(animalSeleccionado!=null){
+			cargarDatos(animalSeleccionado);
+		}
+		
 		tablaMascotasPerdidas = new JTable(modeloMascotasPerdidas);
 		
 		tablaMascotasPerdidas.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
