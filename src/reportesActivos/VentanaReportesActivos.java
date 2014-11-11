@@ -109,25 +109,26 @@ public class VentanaReportesActivos extends JPanel{
 		listaPath.clear();
 		Mascotas totalMascotas = Mascotas.getInstance();
 		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
-			
-			String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
-			String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
-			String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
-			String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
-			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
-			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
-			String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
-			
-			String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
-			if(!pathImagen.isEmpty()) {
-				listaPath.add(pathImagen);
+			if( totalMascotas.mascotasRegistradas.get(i).getCondicionSalida().equals("false")) {
+				
+				String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
+				String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
+				String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
+				String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
+				String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
+				String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
+				String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
+				
+				String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+				if(!pathImagen.isEmpty()) {
+					listaPath.add(pathImagen);
+				}
+				else {
+					listaPath.add("");
+				}
+				Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
+				modelo.addRow(nuevaFila);
 			}
-			else {
-				listaPath.add("");
-			}
-			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
-			modelo.addRow(nuevaFila);
-			
 		}
 	}
 }

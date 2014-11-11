@@ -96,7 +96,8 @@ public class VentanaMascotaDuenio extends JPanel{
 		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
 			if(VistaPrincipal.getUsuario().getIdentificacion().equals(totalMascotas.mascotasRegistradas.get(i).getIdentificacionReportante())) {
 				
-				if(totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada().toLowerCase().equals("encontrado")) {
+				if(totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada().toLowerCase().equals("encontrado") &&
+						totalMascotas.mascotasRegistradas.get(i).getCondicionSalida().equals("false")) {
 				
 					String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
 					String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
