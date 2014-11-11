@@ -97,7 +97,6 @@ public class VentanaMisMascotas extends JPanel {
 					String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
 					if(!pathImagen.isEmpty()) {
 						listaPath.add(pathImagen);
-						System.out.println(listaPath);
 					}
 					else {
 						listaPath.add("");

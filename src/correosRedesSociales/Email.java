@@ -131,20 +131,20 @@ public class Email {
     *Envía un correo alertando que está proxima la fecha de entrega
     *Los métodos únicamente reciben el correo del destinatario ya que el de la aplicacion es fijo
     */
-    public void enviarMensaje(String destinatario , String mensaje){
+    public boolean enviarMensaje(String destinatario , String mensaje){
     	//Se instancia un nuevo Email
     	Email e = new Email(correo,clave,destinatario,encabezado,mensaje);
     	if (e.sendMail()){
-    		JOptionPane.showMessageDialog(null,"El correo se envió satisfactoriamente");
+    		return true;
     	}
-    	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo");}
+    	else{return false;}
     }
-    public void enviarMensaje(String destinatario, String asunto, String mensaje){
+    public boolean enviarMensaje(String destinatario, String asunto, String mensaje){
     	Email e = new Email(correo,clave,destinatario,asunto,mensaje);
     	if (e.sendMail()){
-    		JOptionPane.showMessageDialog(null,"El correo se envió satisfactoriamente");
+    		return true;
     	}
-    	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo");}
+    	else{return false;}
     }
     
 }

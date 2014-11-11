@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -83,6 +85,17 @@ public class VentanaReportesActivos extends JPanel{
 		tabla.getColumn("Estado").setCellRenderer(normal);
 		panelContenedor.setLayout(new CardLayout(0, 0));
 		
+		
+		tabla.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent evt) {
+				if(evt.getClickCount() == 2){
+					int indexFila = tabla.convertRowIndexToModel(tabla.getSelectedRow());
+					String dato = (String)tabla.getModel().getValueAt(indexFila, 4);
+					new VentanaOpciones(dato);
+				}
+		}
+		});
+		
 		JScrollPane scrollPanel = new JScrollPane(tabla,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		grid.fill = GridBagConstraints.BOTH;
 		panelContenedor.add(scrollPanel, "name_181078707065095");
@@ -96,26 +109,25 @@ public class VentanaReportesActivos extends JPanel{
 		listaPath.clear();
 		Mascotas totalMascotas = Mascotas.getInstance();
 		for(int i = 0; i < totalMascotas.mascotasRegistradas.size(); i++) {
-			if(totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada().toLowerCase().equals("extraviado")) {
 			
-				String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
-				String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
-				String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
-				String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
-				String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
-				String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
-				String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
-				
-				String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
-				if(!pathImagen.isEmpty()) {
-					listaPath.add(pathImagen);
-				}
-				else {
-					listaPath.add("");
-				}
-				Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
-				modelo.addRow(nuevaFila);
+			String Tipo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getTipoMascota();
+			String Raza = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getRaza();
+			String Color = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getColor();
+			String Sexo = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getSexo();
+			String Chip = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getChipIdentificacion();
+			String Nombre = totalMascotas.mascotasRegistradas.get(i).getAnimalReportado().getNombreMascota();
+			String Estado = totalMascotas.mascotasRegistradas.get(i).getCondicionEntrada();
+			
+			String pathImagen = totalMascotas.mascotasRegistradas.get(i).getFotosAnimal().get(0);
+			if(!pathImagen.isEmpty()) {
+				listaPath.add(pathImagen);
 			}
+			else {
+				listaPath.add("");
+			}
+			Object[] nuevaFila = {Tipo, Raza, Color, Sexo, Chip, Nombre, Estado};
+			modelo.addRow(nuevaFila);
+			
 		}
 	}
 }
