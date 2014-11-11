@@ -139,6 +139,13 @@ public class Email {
     	}
     	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo");}
     }
+    public void enviarMensaje(String destinatario, String asunto, String mensaje){
+    	Email e = new Email(correo,clave,destinatario,asunto,mensaje);
+    	if (e.sendMail()){
+    		JOptionPane.showMessageDialog(null,"El correo se envió satisfactoriamente");
+    	}
+    	else{JOptionPane.showMessageDialog(null,"No fue posible enviar el correo");}
+    }
     
 }
 
