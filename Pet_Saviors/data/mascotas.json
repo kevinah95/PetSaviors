@@ -415,5 +415,332 @@
     "enAdopcion": false,
     "condicionSalida": "false",
     "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "116260762",
+    "telefonoContacto": "87023584",
+    "correoContacto": "jm95aguilar@hotmail.com",
+    "lugarContacto": "Colón",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img19.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 50.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Daisy",
+      "color": "Blanco",
+      "sexo": "Macho",
+      "chipIdentificacion": "10701",
+      "nombreMascota": "Travis"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "116260762",
+    "telefonoContacto": "87023584",
+    "correoContacto": "jm95aguilar@hotmail.com",
+    "lugarContacto": "Santa Ana",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img20.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Rottweiler",
+      "color": "Negro",
+      "sexo": "Macho",
+      "chipIdentificacion": "Pet10701",
+      "nombreMascota": "Paco"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "116260762",
+    "telefonoContacto": "87023584",
+    "correoContacto": "jm95aguilar@hotmail.com",
+    "lugarContacto": "Piedades",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img21.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 3,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Gato",
+      "raza": "Angora turco",
+      "color": "Blanco",
+      "sexo": "Macho",
+      "chipIdentificacion": "Cat123",
+      "nombreMascota": "Luna"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1453",
+    "telefonoContacto": "666777",
+    "correoContacto": "zoecox@fakemail.com",
+    "lugarContacto": "Desamparados",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img22.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 4,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Hámster",
+      "raza": "Ruso",
+      "color": "Marrón",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Ham123",
+      "nombreMascota": "Panchita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1453",
+    "telefonoContacto": "666777",
+    "correoContacto": "zoecox@fakemail.com",
+    "lugarContacto": "Barrio Chino, San José",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img23.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 5,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Oso",
+      "raza": "Panda",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "Oso123",
+      "nombreMascota": "Peluchin"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1453",
+    "telefonoContacto": "666777",
+    "correoContacto": "zoecox@fakemail.com",
+    "lugarContacto": "En las montañas de heredia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img24.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 6,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Loro",
+      "raza": "Perico",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "Buh123",
+      "nombreMascota": "Ojitos"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1425",
+    "telefonoContacto": "888999",
+    "correoContacto": "benjamin.fox@example.com",
+    "lugarContacto": "San Carlos",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img25.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 7,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Vicuña",
+      "raza": "",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "Alc123",
+      "nombreMascota": "Cuernitos"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1425",
+    "telefonoContacto": "888999",
+    "correoContacto": "benjamin.fox@example.com",
+    "lugarContacto": "Cartago, en el TEC",
+    "fotosAnimal": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 8,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Oveja",
+      "raza": "",
+      "color": "Blanco",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Ov123",
+      "nombreMascota": "Cobijita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1425",
+    "telefonoContacto": "888999",
+    "correoContacto": "benjamin.fox@example.com",
+    "lugarContacto": "En la B310",
+    "fotosAnimal": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 500.0,
+    "animalReportado": {
+      "idAnimal": 9,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pokémon",
+      "raza": "Charizard",
+      "color": "Naranja",
+      "sexo": "Macho",
+      "chipIdentificacion": "PK123",
+      "nombreMascota": "Chorizón"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7458",
+    "telefonoContacto": "999000",
+    "correoContacto": "gemma.butler@emailtest.com",
+    "lugarContacto": "Pococí",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img26.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 9999999.0,
+    "animalReportado": {
+      "idAnimal": 10,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Cerdo",
+      "raza": "",
+      "color": "Rosa",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Cer123",
+      "nombreMascota": "Tierrocita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7458",
+    "telefonoContacto": "999000",
+    "correoContacto": "gemma.butler@emailtest.com",
+    "lugarContacto": "Santo Domingo",
+    "fotosAnimal": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 11,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pollo",
+      "raza": "",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "Poll123",
+      "nombreMascota": "Alitas"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7458",
+    "telefonoContacto": "999000",
+    "correoContacto": "gemma.butler@emailtest.com",
+    "lugarContacto": "La Mancha",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img27.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 12,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Caballo",
+      "raza": "",
+      "color": "Negro",
+      "sexo": "Macho",
+      "chipIdentificacion": "Cab123",
+      "nombreMascota": "Rocinante"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
   }
 ]

@@ -160,5 +160,77 @@
       "eventosParticipado": [],
       "reportes": []
     }
+  },
+  {
+    "identificacion": "116260762",
+    "nombre": "Jose",
+    "pApellido": "Aguilar",
+    "sApellido": "Quesada",
+    "telefono": "87023584",
+    "contrasena": "116260762",
+    "correo": "jm95aguilar@hotmail.com",
+    "dirFotoPerfil": "",
+    "casaCuna": false,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 10,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "1453",
+    "nombre": "Zoe",
+    "pApellido": "Cox",
+    "sApellido": "A",
+    "telefono": "666777",
+    "contrasena": "1453",
+    "correo": "zoecox@fakemail.com",
+    "dirFotoPerfil": "",
+    "casaCuna": false,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 11,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "1425",
+    "nombre": "Benjamin",
+    "pApellido": "Fox",
+    "sApellido": "A",
+    "telefono": "888999",
+    "contrasena": "1425",
+    "correo": "benjamin.fox@example.com",
+    "dirFotoPerfil": "",
+    "casaCuna": false,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 12,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7458",
+    "nombre": "Gemma",
+    "pApellido": "Butler",
+    "sApellido": "A",
+    "telefono": "999000",
+    "contrasena": "7458",
+    "correo": "gemma.butler@emailtest.com",
+    "dirFotoPerfil": "",
+    "casaCuna": true,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 13,
+      "eventosParticipado": [],
+      "reportes": []
+    }
   }
 ]
