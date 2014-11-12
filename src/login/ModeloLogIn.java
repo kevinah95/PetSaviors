@@ -42,7 +42,11 @@ public class ModeloLogIn {
 	private void concederAcceso(Individuo individuo){
 		ACCESO_CONCEDIDO = true;
 		VistaPrincipal principalnormal = new VistaPrincipal(individuo);
-		principalnormal.lblProfile.setIcon(new ImageIcon(individuo.getDirFotoPerfil()));
+		if(!individuo.getDirFotoPerfil().trim().isEmpty()){
+			principalnormal.lblProfile.setIcon(new ImageIcon(individuo.getDirFotoPerfil()));
+			principalnormal.lblNomUsuario.setText(individuo.getNombre());
+		}
+		
 		vistaIngreso.panelCards.add("VistaPrincipal",principalnormal);
 		//principalnormal.setUsuario(individuo);
 		

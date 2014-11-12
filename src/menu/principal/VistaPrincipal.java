@@ -10,6 +10,7 @@
 
 package menu.principal;
 
+import fabrica.botones.JButtonTransparente;
 import individuos.Individuo;
 
 import javax.swing.*;
@@ -28,6 +29,7 @@ import reportesActivos.VentanaReportesActivos;
 import petFinder.VentanaMisMascotas;
 import petFinder.vistaPetFinder;
 import configuracion.Menu;
+import correosRedesSociales.VentanaPIN;
 
 public class VistaPrincipal extends JPanel {
 
@@ -36,6 +38,7 @@ public class VistaPrincipal extends JPanel {
 	public static JPanel panelImagenAnimal = new JPanel();
 	public static CardLayout cardsPrincipal = new CardLayout();
 	public JLabel lblProfile;
+	public JLabel lblNomUsuario;
 	
 	vistaPetFinder petFinder;
 	VentanaReportesActivos reportesActivos;
@@ -58,18 +61,13 @@ public class VistaPrincipal extends JPanel {
 		add(lblDisenadoPor);
 		
 		JPanel panelConfig = new JPanel();
-		panelConfig.setBounds(1107, 70, 84, 84);
+		panelConfig.setBounds(1080, 56, 120, 109);
 		panelConfig.setBackground(new Color(0,0,0,0));
 		add(panelConfig);
 		panelConfig.setLayout(null);
 		
-		JLabel lblEncima = new JLabel("");
-		lblEncima.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/profileEncima.png")));
-		lblEncima.setBounds(0, 0, 84, 84);
-		panelConfig.add(lblEncima);
-		
 		lblProfile = new JLabel("Profile");
-		lblProfile.setBounds(16, 20, 51, 43);
+		lblProfile.setBounds(0, 0, 120, 109);
 		panelConfig.add(lblProfile);
 		lblProfile.setHorizontalAlignment(SwingConstants.LEFT);
 		lblProfile.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/profile.png")));
@@ -198,6 +196,28 @@ public class VistaPrincipal extends JPanel {
 		actualizar.setContentAreaFilled(false);
 		actualizar.setBorder(null);
 		add(actualizar);
+		
+		JButtonTransparente btnTwitter = new JButtonTransparente("");
+		btnTwitter.setIcon(new ImageIcon(VistaPrincipal.class.getResource("/recursos/twitter2.png")));
+		btnTwitter.setBounds(342, 107, 71, 47);
+		btnTwitter.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+				VentanaPIN twitt = new  VentanaPIN();
+			}
+		});
+		add(btnTwitter);
+		
+		JLabel lblHola = new JLabel("Hola");
+		lblHola.setBounds(1042, 7, 37, 20);
+		lblHola.setFont(new Font("Tahoma", Font.BOLD, 16));
+		add(lblHola);
+		
+		lblNomUsuario = new JLabel("");
+		lblNomUsuario.setBounds(1080, 38, 152, 17);
+		lblNomUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
+		add(lblNomUsuario);
 		actualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				panel.removeAll();

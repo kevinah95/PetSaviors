@@ -232,5 +232,41 @@
       "eventosParticipado": [],
       "reportes": []
     }
+  },
+  {
+    "identificacion": "123",
+    "nombre": "hjkhjk",
+    "pApellido": "hjkhjkh",
+    "sApellido": "hjkhjk",
+    "telefono": "37128938912",
+    "contrasena": "132232",
+    "correo": "k@g.com",
+    "dirFotoPerfil": "",
+    "casaCuna": true,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 10,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "1",
+    "nombre": "Kevin",
+    "pApellido": "Hernández",
+    "sApellido": "Rostrán",
+    "telefono": "22136908",
+    "contrasena": "1",
+    "correo": "kevinah95@gmail.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\1.png",
+    "casaCuna": true,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 11,
+      "eventosParticipado": [],
+      "reportes": []
+    }
   }
 ]
