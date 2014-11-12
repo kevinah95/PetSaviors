@@ -394,5 +394,23 @@
       "eventosParticipado": [],
       "reportes": []
     }
+  },
+  {
+    "identificacion": "1122",
+    "nombre": "Oscar",
+    "pApellido": "Arias",
+    "sApellido": "Sánchez",
+    "telefono": "2222",
+    "contrasena": "1122",
+    "correo": "oscar@pln.com",
+    "dirFotoPerfil": "",
+    "casaCuna": false,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 16,
+      "eventosParticipado": [],
+      "reportes": []
+    }
   }
 ]
