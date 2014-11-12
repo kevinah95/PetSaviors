@@ -97,8 +97,6 @@ public final class TwitterPost {
 	    System.out.println("Successfully updated the status to [" + status.getText() + "].");
 
 	    System.out.println("ready exit");
-     
-	    System.exit(0);
     } catch (TwitterException te) {
         te.printStackTrace();
         System.out.println("Failed to get timeline: " + te.getMessage());
