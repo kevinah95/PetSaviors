@@ -40,7 +40,7 @@ public class VentanaPIN extends JFrame implements ActionListener{
         }
     }
     
-    public static void main(String [] args) {
+    public static void llamarVentana() {
         VentanaPIN VentanaPIN1=new VentanaPIN();
         VentanaPIN1.setBounds(500,300,300,150);
         VentanaPIN1.setVisible(true);
