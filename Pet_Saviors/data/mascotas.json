@@ -586,7 +586,7 @@
       "idAnimal": 7,
       "contadorSemejanzas": 0.0,
       "tipoMascota": "Vicuña",
-      "raza": "",
+      "raza": "Raza Única",
       "color": "Marrón",
       "sexo": "Macho",
       "chipIdentificacion": "Alc123",
@@ -617,7 +617,7 @@
       "idAnimal": 8,
       "contadorSemejanzas": 0.0,
       "tipoMascota": "Oveja",
-      "raza": "",
+      "raza": "Raza Única",
       "color": "Blanco",
       "sexo": "Hembra",
       "chipIdentificacion": "Ov123",
@@ -674,7 +674,7 @@
       "idAnimal": 10,
       "contadorSemejanzas": 0.0,
       "tipoMascota": "Cerdo",
-      "raza": "",
+      "raza": "Raza Única",
       "color": "Rosa",
       "sexo": "Hembra",
       "chipIdentificacion": "Cer123",
@@ -705,7 +705,7 @@
       "idAnimal": 11,
       "contadorSemejanzas": 0.0,
       "tipoMascota": "Pollo",
-      "raza": "",
+      "raza": "Raza Única",
       "color": "Marrón",
       "sexo": "Macho",
       "chipIdentificacion": "Poll123",
@@ -731,11 +731,611 @@
       "idAnimal": 12,
       "contadorSemejanzas": 0.0,
       "tipoMascota": "Caballo",
-      "raza": "",
+      "raza": "Raza Única",
       "color": "Negro",
       "sexo": "Macho",
       "chipIdentificacion": "Cab123",
       "nombreMascota": "Rocinante"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "3445",
+    "telefonoContacto": "89106410",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Cartago",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img29.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Paloma",
+      "raza": "Raza Única",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "Pet12312",
+      "nombreMascota": "Querty"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "3445",
+    "telefonoContacto": "89106410",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "África",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img30.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "León",
+      "raza": "Katanga",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "123UIN",
+      "nombreMascota": "Perriquín"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "3445",
+    "telefonoContacto": "89106410",
+    "correoContacto": "jasc996@gmail.com",
+    "lugarContacto": "Heredia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img31.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 3,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Hámster",
+      "raza": "Dorado",
+      "color": "Rosa",
+      "sexo": "Macho",
+      "chipIdentificacion": "TY123",
+      "nombreMascota": "Guapetón"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "5667",
+    "telefonoContacto": "76451617",
+    "correoContacto": "lopMar@gmail.com",
+    "lugarContacto": "San José",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img32.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 4,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Tigre",
+      "raza": "Indochina",
+      "color": "Blanco",
+      "sexo": "Hembra",
+      "chipIdentificacion": "3123di",
+      "nombreMascota": "Jaguar"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "5667",
+    "telefonoContacto": "76451617",
+    "correoContacto": "lopMar@gmail.com",
+    "lugarContacto": "Puntarenas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img33.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 5,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Liebre",
+      "raza": "Raza Única",
+      "color": "Amarillo",
+      "sexo": "Macho",
+      "chipIdentificacion": "nsdi12e",
+      "nombreMascota": "Ícono"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "5667",
+    "telefonoContacto": "76451617",
+    "correoContacto": "lopMar@gmail.com",
+    "lugarContacto": "Holanda",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img34.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 6,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pavo",
+      "raza": "Raza Única",
+      "color": "Naranja",
+      "sexo": "Macho",
+      "chipIdentificacion": "sdnc23",
+      "nombreMascota": "Juanita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1010",
+    "telefonoContacto": "34534532",
+    "correoContacto": "RositaHot@gmail.com",
+    "lugarContacto": "USA",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img35.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 7,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Gallina De Guinea",
+      "raza": "Raza Única",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "YUI23423",
+      "nombreMascota": "Huevon"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1010",
+    "telefonoContacto": "34534532",
+    "correoContacto": "RositaHot@gmail.com",
+    "lugarContacto": "Mongolia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img36.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 8,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Urraca",
+      "raza": "Raza Única",
+      "color": "Negro",
+      "sexo": "Macho",
+      "chipIdentificacion": "YN12312",
+      "nombreMascota": "Urraquín"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1010",
+    "telefonoContacto": "34534532",
+    "correoContacto": "RositaHot@gmail.com",
+    "lugarContacto": "China",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img37.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 9,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Caballo",
+      "raza": "Raza Única",
+      "color": "Amarillo",
+      "sexo": "Macho",
+      "chipIdentificacion": "UJI12312",
+      "nombreMascota": "JupaHuevo"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1111",
+    "telefonoContacto": "28342389",
+    "correoContacto": "NatySuperFamosa@gmail.com",
+    "lugarContacto": "Paraíso",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img38.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 10,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Cerdo",
+      "raza": "Raza Única",
+      "color": "Naranja",
+      "sexo": "Macho",
+      "chipIdentificacion": "HBD123",
+      "nombreMascota": "Chanchis :3"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1111",
+    "telefonoContacto": "28342389",
+    "correoContacto": "NatySuperFamosa@gmail.com",
+    "lugarContacto": "Malasia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img39.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 11,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Tórtola",
+      "raza": "Raza Única",
+      "color": "Negro",
+      "sexo": "Macho",
+      "chipIdentificacion": "dy22342",
+      "nombreMascota": "Bosty"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1111",
+    "telefonoContacto": "28342389",
+    "correoContacto": "NatySuperFamosa@gmail.com",
+    "lugarContacto": "Japón",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img40.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 12,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Faisán",
+      "raza": "Raza Única",
+      "color": "Blanco",
+      "sexo": "Macho",
+      "chipIdentificacion": "U1231",
+      "nombreMascota": "Delfy"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1011",
+    "telefonoContacto": "23423424",
+    "correoContacto": "LukeSableDeLuz@gmail.com",
+    "lugarContacto": "Ecuador",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img41.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 13,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Ratón",
+      "raza": "Raza Única",
+      "color": "Azul",
+      "sexo": "Macho",
+      "chipIdentificacion": "Yi2342",
+      "nombreMascota": "Chubaka"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1011",
+    "telefonoContacto": "23423424",
+    "correoContacto": "LukeSableDeLuz@gmail.com",
+    "lugarContacto": "Turrialba",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img42.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 14,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pollo",
+      "raza": "Raza Única",
+      "color": "Marrón",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Jidjsid3424",
+      "nombreMascota": "Toti"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1011",
+    "telefonoContacto": "23423424",
+    "correoContacto": "LukeSableDeLuz@gmail.com",
+    "lugarContacto": "Perú",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img43.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 15,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Erizo",
+      "raza": "Raza Única",
+      "color": "Blanco",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Inj232",
+      "nombreMascota": "Yuki"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1100",
+    "telefonoContacto": "34234234",
+    "correoContacto": "Shaq@gmail.com",
+    "lugarContacto": "Canadá",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img44.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 16,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Vizcacha",
+      "raza": "Raza Única",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "HUHu322",
+      "nombreMascota": "Foquita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1100",
+    "telefonoContacto": "34234234",
+    "correoContacto": "Shaq@gmail.com",
+    "lugarContacto": "Irlanda",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img45.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 17,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Codorniz",
+      "raza": "Raza Única",
+      "color": "Azul",
+      "sexo": "Macho",
+      "chipIdentificacion": "UNq212",
+      "nombreMascota": "Tiamicina"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "2211",
+    "telefonoContacto": "23423423",
+    "correoContacto": "WillySmith@gmail.com",
+    "lugarContacto": "Alemania",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img46.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 18,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pato",
+      "raza": "Raza Única",
+      "color": "Amarillo",
+      "sexo": "Macho",
+      "chipIdentificacion": "HUH2342",
+      "nombreMascota": "Patillo"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "2211",
+    "telefonoContacto": "23423423",
+    "correoContacto": "WillySmith@gmail.com",
+    "lugarContacto": "Francia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img47.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 19,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Cisne",
+      "raza": "Raza Única",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "IUji23423",
+      "nombreMascota": "MaríaPaula"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "2233",
+    "telefonoContacto": "23424212",
+    "correoContacto": "HechoDeMenosAJustin@gmail.com",
+    "lugarContacto": "Islas Canarias",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img48.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 20,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Canario",
+      "raza": "Raza Única",
+      "color": "Negro",
+      "sexo": "Macho",
+      "chipIdentificacion": "NUNu343",
+      "nombreMascota": "Buhín"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "2233",
+    "telefonoContacto": "23424212",
+    "correoContacto": "HechoDeMenosAJustin@gmail.com",
+    "lugarContacto": "Honduras",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img49.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 21,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Loro",
+      "raza": "Eclectus",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "UNUe234",
+      "nombreMascota": "Kapin"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "2233",
+    "telefonoContacto": "23424212",
+    "correoContacto": "HechoDeMenosAJustin@gmail.com",
+    "lugarContacto": "Perú",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img50.png",
+      "Pet_Saviors\\imagenes\\img51.png",
+      "Pet_Saviors\\imagenes\\img52.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 22,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Llama",
+      "raza": "Raza Única",
+      "color": "Blanco",
+      "sexo": "Macho",
+      "chipIdentificacion": "UHU2342",
+      "nombreMascota": "Llamita"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "0011",
+    "telefonoContacto": "7324238",
+    "correoContacto": "carmenMok@gmail.com",
+    "lugarContacto": "Europa",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img53.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 23,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Welsh Corgi Cardigan",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "JN2342",
+      "nombreMascota": "La Cadenita"
     },
     "fechaRegistrado": "0//0",
     "fechaSalidaSistema": "false",
