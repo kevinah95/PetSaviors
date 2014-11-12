@@ -1,0 +1,164 @@
+[
+  {
+    "identificacion": "7889",
+    "nombre": "Andrew",
+    "pApellido": "Hunter",
+    "sApellido": "Hunter",
+    "telefono": "1112225555",
+    "contrasena": "7889",
+    "correo": "andrew.hunter@fakemail.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7889.png",
+    "casaCuna": true,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 1,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7453",
+    "nombre": "Rebecca",
+    "pApellido": "Turner",
+    "sApellido": "Turner",
+    "telefono": "3334442222",
+    "contrasena": "7453",
+    "correo": "rebecca.turner@test.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7453.png",
+    "casaCuna": false,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 2,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7455",
+    "nombre": "Benjamin",
+    "pApellido": "Hunter",
+    "sApellido": "Hunter",
+    "telefono": "7455",
+    "contrasena": "7455",
+    "correo": "benjamin.hunter@fakemail.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7455.png",
+    "casaCuna": true,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 3,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "1256",
+    "nombre": "Maggie",
+    "pApellido": "Long",
+    "sApellido": "Long",
+    "telefono": "99900088888",
+    "contrasena": "1256",
+    "correo": "maggie.long@test.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\1256.png",
+    "casaCuna": false,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 4,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7412",
+    "nombre": "Paul",
+    "pApellido": "Hopkins",
+    "sApellido": "Hopkins",
+    "telefono": "5556668888",
+    "contrasena": "7412",
+    "correo": "paul.hopkins@example.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7412.png",
+    "casaCuna": true,
+    "adoptante": false,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 5,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "1003",
+    "nombre": "Gemma",
+    "pApellido": "Watson",
+    "sApellido": "Watson",
+    "telefono": "7778881111",
+    "contrasena": "1003",
+    "correo": "gemma.watson@testing.net",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\1003.png",
+    "casaCuna": true,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 6,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "3339",
+    "nombre": "Mike",
+    "pApellido": "Fuller",
+    "sApellido": "Fuller",
+    "telefono": "5556664444",
+    "contrasena": "3339",
+    "correo": "mike.fuller@fakemail.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\3339.png",
+    "casaCuna": false,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 7,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7078",
+    "nombre": "Emily",
+    "pApellido": "Webb",
+    "sApellido": "Webb",
+    "telefono": "8889995555",
+    "contrasena": "7078",
+    "correo": "emily.webb@testing.net",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7078.png",
+    "casaCuna": true,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 8,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  },
+  {
+    "identificacion": "7891",
+    "nombre": "Joseph",
+    "pApellido": "Dunn",
+    "sApellido": "Dunn",
+    "telefono": "9990004444",
+    "contrasena": "7891",
+    "correo": "joseph.dunn@example.com",
+    "dirFotoPerfil": "Pet_Saviors\\perfiles\\7891.png",
+    "casaCuna": true,
+    "adoptante": true,
+    "administrador": false,
+    "datosSistema": {
+      "identificadorIndividuo": 9,
+      "eventosParticipado": [],
+      "reportes": []
+    }
+  }
+]

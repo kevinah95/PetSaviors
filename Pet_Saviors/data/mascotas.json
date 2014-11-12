@@ -1,0 +1,419 @@
+[
+  {
+    "identificacionReportante": "7889",
+    "telefonoContacto": "1112225555",
+    "correoContacto": "andrew.hunter@fakemail.com",
+    "lugarContacto": "Pavas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img0.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 1,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Affenpinscher",
+      "color": "Verde",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet01",
+      "nombreMascota": "perro1"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7889",
+    "telefonoContacto": "1112225555",
+    "correoContacto": "andrew.hunter@fakemail.com",
+    "lugarContacto": "alcelandia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img1.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 2,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Dragón",
+      "raza": "Dragón de Comodo",
+      "color": "Rojo",
+      "sexo": "Hembra",
+      "chipIdentificacion": "alce1",
+      "nombreMascota": "Alce1"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7453",
+    "telefonoContacto": "3334442222",
+    "correoContacto": "rebecca.turner@test.com",
+    "lugarContacto": "Escazú",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img5.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 1.0E7,
+    "animalReportado": {
+      "idAnimal": 3,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Bichón boloñés (Bolognese, Boloñés)",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet02",
+      "nombreMascota": "pinguino"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7453",
+    "telefonoContacto": "3334442222",
+    "correoContacto": "rebecca.turner@test.com",
+    "lugarContacto": "En la china",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img5.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 4,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Akita americano (American akita)",
+      "color": "Rojo",
+      "sexo": "Hembra",
+      "chipIdentificacion": "pet02",
+      "nombreMascota": "rata"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7453",
+    "telefonoContacto": "3334442222",
+    "correoContacto": "rebecca.turner@test.com",
+    "lugarContacto": "pavas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img6.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 5,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Perro",
+      "raza": "Beagle-Harrier",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "Sami",
+      "nombreMascota": "sami"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7455",
+    "telefonoContacto": "7455",
+    "correoContacto": "benjamin.hunter@fakemail.com",
+    "lugarContacto": "escazú",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img7.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 1.0E7,
+    "animalReportado": {
+      "idAnimal": 6,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Daisy Angora",
+      "color": "Rojo",
+      "sexo": "Hembra",
+      "chipIdentificacion": "pet67",
+      "nombreMascota": "puchini"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7455",
+    "telefonoContacto": "7455",
+    "correoContacto": "benjamin.hunter@fakemail.com",
+    "lugarContacto": "En la calle",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img11.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 3332.0,
+    "animalReportado": {
+      "idAnimal": 7,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Hámster",
+      "raza": "Chino",
+      "color": "Naranja",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet05",
+      "nombreMascota": "Hámster"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7455",
+    "telefonoContacto": "7455",
+    "correoContacto": "benjamin.hunter@fakemail.com",
+    "lugarContacto": "pavas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img10.png",
+      "Pet_Saviors\\imagenes\\img9.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 8,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Gato",
+      "raza": "Abisinio",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet89",
+      "nombreMascota": "felinito"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7455",
+    "telefonoContacto": "7455",
+    "correoContacto": "benjamin.hunter@fakemail.com",
+    "lugarContacto": "Perez Zeledón",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img11.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 9,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Gato",
+      "raza": "American Curl",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet05",
+      "nombreMascota": "misingo"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1256",
+    "telefonoContacto": "99900088888",
+    "correoContacto": "maggie.long@test.com",
+    "lugarContacto": "San Carlos",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img12.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 10,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Loro",
+      "raza": "Agapornis",
+      "color": "Rojo",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet90",
+      "nombreMascota": "Simón"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1256",
+    "telefonoContacto": "99900088888",
+    "correoContacto": "maggie.long@test.com",
+    "lugarContacto": "Zoobulandia",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img13.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 11,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Pokémon",
+      "raza": "Gastly",
+      "color": "Azul",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Pet99",
+      "nombreMascota": "Articuno"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7412",
+    "telefonoContacto": "5556668888",
+    "correoContacto": "paul.hopkins@example.com",
+    "lugarContacto": "Puntarenas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img14.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 12,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Oso",
+      "raza": "Americano",
+      "color": "Morado",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet85",
+      "nombreMascota": "Perry"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "1003",
+    "telefonoContacto": "7778881111",
+    "correoContacto": "gemma.watson@testing.net",
+    "lugarContacto": "Lomas",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img15.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 13,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Hámster",
+      "raza": "Dorado",
+      "color": "Marrón",
+      "sexo": "Macho",
+      "chipIdentificacion": "Pet78",
+      "nombreMascota": "Hurón"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "3339",
+    "telefonoContacto": "5556664444",
+    "correoContacto": "mike.fuller@fakemail.com",
+    "lugarContacto": "Limón",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img16.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 14,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Conejo",
+      "raza": "Mini Rex",
+      "color": "Rojo",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Pet09",
+      "nombreMascota": "Mickey Mouse"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7078",
+    "telefonoContacto": "8889995555",
+    "correoContacto": "emily.webb@testing.net",
+    "lugarContacto": "Guanacaste",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img17.png"
+    ],
+    "condicionEntrada": "Encontrado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 15,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Loro",
+      "raza": "Guacamaya",
+      "color": "Naranja",
+      "sexo": "Macho",
+      "chipIdentificacion": "pet45",
+      "nombreMascota": "Periquito"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  },
+  {
+    "identificacionReportante": "7891",
+    "telefonoContacto": "9990004444",
+    "correoContacto": "joseph.dunn@example.com",
+    "lugarContacto": "Alajuela",
+    "fotosAnimal": [
+      "Pet_Saviors\\imagenes\\img18.png"
+    ],
+    "condicionEntrada": "Extraviado",
+    "recompensa": 0.0,
+    "animalReportado": {
+      "idAnimal": 16,
+      "contadorSemejanzas": 0.0,
+      "tipoMascota": "Oso",
+      "raza": "Bezudo",
+      "color": "Rosa",
+      "sexo": "Hembra",
+      "chipIdentificacion": "Pet77",
+      "nombreMascota": "Luigi"
+    },
+    "fechaRegistrado": "0//0",
+    "fechaSalidaSistema": "false",
+    "enAdopcion": false,
+    "condicionSalida": "false",
+    "diasSistema": 1
+  }
+]

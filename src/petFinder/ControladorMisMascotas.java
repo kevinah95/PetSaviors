@@ -31,10 +31,10 @@ public class ControladorMisMascotas{
 				int indexfila = vista.tabla
 						.convertRowIndexToModel(vista.tabla
 								.getSelectedRow());
-				int indexcol = 5;
-				System.out.println();
-				String IDseleccionado = (String) vista.tabla.getModel().getValueAt(indexfila, indexcol);
+				int indexcol = 4;
 				
+				String IDseleccionado = (String) vista.tabla.getModel().getValueAt(indexfila, indexcol);
+				System.out.println(IDseleccionado);
 				Predicate<ReporteAnimal> filtroID = new Predicate<ReporteAnimal>() {
 					public boolean test(ReporteAnimal t) {
 						return t.getAnimalReportado().getChipIdentificacion().equals(IDseleccionado);

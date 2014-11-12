@@ -128,7 +128,7 @@ public class VistaMisMascotasPerdidas extends JFrame {
 		
 		Comparaciones.PetFinder(animalSeleccionado);
 		Comparaciones.resultadoPetFinder.forEach(p->anadirAlModel(p.getAnimalReportado()));
-		
+		Comparaciones.resultadoPetFinder.forEach(p->System.out.println(p.getAnimalReportado().getContadorSemejanzas()));
 	}
 
 	
