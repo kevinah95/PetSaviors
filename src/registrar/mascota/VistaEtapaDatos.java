@@ -1,13 +1,17 @@
 package registrar.mascota;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
+
 import java.awt.*;
+
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.plaf.ComboBoxUI;
 import javax.swing.plaf.basic.BasicArrowButton;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 import javax.swing.text.DefaultStyledDocument;
+
 import clasificacion.animales.ControlEspecie;
 import fabrica.botones.FabricaBotones;
 import filtros.document.DocumentSizeFilter;
@@ -84,6 +88,10 @@ public class VistaEtapaDatos extends JPanel{
 		cbEspecie = new JComboBox<String>();
 		cbEspecie.setModel(new DefaultComboBoxModel<String>());
 		controlEspecie.especiesRegistradas.forEach(p->cbEspecie.addItem(p.getNombre()));
+		cbEspecie.setSelectedIndex(0);
+		ModeloEtapaDatos modelo = new ModeloEtapaDatos();
+		String especieElegida = (String)cbEspecie.getSelectedItem();
+		cbRaza.setModel(new DefaultComboBoxModel( modelo.llenarComboRaza(especieElegida) ));
 		cbEspecie.setBounds(87, 196, 290, 27);
 		cbEspecie.setForeground(new Color(27,39,51));
 		cbEspecie.setFont(fontTextos);

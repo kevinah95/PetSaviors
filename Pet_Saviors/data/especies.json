@@ -1,43 +1,62 @@
 [
   {
     "nombre": "Alpaca",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Caballo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Cabra",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Canario",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Cerdo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Cisne",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Chinchilla",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Cobaya",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Codorniz",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Conejo",
     "listaRazas": [
+      "Raza Única",
       "Alaskan Dwarf (Enano de Alaska)",
       "American Fuzzy Lop",
       "Angora Inglés",
@@ -65,33 +84,45 @@
   },
   {
     "nombre": "Cuervo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Dragón",
     "listaRazas": [
+      "Raza Única",
       "Dragón de Comodo"
     ]
   },
   {
     "nombre": "Erizo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Faisán",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Gallina De Guinea",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Ganso",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Gato",
     "listaRazas": [
+      "Raza Única",
       "Abisinio",
       "Africano",
       "American Curl",
@@ -159,15 +190,20 @@
   },
   {
     "nombre": "Gerbillo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Hurón",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Hámster",
     "listaRazas": [
+      "Raza Única",
       "Chino",
       "De Campbell",
       "Dorado",
@@ -178,6 +214,7 @@
   {
     "nombre": "León",
     "listaRazas": [
+      "Raza Única",
       "Congo",
       "Katanga",
       "Transvaal",
@@ -188,15 +225,20 @@
   },
   {
     "nombre": "Liebre",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Llama",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Loro",
     "listaRazas": [
+      "Raza Única",
       "Agapornis",
       "Amazonas",
       "Aratinga",
@@ -211,11 +253,14 @@
   },
   {
     "nombre": "Ninfa",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Oso",
     "listaRazas": [
+      "Raza Única",
       "Americano",
       "Bezudo",
       "Frontino",
@@ -229,23 +274,32 @@
   },
   {
     "nombre": "Oveja",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Paloma",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Pato",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Pavo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Perro",
     "listaRazas": [
+      "Raza Única",
       "Affenpinscher",
       "Airedale terrier",
       "Akbash",
@@ -599,6 +653,7 @@
   {
     "nombre": "Pokémon",
     "listaRazas": [
+      "Raza Única",
       "Abra",
       "Aerodactyl",
       "Alakazam",
@@ -754,23 +809,32 @@
   },
   {
     "nombre": "Pollo",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Rana",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Rata",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Ratón",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Tigre",
     "listaRazas": [
+      "Raza Única",
       "Bengala",
       "Siberiano",
       "Sumatra",
@@ -781,22 +845,32 @@
   },
   {
     "nombre": "Tortuga",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Tórtola",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Urraca",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Vicuña",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   },
   {
     "nombre": "Vizcacha",
-    "listaRazas": []
+    "listaRazas": [
+      "Raza Única"
+    ]
   }
 ]

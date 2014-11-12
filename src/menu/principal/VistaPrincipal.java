@@ -204,7 +204,7 @@ public class VistaPrincipal extends JPanel {
 			
 			
 			public void actionPerformed(ActionEvent e) {
-				VentanaPIN twitt = new  VentanaPIN();
+//				VentanaPIN twitt = new  VentanaPIN();
 			}
 		});
 		add(btnTwitter);
